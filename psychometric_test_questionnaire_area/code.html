@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Assessment - Healing Mind</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-surface-variant": "#424751", "on-error-container": "#93000a", "primary-fixed-dim": "#aac7ff", "on-primary-container": "#b1cbff", "on-background": "#330043", "error-container": "#ffdad6", tertiary: "#3c3f40", "on-tertiary-container": "#cacbcc", "surface-container": "#ffe6ff", "surface-variant": "#fbd7ff", "secondary-fixed-dim": "#ffb3ae", "on-primary": "#ffffff", "on-tertiary-fixed": "#191c1d", "on-secondary": "#ffffff", "inverse-on-surface": "#ffebfe", "outline-variant": "#c2c6d3", "on-secondary-fixed-variant": "#8a1a1e", "tertiary-fixed": "#e1e3e4", "surface-bright": "#fff7fb", "surface-dim": "#f8cbff", primary: "#003d7e", "on-error": "#ffffff", "on-primary-fixed-variant": "#00458d", "on-primary-fixed": "#001b3e", "primary-container": "#0d54a5", "on-secondary-container": "#70040e", outline: "#727783", "surface-container-highest": "#fbd7ff", "tertiary-container": "#535657", background: "#fff7fb", "secondary-fixed": "#ffdad7", error: "#ba1a1a", "secondary-container": "#ff716b", "inverse-surface": "#54006c", "surface-container-low": "#ffeffd", "primary-fixed": "#d6e3ff", "surface-container-high": "#fddfff", surface: "#fff7fb", secondary: "#ab3332", "surface-tint": "#1f5daf", "tertiary-fixed-dim": "#c5c7c8", "on-secondary-fixed": "#410004", "surface-container-lowest": "#ffffff", "on-surface": "#330043", "inverse-primary": "#aac7ff", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#454748"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xs: "4px", "margin-desktop": "40px", "margin-mobile": "16px", base: "8px", gutter: "24px", sm: "8px", xl: "48px", lg: "24px", md: "16px"}, fontFamily: {"label-sm": ["Public Sans"], "label-md": ["Public Sans"], "body-md": ["Public Sans"], "display-lg": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "body-lg": ["Public Sans"], "body-sm": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-full flex flex-col md:flex-row antialiased">
+<!-- TopAppBar for Mobile (Suppressed navigation, showing only brand and close/exit) -->
+<header class="md:hidden flex justify-between items-center w-full px-4 h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant/20 z-50 sticky top-0">
+<button aria-label="Close Assessment" class="text-on-surface-variant hover:bg-surface-container-low transition-opacity flex items-center justify-center p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<span class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary-fixed-dim">Healing Mind</span>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- SideNav for Desktop (Suppressed full nav, providing anchor) -->
+<nav class="hidden md:flex flex-col w-[280px] bg-surface-container-lowest border-r border-outline-variant/20 h-full fixed left-0 top-0 z-40 p-6">
+<div class="mb-12">
+<span class="font-headline-md text-headline-md font-bold text-primary">Healing Mind</span>
+</div>
+<div class="flex-1">
+<div class="text-label-sm font-label-sm text-outline mb-4 uppercase tracking-wider">Current Activity</div>
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-lg px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md">Assessment</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-low w-full rounded-lg px-4 py-3 transition-colors group">
+<span class="material-symbols-outlined group-hover:text-error transition-colors" data-icon="exit_to_app">exit_to_app</span>
+<span class="font-label-md text-label-md">Save &amp; Exit</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full md:ml-[280px] overflow-y-auto">
+<!-- Header / Progress Area -->
+<div class="max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+<div class="flex flex-col gap-2 mb-8">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Beck Depression Inventory (BDI-II)</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Self-Evaluation Questionnaire</h1>
+</div>
+<!-- Progress Bar -->
+<div class="mb-12">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Question 4 of 21</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">19% Completed</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-500 ease-out" style="width: 19%"></div>
+</div>
+</div>
+</div>
+<!-- Question Card Container -->
+<div class="max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center pb-24">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 md:p-10 shadow-[0px_4px_12px_rgba(26,37,48,0.04)] mb-8 transition-all duration-300">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-8">
+                    Choose the statement that best describes how you have been feeling during the past two weeks, including today.
+                </h2>
+<!-- Options List (Radio Cards) -->
+<div class="flex flex-col gap-4">
+<label class="relative flex items-start cursor-pointer group">
+<input class="peer sr-only" name="bdi_q4" type="radio" value="0"/>
+<div class="w-full flex items-center p-4 md:p-5 rounded-lg border border-outline-variant bg-surface-container-lowest group-hover:bg-surface-container-low peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-lowest transition-all min-h-[64px]">
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary mr-4 transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface">I get as much satisfaction out of things as I used to.</span>
+</div>
+</label>
+<label class="relative flex items-start cursor-pointer group">
+<input class="peer sr-only" name="bdi_q4" type="radio" value="1"/>
+<div class="w-full flex items-center p-4 md:p-5 rounded-lg border border-outline-variant bg-surface-container-lowest group-hover:bg-surface-container-low peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-lowest transition-all min-h-[64px]">
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary mr-4 transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface">I don't enjoy things the way I used to.</span>
+</div>
+</label>
+<label class="relative flex items-start cursor-pointer group">
+<input class="peer sr-only" name="bdi_q4" type="radio" value="2"/>
+<div class="w-full flex items-center p-4 md:p-5 rounded-lg border border-outline-variant bg-surface-container-lowest group-hover:bg-surface-container-low peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-lowest transition-all min-h-[64px]">
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary mr-4 transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface">I get no real satisfaction out of anything anymore.</span>
+</div>
+</label>
+<label class="relative flex items-start cursor-pointer group">
+<input class="peer sr-only" name="bdi_q4" type="radio" value="3"/>
+<div class="w-full flex items-center p-4 md:p-5 rounded-lg border border-outline-variant bg-surface-container-lowest group-hover:bg-surface-container-low peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-lowest transition-all min-h-[64px]">
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full border-2 border-outline-variant peer-checked:border-primary mr-4 transition-colors">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface">I am dissatisfied or bored with everything.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Navigation Actions -->
+<div class="flex items-center justify-between mt-auto md:mt-4">
+<button class="min-h-[48px] px-6 py-2 rounded-full border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                    Previous
+                </button>
+<button class="min-h-[48px] px-8 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-sm">
+                    Next
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Suppress BottomNavBar as this is a focused task/transactional flow -->
+</body></html>

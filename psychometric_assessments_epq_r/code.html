@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPQ-R Questionnaire</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003d7e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0d54a5",
+                        "on-primary-container": "#b1cbff",
+                        surface: "#fff7fb",
+                        "on-surface": "#330043",
+                        "surface-variant": "#fbd7ff",
+                        "on-surface-variant": "#424751",
+                        background: "#fff7fb",
+                        "on-background": "#330043",
+                        outline: "#727783",
+                        "outline-variant": "#c2c6d3"
+                    },
+                    fontFamily: {
+                        body: ["Public Sans"],
+                        headline: ["Public Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+    
+    <!-- Top App Bar -->
+    <header class="bg-surface border-b border-outline-variant w-full h-16 flex justify-between items-center px-4 md:px-10 sticky top-0 z-40 shadow-sm">
+        <div class="flex items-center gap-4">
+            <button onclick="window.history.back()" class="material-symbols-outlined text-primary hover:bg-surface-variant p-2 rounded-full transition-colors cursor-pointer">arrow_back</button>
+            <h1 class="font-headline text-xl text-primary font-semibold">Eysenck Personality Questionnaire-Revised (EPQ-R)</h1>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-4 md:p-8 mt-4">
+        
+        <!-- Intro Card -->
+        <div id="introCard" class="bg-surface rounded-xl border border-outline-variant p-6 mb-6 shadow-sm">
+            <h2 class="text-2xl font-semibold text-primary mb-2">Instructions</h2>
+            <p class="text-on-surface-variant mb-4">There are 100 questions in this questionnaire. Please read each statement carefully and select "Yes" or "No" based on how well it describes you. There are no right or wrong answers.</p>
+            <div class="flex items-center gap-2 bg-primary-container/10 p-3 rounded-lg border border-primary/20 text-primary">
+                <span class="material-symbols-outlined">info</span>
+                <span class="text-sm">Please answer all questions honestly to ensure accurate results.</span>
+            </div>
+            
+            <div class="mt-4">
+                <div class="w-full bg-surface-variant rounded-full h-2.5 mb-1">
+                    <div id="progressBar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-outline font-medium">
+                    <span>Progress</span>
+                    <span id="progressText">0/100</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questionnaire Container -->
+        <div id="questionsContainer" class="space-y-4 mb-8">
+            <!-- Questions will be injected here -->
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center mb-12">
+            <button id="submitBtn" onclick="calculateResults()" class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                Submit Assessment
+            </button>
+        </div>
+        
+        <!-- Results Modal (Hidden by default) -->
+        <div id="resultsModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+            <div class="bg-surface rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 md:p-8 relative">
+                <button onclick="closeResults()" class="absolute top-4 right-4 material-symbols-outlined text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-variant transition-colors">close</button>
+                
+                <div class="text-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary mb-2">assignment_turned_in</span>
+                    <h2 class="text-3xl font-bold text-on-surface">Your Results</h2>
+                    <p class="text-on-surface-variant mt-2">Eysenck Personality Questionnaire-Revised (EPQ-R)</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Psychoticism -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-primary">Psychoticism (P)</h3>
+                            <span id="scoreP" class="text-xl font-bold text-on-surface bg-surface-variant px-3 py-1 rounded-lg border border-outline-variant">0</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant">High scores associate with traits such as aggressiveness, insensitivity, and a lack of empathy. Low scores suggest a compassionate personality.</p>
+                    </div>
+                    
+                    <!-- Extraversion -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-primary">Extraversion (E)</h3>
+                            <span id="scoreE" class="text-xl font-bold text-on-surface bg-surface-variant px-3 py-1 rounded-lg border border-outline-variant">0</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant">High scores indicate a tendency towards sociability and impulsiveness. Low scores suggest introversion and a preference for solitude.</p>
+                    </div>
+                    
+                    <!-- Neuroticism -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-primary">Neuroticism (N)</h3>
+                            <span id="scoreN" class="text-xl font-bold text-on-surface bg-surface-variant px-3 py-1 rounded-lg border border-outline-variant">0</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant">High scores reflect emotional instability and anxiety. Low scores indicate emotional stability and resilience.</p>
+                    </div>
+                    
+                    <!-- Lie Scale -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-primary">Lie Scale (L)</h3>
+                            <span id="scoreL" class="text-xl font-bold text-on-surface bg-surface-variant px-3 py-1 rounded-lg border border-outline-variant">0</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant">High scores indicate a tendency to present oneself in an overly favorable manner, compromising reliability.</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-4 mt-8">
+                    <button onclick="window.history.back()" class="px-6 py-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors font-medium">Return to Dashboard</button>
+                    <button onclick="window.print()" class="px-6 py-2 bg-primary text-on-primary rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors font-medium flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const questionsRaw = `Do you have many different hobbies?
+Do you stop to think things over before doing anything?
+Does your mood often go up and down?
+Have you ever taken the praise for something you knew someone else had really done?
+Are you a talkative person?
+Would being in debt worry you?
+Do you ever feel "just miserable" for no reason?
+Were you ever greedy by helping yourself to more than your share of anything?
+Do you lock up your house carefully at night?
+Are you rather lively?
+Would it upset you a lot to see a child or animal suffer?
+Do you often worry about things you should not have done or said?
+If you say you will do something, do you always keep your promise no matter how inconvenient it might be?
+Can you usually let yourself go and enjoy yourself at a lively party?
+Are you an irritable person?
+Have you ever blamed someone for doing something you knew was really your fault?
+Do you enjoy meeting new people?
+Do you believe insurance schemes are a good idea?
+Are your feelings easily hurt?
+Are all your habits good and desirable ones?
+Do you tend to keep in the background on social occasions?
+Would you take drugs which may have strange or dangerous effects?
+Do you often feel "fed up"?
+Have you ever taken anything (even a pin or a button) that belonged to someone else?
+Do you like going out a lot?
+Do you enjoy hurting people you love?
+Are you often troubled about feelings of guilt?
+Do you sometimes talk about things you know nothing about?
+Do you prefer reading to meeting people?
+Do you have enemies who want to harm you?
+Would you call yourself a nervous person?
+Do you have many friends?
+Do you enjoy practical jokes that can sometimes really hurt people?
+Are you a worrier?
+As a child did you do as you were told immediately and without grumbling?
+Would you call yourself happy-go-lucky?
+Do good manners and cleanliness matter much to you?
+Do you worry about awful things that might happen?
+Have you ever broken or lost something belonging to someone else?
+Do you usually take the initiative in making new friends?
+Would you call yourself tense or "highly-strung"?
+Are you mostly quite when you are with other people?
+Do you think marriage is old-fashioned and should be done away with?
+Do you sometimes boast a little?
+Can you easily get some life into a rather dull party?
+Do people who drive carefully annoy you?
+Do you worry about your health?
+Have you ever said anything bad or nasty about anyone?
+Do you like telling jokes and funny stories to your friend?
+Do most things taste the same to you?
+As a child were you ever cheeky to your parents?
+Do you like mixing with people?
+Does it worry you if you know there are mistakes in your work?
+Do you feel sleeplessness?
+Do you wash always before a meal?
+Do you neatly always have a "ready answer" when people talk to you?
+Do you like to arrive at appointments in plenty of time?
+Have you often felt listless and tired for no reason?
+Have you ever cheated at a game?
+Do you like doing things in which you have to act quickly?
+Is (or was) your mother a good woman?
+Do you often feel life is very dull?
+Have you ever taken advantage of someone?
+Do you often take on more activities than you have time for?
+Are there several people who keep trying to avoid you?
+Do you worry a lot about your looks?
+Do you think people spend too much time safeguarding their future with savings and insurance?
+Have you ever wished that you were dead?
+Would you dodge paying taxes if you were sure you could never be found out?
+Can you get a party going?
+Do you try not to be rude to people?
+Do you worry too long after an embarrassing experience?
+Have you ever insisted on having your own way?
+When you catch a train do you often arrive at the last minute?
+Do you suffer from "nerves"?
+Do your friendships breakup easily without it being your fault?
+Do you often feel lonely?
+Do you always practice what you preach?
+Do you sometimes like teasing animals?
+Are you easily hurt when people find fault with you or the work you do?
+Have you ever been late for an appointment or work?
+Do you like plenty of bustle and excitement around you?
+Would you like other people to be afraid of you?
+Are you sometimes bubbling over with energy and sometimes very sluggish?
+Do you sometimes put off until tomorrow what you ought to do today?
+Do other people think of you as being very lively?
+Do people tell you a lot of lies?
+Are you touchy about something?
+Are you always willing to admit it when you have made a mistake?
+Would you feel very sorry for an animal caught in a trap?`;
+
+        const questions = questionsRaw.split('\n').filter(q => q.trim().length > 0).map(q => q.replace(/^\d+\.\s*/, '').trim());
+        const answers = new Array(questions.length).fill(null);
+
+        const scoring = {
+            P: {
+                yes: [22, 26, 30, 33, 43, 46, 50, 65, 67, 74, 76, 79, 83, 87],
+                no: [2, 6, 9, 11, 18, 53, 57, 61, 71, 90]
+            },
+            E: {
+                yes: [1, 5, 10, 14, 17, 25, 32, 36, 40, 45, 49, 52, 56, 60, 64, 70, 82, 86],
+                no: [21, 29, 42]
+            },
+            N: {
+                yes: [3, 7, 12, 15, 19, 23, 27, 31, 34, 37, 38, 41, 47, 54, 58, 62, 66, 68, 72, 75, 77, 80, 84, 88],
+                no: []
+            },
+            L: {
+                yes: [13, 20, 35, 55, 78, 89],
+                no: [4, 8, 16, 24, 28, 39, 44, 48, 51, 59, 63, 69, 73, 81, 85]
+            }
+        };
+
+        const container = document.getElementById('questionsContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        
+        function renderQuestions() {
+            container.innerHTML = '';
+            questions.forEach((q, index) => {
+                const qNum = index + 1;
+                const div = document.createElement('div');
+                div.className = 'bg-surface rounded-xl border border-outline-variant p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-colors hover:border-primary/30';
+                div.id = `q-card-${index}`;
+                
+                div.innerHTML = `
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                            ${qNum}
+                        </div>
+                        <p class="text-on-surface font-medium pt-1">${q}</p>
+                    </div>
+                    <div class="flex gap-3 mt-4 md:mt-0">
+                        <button onclick="selectAnswer(${index}, 'Yes')" id="btn-yes-${index}" class="px-6 py-2 rounded-lg border-2 border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium min-w-[80px]">Yes</button>
+                        <button onclick="selectAnswer(${index}, 'No')" id="btn-no-${index}" class="px-6 py-2 rounded-lg border-2 border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium min-w-[80px]">No</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            updateProgress();
+        }
+
+        function selectAnswer(qIndex, answer) {
+            answers[qIndex] = answer;
+            
+            // Update UI
+            const btnYes = document.getElementById(`btn-yes-${qIndex}`);
+            const btnNo = document.getElementById(`btn-no-${qIndex}`);
+            
+            // Reset both
+            btnYes.className = 'px-6 py-2 rounded-lg border-2 border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium min-w-[80px]';
+            btnNo.className = 'px-6 py-2 rounded-lg border-2 border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium min-w-[80px]';
+            
+            // Highlight selected
+            if (answer === 'Yes') {
+                btnYes.className = 'px-6 py-2 rounded-lg border-2 border-primary bg-primary text-on-primary font-medium min-w-[80px] shadow-sm';
+            } else {
+                btnNo.className = 'px-6 py-2 rounded-lg border-2 border-primary bg-primary text-on-primary font-medium min-w-[80px] shadow-sm';
+            }
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answeredCount = answers.filter(a => a !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressBar.style.width = `${percentage}%`;
+            progressText.innerText = `${answeredCount} of ${questions.length} Answered`;
+        }
+
+        function calculateResults() {
+            // Check if all answered
+            if (answers.includes(null)) {
+                alert("Please answer all questions before submitting.");
+                return;
+            }
+
+            let pScore = 0, eScore = 0, nScore = 0, lScore = 0;
+
+            answers.forEach((ans, index) => {
+                if (!ans) return;
+                const qNum = index + 1;
+                
+                // P Score
+                if ((scoring.P.yes.includes(qNum) && ans === 'Yes') || (scoring.P.no.includes(qNum) && ans === 'No')) pScore++;
+                // E Score
+                if ((scoring.E.yes.includes(qNum) && ans === 'Yes') || (scoring.E.no.includes(qNum) && ans === 'No')) eScore++;
+                // N Score
+                if ((scoring.N.yes.includes(qNum) && ans === 'Yes') || (scoring.N.no.includes(qNum) && ans === 'No')) nScore++;
+                // L Score
+                if ((scoring.L.yes.includes(qNum) && ans === 'Yes') || (scoring.L.no.includes(qNum) && ans === 'No')) lScore++;
+            });
+
+            // Save to Client Database
+            try {
+                const loggedInUser = localStorage.getItem('loggedInUser');
+                if (loggedInUser) {
+                    const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+                    if (users[loggedInUser]) {
+                        users[loggedInUser].epqResults = { 
+                            P: pScore, 
+                            E: eScore, 
+                            N: nScore, 
+                            L: lScore, 
+                            date: new Date().toISOString() 
+                        };
+                        localStorage.setItem('healingMindUsers', JSON.stringify(users));
+                    }
+                }
+            } catch(e) {
+                console.error("Error saving EPQ results to database:", e);
+            }
+
+            // Update Modal
+            document.getElementById('scoreP').textContent = pScore;
+            document.getElementById('scoreE').textContent = eScore;
+            document.getElementById('scoreN').textContent = nScore;
+            document.getElementById('scoreL').textContent = lScore;
+            
+            // Show Modal
+            document.getElementById('resultsModal').classList.remove('hidden');
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').classList.add('hidden');
+        }
+
+        // Init
+        renderQuestions();
+
+    </script>
+</body>
+</html>

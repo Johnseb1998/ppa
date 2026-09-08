@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Sanctuary Admin - Client Master File</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffb3ae", "on-primary-fixed-variant": "#00458d", "on-secondary-container": "#70040e", "surface-container-highest": "#fbd7ff", "secondary-container": "#ff716b", "on-primary-fixed": "#001b3e", "on-tertiary-fixed-variant": "#454748", "surface-variant": "#fbd7ff", outline: "#727783", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "tertiary-container": "#535657", "tertiary-fixed": "#e1e3e4", "secondary-fixed": "#ffdad7", "on-error-container": "#93000a", "inverse-primary": "#aac7ff", "tertiary-fixed-dim": "#c5c7c8", "surface-container-low": "#ffeffd", "primary-fixed": "#d6e3ff", "inverse-on-surface": "#ffebfe", primary: "#003d7e", error: "#ba1a1a", "surface-tint": "#1f5daf", "on-surface-variant": "#424751", "surface-container": "#ffe6ff", secondary: "#ab3332", "on-background": "#330043", "on-tertiary-container": "#cacbcc", "on-error": "#ffffff", "primary-container": "#0d54a5", "on-tertiary-fixed": "#191c1d", surface: "#fff7fb", "primary-fixed-dim": "#aac7ff", "surface-bright": "#fff7fb", "on-surface": "#330043", "surface-container-high": "#fddfff", background: "#fff7fb", "surface-dim": "#f8cbff", "on-secondary-fixed": "#410004", "error-container": "#ffdad6", "inverse-surface": "#54006c", "on-primary": "#ffffff", "on-primary-container": "#b1cbff", tertiary: "#3c3f40", "outline-variant": "#c2c6d3", "on-secondary-fixed-variant": "#8a1a1e"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xl: "48px", base: "8px", sm: "8px", lg: "24px", "margin-mobile": "16px", md: "16px", gutter: "24px", xs: "4px", "margin-desktop": "40px"}, fontFamily: {"body-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "label-sm": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "body-sm": ["Public Sans"], "display-lg": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "label-md": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 md:pl-[280px]">
+<!-- Sidebar Navigation (Desktop) -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-[280px] bg-surface border-r border-outline-variant py-lg gap-base z-50">
+<div class="px-lg pb-md border-b border-outline-variant flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-headline-md">
+                CA
+            </div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Clinical Administrator</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Practice Oversight</p>
+<p class="font-label-sm text-label-sm text-outline mt-xs">v2.4.0</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-base py-md space-y-2">
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-body-md text-body-md">Executive Summary</span>
+</a>
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="font-body-md text-body-md">Staff Directory</span>
+</a>
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md">Revenue Reports</span>
+</a>
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full bg-secondary-container text-on-secondary-container font-semibold cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined filled-icon" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-body-md text-body-md">System Configuration</span>
+</a>
+</div>
+</nav>
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-outline-variant w-full h-16 flex justify-between items-center px-margin-mobile md:px-margin-desktop sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer md:hidden" data-icon="menu">menu</span>
+<span class="material-symbols-outlined text-primary hidden md:block" data-icon="clinical_notes">clinical_notes</span>
+<h1 class="font-headline-md text-headline-md text-primary font-semibold">Clinical Sanctuary Admin</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container-low rounded-full p-2 transition-colors active:scale-95 duration-150" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-primary-container md:hidden flex items-center justify-center text-primary font-label-md">
+                CA
+            </div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="p-margin-mobile md:p-margin-desktop max-w-7xl mx-auto space-y-lg">
+<!-- Search and Filter Header -->
+<div class="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Client Master File</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Comprehensive overview and secure management of clinical records.</p>
+</div>
+<div class="flex w-full md:w-auto gap-2">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary font-body-sm outline-none transition-shadow" placeholder="Search by Name, ID, or Condition" type="text"/>
+</div>
+<button class="h-12 px-4 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container-low text-on-surface-variant flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+<span class="hidden md:inline font-label-sm">Filters</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout for Client Profile -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Demographic & Quick Stats -->
+<div class="md:col-span-4 space-y-gutter">
+<!-- Demographic Summary Card -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md">
+<div class="flex items-center gap-md mb-md">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-highest" data-alt="Professional headshot of a middle-aged male patient in a brightly lit, modern clinical environment. Soft studio lighting emphasizing a neutral, calm expression. The background is slightly blurred showing subtle elements of a medical office. High resolution, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwkk_J-HZFvNgIV8XnGEFvHadnt-Ax0gLg6JUJ6JlZyiGtLArEDGNcq2OfJWQY5BDHH1zNLNSf4lb83QhSXVbuEPVCW-c5msZrHIh6HJ2yKub5O_OTjxXPO-JJNI_mihhDmnBKrCTo9gRneJU46iuq3cIJw5hRjRt4iOPQHa3G_qugX7gWqmqlDTWuXQPNXCfzUmf0LMt048gcEU9C9ffbKWGjAzWmtbo7-LJ9kssgMfxVEyE_W8nL"/>
+<div>
+<h3 id="clientName" class="font-headline-md text-headline-md text-on-surface">Eleanor Vance</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Active Treatment</p>
+</div>
+</div>
+</div>
+<div class="space-y-3 mb-md">
+<div class="flex justify-between">
+<span class="font-body-sm text-body-sm text-outline">Clinical ID</span>
+<span id="clientIdStr" class="font-body-sm text-body-sm text-on-surface font-medium">CS-2023-0891</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-sm text-body-sm text-outline">DOB / Age</span>
+<span id="clientDobAge" class="font-body-sm text-body-sm text-on-surface">14 Mar 1985 (38)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-sm text-body-sm text-outline">Primary Contact</span>
+<span id="clientContact" class="font-body-sm text-body-sm text-primary">+1 (555) 019-2834</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-sm text-body-sm text-outline">Assigned Therapist</span>
+<span class="font-body-sm text-body-sm text-on-surface">Dr. A. Sterling</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full font-label-sm text-label-sm">Generalized Anxiety</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full font-label-sm text-label-sm">CBT Focus</span>
+</div>
+</div>
+<!-- Case History Quick Links -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md">
+<h4 class="font-label-md text-label-md text-on-surface mb-md">CASE HISTORY DOCUMENTS</h4>
+<ul class="space-y-0">
+<li class="flex items-center justify-between py-3 border-b border-outline-variant last:border-0 hover:bg-surface-container-low transition-colors cursor-pointer px-2 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="description">description</span>
+<span class="font-body-sm text-body-sm text-on-surface">Initial Intake Form</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Oct '23</span>
+</li>
+<li class="flex items-center justify-between py-3 border-b border-outline-variant last:border-0 hover:bg-surface-container-low transition-colors cursor-pointer px-2 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="verified_user">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface">Digital Consent (HIPAA)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Signed</span>
+</li>
+<li class="flex items-center justify-between py-3 hover:bg-surface-container-low transition-colors cursor-pointer px-2 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="group">group</span>
+<span class="font-body-sm text-body-sm text-on-surface">Bystander/Emergency Info</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="chevron_right">chevron_right</span>
+</li>
+</ul>
+</div>
+
+<!-- Payment & Billing Quick Links -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md mt-gutter">
+<h4 class="font-label-md text-label-md text-on-surface mb-md">PAYMENT & BILLING</h4>
+<ul class="space-y-0">
+<li class="flex items-center justify-between py-3 border-b border-outline-variant last:border-0 hover:bg-surface-container-low transition-colors cursor-pointer px-2 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="receipt">receipt</span>
+<span class="font-body-sm text-body-sm text-on-surface">Recent Invoice (₹1500)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Paid via UPI</span>
+</li>
+<li class="flex items-center justify-between py-3 hover:bg-surface-container-low transition-colors cursor-pointer px-2 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="history">history</span>
+<span class="font-body-sm text-body-sm text-on-surface">Transaction History</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="chevron_right">chevron_right</span>
+</li>
+</ul>
+</div>
+
+</div>
+
+<!-- Middle Column: Clinical Records & Psychometrics -->
+<div id="middleColumn" class="md:col-span-8 space-y-gutter">
+<!-- Psychometric History Chart / Overview -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md">
+<div class="flex justify-between items-center mb-md">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Psychometric Trends (PHQ-9 &amp; GAD-7)</h4>
+<button class="text-primary font-label-sm text-label-sm hover:underline">View Detailed Report</button>
+</div>
+<!-- Faux Chart Area using CSS styling -->
+<div class="h-48 w-full bg-surface-container-low rounded-lg relative overflow-hidden flex items-end justify-between px-4 pb-2 pt-6">
+<!-- Chart Lines (Simulated with div heights) -->
+<div class="w-1/12 flex flex-col items-center gap-1 group relative">
+<div class="w-full flex-1 flex items-end justify-center gap-1">
+<div class="w-2 bg-primary/40 h-[60%] rounded-t-sm"></div>
+<div class="w-2 bg-secondary/40 h-[40%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-[10px] text-outline">Oct</span>
+</div>
+<div class="w-1/12 flex flex-col items-center gap-1">
+<div class="w-full flex-1 flex items-end justify-center gap-1">
+<div class="w-2 bg-primary/50 h-[65%] rounded-t-sm"></div>
+<div class="w-2 bg-secondary/50 h-[35%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-[10px] text-outline">Nov</span>
+</div>
+<div class="w-1/12 flex flex-col items-center gap-1">
+<div class="w-full flex-1 flex items-end justify-center gap-1">
+<div class="w-2 bg-primary/60 h-[50%] rounded-t-sm"></div>
+<div class="w-2 bg-secondary/60 h-[45%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-[10px] text-outline">Dec</span>
+</div>
+<div class="w-1/12 flex flex-col items-center gap-1">
+<div class="w-full flex-1 flex items-end justify-center gap-1">
+<div class="w-2 bg-primary/80 h-[30%] rounded-t-sm"></div>
+<div class="w-2 bg-secondary/80 h-[55%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-[10px] text-outline">Jan</span>
+</div>
+<div class="w-1/12 flex flex-col items-center gap-1">
+<div class="w-full flex-1 flex items-end justify-center gap-1">
+<div class="w-2 bg-primary h-[25%] rounded-t-sm shadow-[0_0_8px_rgba(0,93,167,0.4)]"></div>
+<div class="w-2 bg-secondary h-[40%] rounded-t-sm shadow-[0_0_8px_rgba(84,95,108,0.4)]"></div>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface font-semibold">Feb</span>
+</div>
+<!-- Chart Legend -->
+<div class="absolute top-2 right-4 flex gap-4">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-[10px] text-outline">GAD-7 (Anxiety)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-[10px] text-outline">PHQ-9 (Depression)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Mental Status Examination (MSE) Summary -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md">
+<div class="flex justify-between items-center mb-md">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Latest MSE Summary</h4>
+<button class="text-primary font-label-sm text-label-sm hover:underline">View Full MSE</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div><p class="font-label-sm text-outline">Appearance</p><p class="font-body-sm text-on-surface">Neat, appropriate</p></div>
+    <div><p class="font-label-sm text-outline">Behavior</p><p class="font-body-sm text-on-surface">Cooperative, calm</p></div>
+    <div><p class="font-label-sm text-outline">Mood/Affect</p><p class="font-body-sm text-on-surface">Euthymic, congruent</p></div>
+    <div><p class="font-label-sm text-outline">Thought Process</p><p class="font-body-sm text-on-surface">Logical, goal-directed</p></div>
+</div>
+</div>
+
+<!-- Timeline of Care & Clinical Records -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md">
+<h4 class="font-label-md text-label-md text-on-surface mb-md">TIMELINE OF CARE &amp; SOAP NOTES</h4>
+<div class="relative pl-6 border-l-2 border-surface-container-highest space-y-6">
+<!-- Timeline Item 1 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-primary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</span>
+<div class="flex justify-between items-start mb-1">
+<div>
+<h5 class="font-body-md text-body-md font-medium text-on-surface">Standard Psychotherapy Session</h5>
+<p class="font-body-sm text-body-sm text-outline">Feb 14, 2024 • 10:00 AM - 11:00 AM • Dr. A. Sterling</p>
+</div>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded text-xs font-medium">SOAP Prepared</span>
+</div>
+<div class="mt-2 bg-surface-container-lowest border border-outline-variant rounded-lg p-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Patient reported decreased generalized anxiety symptoms over the past two weeks. Discussed implementation of progressive muscle relaxation techniques. Assigned CBT journaling task for identifying automatic negative thoughts during work hours.</p>
+<button class="mt-2 text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span> View Full Note
+                                </button>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-outline flex items-center justify-center"></span>
+<div class="flex justify-between items-start mb-1">
+<div>
+<h5 class="font-body-md text-body-md font-medium text-on-surface">Psychometric Assessment Completed</h5>
+<p class="font-body-sm text-body-sm text-outline">Jan 28, 2024 • Patient Portal</p>
+</div>
+</div>
+<div class="mt-2 flex gap-2">
+<span class="px-3 py-1 bg-surface-container border border-outline-variant text-on-surface-variant rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="done_all">done_all</span> GAD-7 (Score: 8)
+                                </span>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-outline flex items-center justify-center"></span>
+<div class="flex justify-between items-start mb-1">
+<div>
+<h5 class="font-body-md text-body-md font-medium text-on-surface">Standard Psychotherapy Session</h5>
+<p class="font-body-sm text-body-sm text-outline">Jan 21, 2024 • 14:00 PM - 15:00 PM • Dr. A. Sterling</p>
+</div>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded text-xs font-medium">SOAP Prepared</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-outline-variant rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors text-center">
+                        Load Previous History
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface border-t border-outline-variant shadow-md">
+<!-- Dashboard / Overview -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Overview</span>
+</a>
+<!-- Therapists -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm mt-1">Therapists</span>
+</a>
+<!-- Metrics -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm mt-1">Metrics</span>
+</a>
+<!-- Settings (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined filled-icon" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</a>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientId = urlParams.get('id');
+        
+        if (clientId) {
+            const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+            const client = Object.values(users).find(u => u.clientId === clientId);
+            
+            if (client) {
+                document.getElementById('clientName').textContent = client.name || 'Unknown';
+                document.getElementById('clientIdStr').textContent = 'ID: ' + clientId;
+                
+                let age = '';
+                if (client.dob) {
+                    const dob = new Date(client.dob);
+                    const diff = Date.now() - dob.getTime();
+                    age = ' (' + Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25)) + ')';
+                }
+                document.getElementById('clientDobAge').textContent = (client.dob || 'N/A') + age;
+                
+                const phone = Object.keys(users).find(k => users[k].clientId === clientId);
+                document.getElementById('clientContact').textContent = phone || 'N/A';
+                
+                // If client has EPQ results, render them
+                if (client.epqResults) {
+                    const epqDiv = document.createElement('div');
+                    epqDiv.className = "bg-surface rounded-xl border border-primary/20 p-md shadow-sm";
+                    epqDiv.innerHTML = `
+                        <div class="flex justify-between items-center mb-md">
+                            <h4 class="font-label-md text-label-md text-primary uppercase tracking-wider flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">assignment</span>
+                                EPQ-R Assessment Results
+                            </h4>
+                            <span class="text-xs text-outline bg-surface-variant px-2 py-1 rounded-full">${new Date(client.epqResults.date).toLocaleDateString()}</span>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-surface-variant/30 p-3 rounded-lg border border-outline-variant text-center">
+                                <p class="font-label-sm text-outline">Psychoticism (P)</p>
+                                <p class="font-headline-md text-primary mt-1">${client.epqResults.P}</p>
+                            </div>
+                            <div class="bg-surface-variant/30 p-3 rounded-lg border border-outline-variant text-center">
+                                <p class="font-label-sm text-outline">Extraversion (E)</p>
+                                <p class="font-headline-md text-primary mt-1">${client.epqResults.E}</p>
+                            </div>
+                            <div class="bg-surface-variant/30 p-3 rounded-lg border border-outline-variant text-center">
+                                <p class="font-label-sm text-outline">Neuroticism (N)</p>
+                                <p class="font-headline-md text-primary mt-1">${client.epqResults.N}</p>
+                            </div>
+                            <div class="bg-surface-variant/30 p-3 rounded-lg border border-outline-variant text-center">
+                                <p class="font-label-sm text-outline">Lie Scale (L)</p>
+                                <p class="font-headline-md text-primary mt-1">${client.epqResults.L}</p>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('middleColumn').prepend(epqDiv);
+                }
+            }
+        }
+    });
+</script>
+
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjustment Inventory for College Students (AICS)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003d7e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0d54a5",
+                        "on-primary-container": "#b1cbff",
+                        surface: "#fff7fb",
+                        "on-surface": "#330043",
+                        "surface-variant": "#fbd7ff",
+                        "on-surface-variant": "#424751",
+                        background: "#fff7fb",
+                        "on-background": "#330043",
+                        outline: "#727783",
+                        "outline-variant": "#c2c6d3",
+                        error: "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#410002"
+                    },
+                    fontFamily: {
+                        body: ["Public Sans"],
+                        headline: ["Public Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Custom scrollbar for question container */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #c2c6d3; border-radius: 20px; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+    
+    <!-- Top App Bar -->
+    <header class="bg-surface border-b border-outline-variant w-full h-16 flex justify-between items-center px-4 md:px-10 sticky top-0 z-40 shadow-sm shrink-0">
+        <div class="flex items-center gap-4">
+            <button onclick="window.history.back()" class="material-symbols-outlined text-primary hover:bg-surface-variant p-2 rounded-full transition-colors cursor-pointer">arrow_back</button>
+            <h1 class="font-headline text-xl text-primary font-semibold">AICS</h1>
+        </div>
+        <div class="font-medium text-sm text-on-surface-variant bg-surface-variant/50 px-3 py-1 rounded-full border border-outline-variant/30">
+            <span id="answeredCount">0</span> / 102 Answered
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-4 md:p-8 flex-grow w-full flex flex-col">
+        
+        <!-- Intro Card -->
+        <div id="introCard" class="bg-surface rounded-xl border border-outline-variant p-6 mb-6 shadow-sm">
+            <h2 class="text-2xl font-semibold text-primary mb-2">Adjustment Inventory for College Students (AICS)</h2>
+            <p class="text-on-surface-variant mb-4">This inventory assesses your adjustment in five areas: Home, Health, Social, Emotional, and Educational. Read each statement carefully and answer either "Yes" or "No".</p>
+            <div class="flex items-center gap-2 bg-primary-container/10 p-3 rounded-lg border border-primary/20 text-primary mb-6">
+                <span class="material-symbols-outlined">info</span>
+                <span class="text-sm">There are no right or wrong answers. Select the response that best describes your feelings or behavior.</span>
+            </div>
+            <button onclick="startTest()" class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all">
+                Begin Assessment
+            </button>
+        </div>
+
+        <!-- Test Container -->
+        <div id="testContainer" class="hidden flex-col items-center w-full">
+            <div class="w-full bg-surface-variant rounded-full h-2 mb-8">
+                <div id="progressBar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+
+            <!-- Questionnaire List -->
+            <div id="questionsList" class="w-full flex flex-col gap-4 mb-8 custom-scrollbar pb-10">
+                <!-- Questions injected via JS -->
+            </div>
+
+            <!-- Submit Controls -->
+            <div class="flex justify-center w-full mt-auto sticky bottom-4 bg-background/90 backdrop-blur py-4 border-t border-outline-variant/30 hidden" id="submitControls">
+                <button id="submitBtn" onclick="calculateResults()" class="px-8 py-3 bg-primary text-on-primary rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors font-semibold text-lg flex items-center gap-2 shadow-lg">
+                    Submit Assessment <span class="material-symbols-outlined">done_all</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="resultsModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+            <div class="bg-surface rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 md:p-8 relative">
+                <button onclick="closeResults()" class="absolute top-4 right-4 material-symbols-outlined text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-variant transition-colors">close</button>
+                
+                <div class="text-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary mb-2">analytics</span>
+                    <h2 class="text-3xl font-bold text-on-surface">Adjustment Profile</h2>
+                    <p class="text-on-surface-variant mt-2">AICS Raw Scores (Maladjustment)</p>
+                </div>
+                
+                <!-- Domain Scores Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-4 text-center">
+                        <div class="text-xs font-semibold text-on-surface-variant uppercase mb-1">Home</div>
+                        <div class="text-2xl font-bold text-primary"><span id="scoreHome">0</span><span class="text-sm font-medium text-outline">/16</span></div>
+                    </div>
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-4 text-center">
+                        <div class="text-xs font-semibold text-on-surface-variant uppercase mb-1">Health</div>
+                        <div class="text-2xl font-bold text-primary"><span id="scoreHealth">0</span><span class="text-sm font-medium text-outline">/15</span></div>
+                    </div>
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-4 text-center">
+                        <div class="text-xs font-semibold text-on-surface-variant uppercase mb-1">Social</div>
+                        <div class="text-2xl font-bold text-primary"><span id="scoreSocial">0</span><span class="text-sm font-medium text-outline">/19</span></div>
+                    </div>
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-4 text-center">
+                        <div class="text-xs font-semibold text-on-surface-variant uppercase mb-1">Emotional</div>
+                        <div class="text-2xl font-bold text-primary"><span id="scoreEmotional">0</span><span class="text-sm font-medium text-outline">/31</span></div>
+                    </div>
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-4 text-center">
+                        <div class="text-xs font-semibold text-on-surface-variant uppercase mb-1">Educational</div>
+                        <div class="text-2xl font-bold text-primary"><span id="scoreEducational">0</span><span class="text-sm font-medium text-outline">/21</span></div>
+                    </div>
+                    <div class="bg-primary/10 border border-primary/30 rounded-xl p-4 text-center">
+                        <div class="text-xs font-bold text-primary uppercase mb-1">Total</div>
+                        <div class="text-2xl font-bold text-primary"><span id="scoreTotal">0</span><span class="text-sm font-medium text-outline">/102</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-error-container/50 p-4 rounded-xl border border-error/20 text-sm text-on-error-container mb-6">
+                    <div class="flex items-center gap-2 mb-2 text-error">
+                        <span class="material-symbols-outlined text-[18px]">info</span>
+                        <strong class="font-semibold">Clinical Note</strong>
+                    </div>
+                    <p>Higher scores indicate poor adjustment (maladjustment) in the respective areas. These raw scores should be compared against the normative tables provided in the official AICS manual to determine the adjustment classification (e.g., Excellent, Good, Average, Unsatisfactory, Very Unsatisfactory).</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <button onclick="window.location.href='../psychometric_assessments/code.html'" class="px-6 py-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors font-medium">Return to Assessments</button>
+                    <button onclick="window.print()" class="px-6 py-2 bg-primary text-on-primary rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors font-medium flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- AICS CONFIGURATION ---
+        // You MUST replace the 'text' fields with the actual questions from the proprietary manual.
+        // Also verify the 'domain' mapping and the 'maladjustmentAnswer' (whether answering "Yes" or "No" indicates maladjustment for that specific item).
+        const placeholderQuestions = [];
+        const domainCounts = { Home: 16, Health: 15, Social: 19, Emotional: 31, Educational: 21 };
+        
+        let qIndex = 1;
+        // Auto-generating 102 placeholder items based on domain counts
+        for (const [domain, count] of Object.entries(domainCounts)) {
+            for (let i = 0; i < count; i++) {
+                placeholderQuestions.push({
+                    id: qIndex,
+                    text: `[${domain}] Placeholder Question ${qIndex}. Replace this text with the actual question from the AICS manual.`,
+                    domain: domain,
+                    maladjustmentAnswer: "Yes" // Replace with "No" if a "No" answer indicates maladjustment for this item.
+                });
+                qIndex++;
+            }
+        }
+        
+        // This is the active array used by the application.
+        const questions = placeholderQuestions; 
+        
+        // --- APPLICATION STATE ---
+        const answers = {}; // Maps question id to user's response ("Yes" or "No")
+
+        function startTest() {
+            document.getElementById('introCard').classList.add('hidden');
+            const container = document.getElementById('testContainer');
+            container.classList.remove('hidden');
+            container.classList.add('flex');
+            
+            renderQuestions();
+        }
+
+        function renderQuestions() {
+            const list = document.getElementById('questionsList');
+            list.innerHTML = '';
+            
+            questions.forEach((q, index) => {
+                const isSelectedYes = answers[q.id] === "Yes";
+                const isSelectedNo = answers[q.id] === "No";
+                
+                const card = document.createElement('div');
+                card.className = `bg-surface border ${answers[q.id] ? 'border-primary/40' : 'border-outline-variant'} rounded-xl p-5 shadow-sm transition-colors`;
+                card.id = `q-card-${q.id}`;
+                
+                card.innerHTML = `
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <span class="text-sm font-semibold text-primary/70 mb-1 block">Item ${index + 1}</span>
+                            <p class="text-on-surface font-medium">${q.text}</p>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button onclick="selectOption(${q.id}, 'Yes')" class="px-6 py-2 rounded-full border ${isSelectedYes ? 'bg-primary text-on-primary border-primary' : 'border-outline-variant text-on-surface-variant hover:bg-surface-variant'} transition-colors font-medium w-20">
+                                Yes
+                            </button>
+                            <button onclick="selectOption(${q.id}, 'No')" class="px-6 py-2 rounded-full border ${isSelectedNo ? 'bg-primary text-on-primary border-primary' : 'border-outline-variant text-on-surface-variant hover:bg-surface-variant'} transition-colors font-medium w-20">
+                                No
+                            </button>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+            updateProgress();
+        }
+
+        function selectOption(qId, response) {
+            answers[qId] = response;
+            
+            // Fast re-render of just the buttons for the specific card to avoid layout shift
+            const card = document.getElementById(`q-card-${qId}`);
+            if(card) {
+                card.classList.remove('border-outline-variant');
+                card.classList.add('border-primary/40');
+                
+                const buttons = card.querySelectorAll('button');
+                buttons.forEach(btn => {
+                    const isYesBtn = btn.textContent.trim() === 'Yes';
+                    const isSelected = (isYesBtn && response === 'Yes') || (!isYesBtn && response === 'No');
+                    
+                    if(isSelected) {
+                        btn.className = "px-6 py-2 rounded-full border bg-primary text-on-primary border-primary transition-colors font-medium w-20";
+                    } else {
+                        btn.className = "px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-colors font-medium w-20";
+                    }
+                });
+            }
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answeredCount = Object.keys(answers).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+            document.getElementById('answeredCount').textContent = answeredCount;
+            
+            if (answeredCount === questions.length) {
+                const controls = document.getElementById('submitControls');
+                controls.classList.remove('hidden');
+                controls.classList.add('flex');
+                
+                // Auto scroll to bottom
+                setTimeout(() => {
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }, 100);
+            }
+        }
+
+        function calculateResults() {
+            // Initialization
+            const scores = { Home: 0, Health: 0, Social: 0, Emotional: 0, Educational: 0, Total: 0 };
+            
+            // Calculate Maladjustment Scores
+            questions.forEach(q => {
+                const userResponse = answers[q.id];
+                if (userResponse === q.maladjustmentAnswer) {
+                    scores[q.domain]++;
+                    scores.Total++;
+                }
+            });
+
+            // Save to Local Database
+            try {
+                const loggedInUser = localStorage.getItem('loggedInUser');
+                if (loggedInUser) {
+                    const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+                    if (users[loggedInUser]) {
+                        users[loggedInUser].aicsResults = { 
+                            scores: scores,
+                            date: new Date().toISOString() 
+                        };
+                        localStorage.setItem('healingMindUsers', JSON.stringify(users));
+                    }
+                }
+            } catch(e) {
+                console.error("Error saving results:", e);
+            }
+
+            // Update Modal Values
+            document.getElementById('scoreHome').textContent = scores.Home;
+            document.getElementById('scoreHealth').textContent = scores.Health;
+            document.getElementById('scoreSocial').textContent = scores.Social;
+            document.getElementById('scoreEmotional').textContent = scores.Emotional;
+            document.getElementById('scoreEducational').textContent = scores.Educational;
+            document.getElementById('scoreTotal').textContent = scores.Total;
+            
+            // Show Modal
+            document.getElementById('resultsModal').classList.remove('hidden');
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').classList.add('hidden');
+        }
+
+    </script>
+</body>
+</html>

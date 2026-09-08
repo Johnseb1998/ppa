@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychometric Assessments - Healing Mind</title>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#003d7e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0d54a5",
+                        "on-primary-container": "#b1cbff",
+                        "secondary": "#ab3332",
+                        "surface": "#fff7fb",
+                        "on-surface": "#330043",
+                        "on-surface-variant": "#424751",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#ffeffd",
+                        "surface-container": "#ffe6ff",
+                        "outline": "#727783",
+                        "outline-variant": "#c2c6d3",
+                        "background": "#fff7fb",
+                        "on-background": "#330043",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-tertiary-fixed": "#191c1d"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "body-sm": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+
+    <!-- TopAppBar -->
+    <header class="docked full-width top-0 z-50 bg-surface border-b border-outline-variant/20 flex justify-between items-center w-full px-4 h-16 sticky">
+        <div class="flex items-center gap-4">
+            <!-- Back Button -->
+            <button class="p-2 text-on-surface-variant hover:bg-surface-container-low transition-opacity rounded-full flex items-center justify-center" onclick="window.location.href='../client_dashboard/code.html'">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="font-headline-md text-[24px] font-bold text-primary">Healing Mind</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 md:px-10 py-8">
+        
+        <!-- Header Section -->
+        <div class="mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+                <h2 class="font-headline-lg text-[32px] font-semibold text-on-surface mb-2">Psychometric Assessments</h2>
+                <p class="font-body-md text-on-surface-variant max-w-2xl">
+                    Take clinically validated assessments to help you and your therapist better understand your personality, cognitive abilities, and mental well-being.
+                </p>
+            </div>
+            <div class="w-16 h-16 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+            </div>
+        </div>
+
+        <!-- Filter/Category Tabs -->
+        <div class="flex overflow-x-auto gap-2 mb-8 pb-2 no-scrollbar">
+            <button class="px-6 py-2 bg-primary text-on-primary rounded-full font-label-md whitespace-nowrap">All Assessments</button>
+            <button class="px-6 py-2 bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container-low rounded-full font-label-md whitespace-nowrap transition-colors">Personality</button>
+            <button class="px-6 py-2 bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container-low rounded-full font-label-md whitespace-nowrap transition-colors">Cognitive (IQ)</button>
+            <button class="px-6 py-2 bg-surface-container-lowest border border-outline-variant/50 text-on-surface hover:bg-surface-container-low rounded-full font-label-md whitespace-nowrap transition-colors">Clinical & Mood</button>
+        </div>
+
+        <!-- Assessment Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- 16PF -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">psychology</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Personality</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">16PF Questionnaire</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The 16 Personality Factor Questionnaire is a self-report personality test developed over decades of research to measure normal personality range.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 35-50 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 185 items</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- NEO PI -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">psychology</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Personality</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">NEO PI-R</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The Revised NEO Personality Inventory provides a detailed assessment of general personality in adults and adolescents based on the Five-Factor Model.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 40-60 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 240 items</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- EPQ -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">psychology</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Personality</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Eysenck (EPQ)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The Eysenck Personality Questionnaire measures the three major dimensions of personality: Extraversion, Neuroticism, and Psychoticism.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 20-30 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 100 items</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Big 5 -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">group_work</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Personality</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Big Five (BFI)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The Big Five Inventory quickly assesses the five core personality traits: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 10-15 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 44 items</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Locus of Control (IPC) -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">compare_arrows</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Personality</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Locus of Control (IPC)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        Levenson's IPC scale measures the extent to which you believe your life outcomes are determined by Internal factors, Powerful others, or Chance.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 10 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 24 items</div>
+                    </div>
+                </div>
+                <button onclick="window.location.href='../psychometric_assessments_locus_of_control/code.html'" class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- IQ -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-tertiary-fixed/30 text-tertiary-fixed-dim flex items-center justify-center text-on-surface">
+                            <span class="material-symbols-outlined">neurology</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Cognitive</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">IQ Assessment (WAIS)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        A recognized cognitive ability test aimed at evaluating intelligence quotient (IQ) across different cognitive domains such as reasoning and memory.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 60-90 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> Varies</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Raven's SPM -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-tertiary-fixed/30 text-tertiary-fixed-dim flex items-center justify-center text-on-surface">
+                            <span class="material-symbols-outlined">neurology</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Cognitive</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Raven's SPM</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        Standard Progressive Matrices to evaluate fluid intelligence and non-verbal abstract reasoning without cultural or language bias.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 45 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 60 items</div>
+                    </div>
+                </div>
+                <button onclick="window.location.href='../psychometric_assessments_raven_spm/code.html'" class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Mood -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                            <span class="material-symbols-outlined">mood</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Clinical</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Mood Disorder (PHQ-9)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The Patient Health Questionnaire is a reliable self-administered tool used to screen, diagnose, and monitor severity of mood changes and depression.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 5-10 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 9 items</div>
+                    </div>
+                </div>
+                <button onclick="window.location.href='../psychometric_assessments_phq9/code.html'" class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Anxiety -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                            <span class="material-symbols-outlined">monitor_heart</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Clinical</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Anxiety Scale (GAD-7)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The Generalized Anxiety Disorder 7-item scale is a quick tool to assess the severity of anxiety symptoms over the last two weeks.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 5 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 7 items</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Youth Problem Inventory -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-outline-variant/30 text-on-surface-variant flex items-center justify-center">
+                            <span class="material-symbols-outlined">psychology_alt</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Clinical</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Youth Problem Inventory (YPI-V)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        A comprehensive inventory designed to assess problems among youth in family, school, socio-economic, and personal domains.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 15-20 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 80 items</div>
+                    </div>
+                </div>
+                <button onclick="window.location.href='../psychometric_assessments_youth_problem_inventory/code.html'" class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Adjustment Inventory for College Students -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-outline-variant/30 text-on-surface-variant flex items-center justify-center">
+                            <span class="material-symbols-outlined">balance</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Clinical</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Adjustment Inventory (AICS)</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        Assesses adjustment levels of college students in five areas: Home, Health, Social, Emotional, and Educational.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 15-20 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 102 items</div>
+                    </div>
+                </div>
+                <button onclick="window.location.href='../psychometric_assessments_aics/code.html'" class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <!-- Others -->
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-outline-variant/30 text-on-surface-variant flex items-center justify-center">
+                            <span class="material-symbols-outlined">more_horiz</span>
+                        </div>
+                        <span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Clinical</span>
+                    </div>
+                    <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Perceived Stress Scale</h3>
+                    <p class="font-body-sm text-on-surface-variant mb-4">
+                        The PSS is a classic psychological instrument for measuring the perception of stress, showing how unpredictable and overloaded you find your life.
+                    </p>
+                    <div class="flex items-center gap-4 text-on-surface-variant font-label-sm mb-6">
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 10 min</div>
+                        <div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">help_center</span> 10 items</div>
+                    </div>
+                </div>
+                <button class="w-full bg-surface-container border border-primary/20 text-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors">
+                    Start Assessment <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

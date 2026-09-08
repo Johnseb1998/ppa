@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raven's Standard Progressive Matrices (SPM)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003d7e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0d54a5",
+                        "on-primary-container": "#b1cbff",
+                        surface: "#fff7fb",
+                        "on-surface": "#330043",
+                        "surface-variant": "#fbd7ff",
+                        "on-surface-variant": "#424751",
+                        background: "#fff7fb",
+                        "on-background": "#330043",
+                        outline: "#727783",
+                        "outline-variant": "#c2c6d3"
+                    },
+                    fontFamily: {
+                        body: ["Public Sans"],
+                        headline: ["Public Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+    
+    <!-- Top App Bar -->
+    <header class="bg-surface border-b border-outline-variant w-full h-16 flex justify-between items-center px-4 md:px-10 sticky top-0 z-40 shadow-sm shrink-0">
+        <div class="flex items-center gap-4">
+            <button onclick="window.history.back()" class="material-symbols-outlined text-primary hover:bg-surface-variant p-2 rounded-full transition-colors cursor-pointer">arrow_back</button>
+            <h1 class="font-headline text-xl text-primary font-semibold">Raven's SPM</h1>
+        </div>
+        <div class="font-medium text-sm text-on-surface-variant bg-surface-variant/50 px-3 py-1 rounded-full border border-outline-variant/30">
+            Item <span id="currentItemText">1</span> of 60
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-4 md:p-8 flex-grow w-full flex flex-col">
+        
+        <!-- Intro Card (Hidden during test) -->
+        <div id="introCard" class="bg-surface rounded-xl border border-outline-variant p-6 mb-6 shadow-sm">
+            <h2 class="text-2xl font-semibold text-primary mb-2">Instructions</h2>
+            <p class="text-on-surface-variant mb-4">This test consists of 60 visual patterns with a missing piece. For each pattern, choose the correct piece from the options below that completes the pattern.</p>
+            <div class="flex items-center gap-2 bg-primary-container/10 p-3 rounded-lg border border-primary/20 text-primary mb-6">
+                <span class="material-symbols-outlined">info</span>
+                <span class="text-sm">Sets A & B have 6 options. Sets C, D & E have 8 options.</span>
+            </div>
+            <button onclick="startTest()" class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all">
+                Start Assessment
+            </button>
+        </div>
+
+        <!-- Test Container -->
+        <div id="testContainer" class="hidden flex-col items-center w-full">
+            
+            <div class="flex justify-between w-full mb-4 items-center">
+                <div class="text-lg font-bold text-primary" id="setIndicator">Set A</div>
+                <div class="w-1/2 bg-surface-variant rounded-full h-2">
+                    <div id="progressBar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Main Matrix Image -->
+            <div class="bg-surface border border-outline-variant p-2 rounded-xl mb-8 shadow-sm flex justify-center items-center w-full max-w-2xl min-h-[300px] relative">
+                <img id="matrixImage" src="" alt="Matrix Pattern" class="max-w-full max-h-[400px] object-contain rounded z-10">
+                <!-- Placeholder text if image fails to load -->
+                <div id="matrixPlaceholder" class="absolute flex flex-col items-center justify-center text-outline/50 w-full h-full">
+                    <span class="material-symbols-outlined text-6xl mb-2">image</span>
+                    <span class="font-medium text-center px-4" id="placeholderText">Upload matrix image here</span>
+                </div>
+            </div>
+
+            <div class="w-full max-w-2xl border-t border-outline-variant/30 mb-8"></div>
+
+            <!-- Options Grid -->
+            <div id="optionsGrid" class="grid grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-3xl mb-10">
+                <!-- Options injected via JS -->
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="flex justify-between w-full max-w-2xl mt-auto">
+                <button id="prevBtn" onclick="prevItem()" class="px-6 py-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors font-medium flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <span class="material-symbols-outlined text-[18px]">chevron_left</span> Previous
+                </button>
+                <button id="nextBtn" onclick="nextItem()" class="px-6 py-2 bg-primary text-on-primary rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors font-medium flex items-center gap-2">
+                    Next <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                </button>
+                <button id="submitBtn" onclick="calculateResults()" class="hidden px-6 py-2 bg-secondary text-on-primary rounded-full hover:bg-secondary/90 transition-colors font-medium items-center gap-2">
+                    Submit Test <span class="material-symbols-outlined text-[18px]">done</span>
+                </button>
+            </div>
+            
+            <!-- Quick Navigation Grid -->
+            <div class="mt-12 w-full">
+                <h3 class="text-sm font-semibold text-on-surface-variant mb-2">Quick Navigation</h3>
+                <div id="quickNavGrid" class="flex flex-wrap gap-1"></div>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="resultsModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+            <div class="bg-surface rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 md:p-8 relative">
+                <button onclick="closeResults()" class="absolute top-4 right-4 material-symbols-outlined text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-variant transition-colors">close</button>
+                
+                <div class="text-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary mb-2">neurology</span>
+                    <h2 class="text-3xl font-bold text-on-surface">Assessment Complete</h2>
+                    <p class="text-on-surface-variant mt-2">Raven's Standard Progressive Matrices (SPM)</p>
+                </div>
+                
+                <div class="flex justify-center mb-8">
+                    <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center w-full max-w-sm">
+                        <h3 class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Total Raw Score</h3>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span id="finalScore" class="text-5xl font-bold text-primary">0</span>
+                            <span class="text-xl font-medium text-on-surface-variant">/ 60</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-surface-variant/20 p-4 rounded-xl border border-outline-variant/50 text-sm text-on-surface-variant mb-6">
+                    <div class="flex items-center gap-2 mb-2 text-on-surface">
+                        <span class="material-symbols-outlined text-[18px]">info</span>
+                        <strong class="font-semibold">Clinical / Diagnostic Note</strong>
+                    </div>
+                    <p>The total raw score must be converted into a percentile rank using normative data tables (varying by age and demographic) found in the official professional manual to properly interpret cognitive ability.</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <button onclick="window.location.href='../psychometric_assessments/code.html'" class="px-6 py-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors font-medium">Return to Assessments</button>
+                    <button onclick="window.print()" class="px-6 py-2 bg-primary text-on-primary rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors font-medium flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const totalItems = 60;
+        const sets = ['A', 'B', 'C', 'D', 'E'];
+        let currentIndex = 0; // 0 to 59
+        const answers = new Array(totalItems).fill(null);
+        
+        // Placeholder Scoring Key (Replace with actual correct options 1-6 or 1-8)
+        // 1-indexed option numbers
+        const scoringKey = new Array(totalItems).fill(1); // Defaulting all to 1 for placeholder
+
+        function startTest() {
+            document.getElementById('introCard').classList.add('hidden');
+            document.getElementById('testContainer').classList.remove('hidden');
+            document.getElementById('testContainer').classList.add('flex');
+            renderQuickNav();
+            loadItem(0);
+        }
+
+        function loadItem(index) {
+            currentIndex = index;
+            const setIndex = Math.floor(index / 12);
+            const itemNumber = (index % 12) + 1;
+            const setName = sets[setIndex];
+            const numOptions = (setName === 'A' || setName === 'B') ? 6 : 8;
+            const itemId = `${setName}${itemNumber}`;
+
+            document.getElementById('currentItemText').textContent = index + 1;
+            document.getElementById('setIndicator').textContent = `Set ${setName}`;
+            
+            // Update Matrix Image Placeholder
+            const matrixImg = document.getElementById('matrixImage');
+            const matrixPlaceholder = document.getElementById('matrixPlaceholder');
+            const placeholderText = document.getElementById('placeholderText');
+            
+            // Assuming local folder 'images'
+            matrixImg.src = `images/${itemId}.png`; 
+            matrixImg.onerror = function() {
+                this.style.display = 'none';
+                matrixPlaceholder.classList.remove('hidden');
+                placeholderText.textContent = `Upload ${itemId}.png here`;
+            };
+            matrixImg.onload = function() {
+                this.style.display = 'block';
+                matrixPlaceholder.classList.add('hidden');
+            };
+
+            // Render Options
+            const optionsGrid = document.getElementById('optionsGrid');
+            optionsGrid.innerHTML = '';
+            
+            // Adjust grid columns based on number of options
+            if (numOptions === 6) {
+                optionsGrid.className = "grid grid-cols-3 gap-4 w-full max-w-2xl mb-10";
+            } else {
+                optionsGrid.className = "grid grid-cols-4 gap-4 w-full max-w-3xl mb-10";
+            }
+
+            for (let i = 1; i <= numOptions; i++) {
+                const isSelected = answers[currentIndex] === i;
+                const btn = document.createElement('button');
+                btn.onclick = () => selectOption(i);
+                
+                // Styling
+                let baseClasses = "relative aspect-square border-2 rounded-xl flex items-center justify-center overflow-hidden transition-all hover:border-primary/50 bg-surface shadow-sm";
+                if (isSelected) {
+                    baseClasses += " border-primary ring-2 ring-primary/20 scale-[1.02]";
+                } else {
+                    baseClasses += " border-outline-variant";
+                }
+                btn.className = baseClasses;
+
+                btn.innerHTML = `
+                    <div class="absolute top-2 left-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isSelected ? 'bg-primary text-on-primary' : 'bg-surface-variant text-on-surface-variant'} z-20">${i}</div>
+                    <img src="images/${itemId}_opt${i}.png" class="max-w-[80%] max-h-[80%] object-contain z-10" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <span class="hidden text-outline text-sm font-medium absolute text-center px-2">Opt ${i}</span>
+                `;
+                optionsGrid.appendChild(btn);
+            }
+
+            // Update Navigation Controls
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            
+            if (currentIndex === totalItems - 1) {
+                document.getElementById('nextBtn').classList.add('hidden');
+                document.getElementById('submitBtn').classList.remove('hidden');
+                document.getElementById('submitBtn').classList.add('flex');
+            } else {
+                document.getElementById('nextBtn').classList.remove('hidden');
+                document.getElementById('submitBtn').classList.add('hidden');
+                document.getElementById('submitBtn').classList.remove('flex');
+            }
+
+            updateProgress();
+            updateQuickNav();
+        }
+
+        function selectOption(optionNumber) {
+            answers[currentIndex] = optionNumber;
+            loadItem(currentIndex); // re-render to show selection
+            
+            // Auto advance after a brief delay if not the last item
+            if (currentIndex < totalItems - 1) {
+                setTimeout(() => nextItem(), 400);
+            }
+        }
+
+        function prevItem() {
+            if (currentIndex > 0) loadItem(currentIndex - 1);
+        }
+
+        function nextItem() {
+            if (currentIndex < totalItems - 1) loadItem(currentIndex + 1);
+        }
+
+        function updateProgress() {
+            const answeredCount = answers.filter(a => a !== null).length;
+            const percentage = (answeredCount / totalItems) * 100;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+        }
+
+        function renderQuickNav() {
+            const grid = document.getElementById('quickNavGrid');
+            grid.innerHTML = '';
+            for (let i = 0; i < totalItems; i++) {
+                const btn = document.createElement('button');
+                btn.id = `qnav-${i}`;
+                btn.onclick = () => loadItem(i);
+                btn.className = "w-8 h-8 rounded flex items-center justify-center text-xs font-medium border border-outline-variant hover:border-primary transition-colors";
+                btn.textContent = i + 1;
+                grid.appendChild(btn);
+            }
+        }
+
+        function updateQuickNav() {
+            for (let i = 0; i < totalItems; i++) {
+                const btn = document.getElementById(`qnav-${i}`);
+                if (!btn) continue;
+                
+                let classes = "w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-colors ";
+                
+                if (i === currentIndex) {
+                    classes += "border-2 border-primary bg-primary/10 text-primary font-bold ";
+                } else if (answers[i] !== null) {
+                    classes += "border border-primary bg-primary text-on-primary ";
+                } else {
+                    classes += "border border-outline-variant text-on-surface-variant hover:border-primary/50 ";
+                }
+                
+                btn.className = classes;
+            }
+        }
+
+        function calculateResults() {
+            // Check if all answered
+            if (answers.includes(null)) {
+                if(!confirm("You have unanswered items. Are you sure you want to submit?")) {
+                    return;
+                }
+            }
+
+            let score = 0;
+            answers.forEach((ans, index) => {
+                if (ans === scoringKey[index]) {
+                    score++;
+                }
+            });
+
+            // Save to Local Database
+            try {
+                const loggedInUser = localStorage.getItem('loggedInUser');
+                if (loggedInUser) {
+                    const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+                    if (users[loggedInUser]) {
+                        users[loggedInUser].ravenSpmResults = { 
+                            rawScore: score,
+                            date: new Date().toISOString() 
+                        };
+                        localStorage.setItem('healingMindUsers', JSON.stringify(users));
+                    }
+                }
+            } catch(e) {
+                console.error("Error saving results:", e);
+            }
+
+            // Update Modal
+            document.getElementById('finalScore').textContent = score;
+            
+            // Show Modal
+            document.getElementById('resultsModal').classList.remove('hidden');
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').classList.add('hidden');
+        }
+
+    </script>
+</body>
+</html>

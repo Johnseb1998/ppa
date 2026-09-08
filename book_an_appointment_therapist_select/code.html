@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Therapist - Healing Mind</title>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#003d7e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0d54a5",
+                        "on-primary-container": "#b1cbff",
+                        "secondary": "#ab3332",
+                        "surface": "#fff7fb",
+                        "on-surface": "#330043",
+                        "on-surface-variant": "#424751",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#ffeffd",
+                        "surface-container": "#ffe6ff",
+                        "outline": "#727783",
+                        "outline-variant": "#c2c6d3",
+                        "background": "#fff7fb",
+                        "on-background": "#330043"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "body-sm": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+
+    <!-- TopAppBar -->
+    <header class="docked full-width top-0 z-50 bg-surface border-b border-outline-variant/20 flex justify-between items-center w-full px-4 h-16">
+        <div class="flex items-center gap-4">
+            <!-- Back Button Context -->
+            <button class="p-2 text-on-surface-variant hover:bg-surface-container-low transition-opacity rounded-full flex items-center justify-center" onclick="window.location.href='../client_dashboard/code.html'">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="font-headline-md text-[24px] font-bold text-primary">Healing Mind</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 md:px-10 py-8">
+        
+        <!-- Header Section -->
+        <div class="mb-8">
+            <h2 class="font-headline-lg text-[32px] font-semibold text-on-surface mb-2">Select a Therapist</h2>
+            <p class="font-body-md text-on-surface-variant max-w-2xl">
+                Choose a therapist who specializes in the areas you need support with. You can book an available time slot on the next step.
+            </p>
+        </div>
+
+        <!-- Filter/Search Bar (Visual Only for Prototype) -->
+        <div class="flex gap-4 mb-8">
+            <div class="relative flex-1 max-w-md">
+                <span class="material-symbols-outlined absolute left-3 top-3 text-outline">search</span>
+                <input type="text" placeholder="Search by name or specialty..." class="w-full pl-10 pr-4 py-3 border border-outline-variant rounded-lg bg-surface-container-lowest focus:ring-primary focus:border-primary">
+            </div>
+            <button class="px-6 py-3 border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md flex items-center gap-2">
+                <span class="material-symbols-outlined">filter_list</span> Filters
+            </button>
+        </div>
+
+        <!-- Therapist Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">JS</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">John Sebastian</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (5 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Anxiety</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Depression</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">CBT</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Stress</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Trauma</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 5 years of experience. Specialized in Anxiety, Depression, CBT, Stress, Trauma.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('John Sebastian', 'Anxiety, Depression, CBT, Stress, Trauma')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">G</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Goodwin</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (8 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">PTSD</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Grief</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Family Therapy</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Relationships</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Anger Management</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 8 years of experience. Specialized in PTSD, Grief, Family Therapy, Relationships, Anger Management.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Goodwin', 'PTSD, Grief, Family Therapy, Relationships, Anger Management')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">S</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Sara</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (12 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Child Psychology</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Adolescents</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">ADHD</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Autism</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Behavioral Issues</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 12 years of experience. Specialized in Child Psychology, Adolescents, ADHD, Autism, Behavioral Issues.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Sara', 'Child Psychology, Adolescents, ADHD, Autism, Behavioral Issues')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">A</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Anu</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (3 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Addiction</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Substance Abuse</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">OCD</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Phobias</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Panic Attacks</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 3 years of experience. Specialized in Addiction, Substance Abuse, OCD, Phobias, Panic Attacks.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Anu', 'Addiction, Substance Abuse, OCD, Phobias, Panic Attacks')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">S</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Sneha</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (15 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Career Counseling</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Life Transitions</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Self-Esteem</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Eating Disorders</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Bipolar Disorder</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 15 years of experience. Specialized in Career Counseling, Life Transitions, Self-Esteem, Eating Disorders, Bipolar Disorder.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Sneha', 'Career Counseling, Life Transitions, Self-Esteem, Eating Disorders, Bipolar Disorder')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">A</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Arun</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (6 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Couples Counseling</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Divorce</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Parenting</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Intimacy</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Communication</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 6 years of experience. Specialized in Couples Counseling, Divorce, Parenting, Intimacy, Communication.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Arun', 'Couples Counseling, Divorce, Parenting, Intimacy, Communication')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">A</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Abhi</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (10 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Anxiety</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Depression</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">PTSD</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Trauma</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Stress</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 10 years of experience. Specialized in Anxiety, Depression, PTSD, Trauma, Stress.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Abhi', 'Anxiety, Depression, PTSD, Trauma, Stress')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">A</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Akhil</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (4 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">CBT</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">DBT</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Mindfulness</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">ACT</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">EMDR</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 4 years of experience. Specialized in CBT, DBT, Mindfulness, ACT, EMDR.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Akhil', 'CBT, DBT, Mindfulness, ACT, EMDR')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">A</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Alan</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (7 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Grief</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Loss</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Chronic Illness</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Pain Management</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Insomnia</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 7 years of experience. Specialized in Grief, Loss, Chronic Illness, Pain Management, Insomnia.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Alan', 'Grief, Loss, Chronic Illness, Pain Management, Insomnia')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">P</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Paru</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (9 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Self-Harm</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Suicidal Ideation</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">BPD</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Mood Disorders</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Personality Disorders</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 9 years of experience. Specialized in Self-Harm, Suicidal Ideation, BPD, Mood Disorders, Personality Disorders.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Paru', 'Self-Harm, Suicidal Ideation, BPD, Mood Disorders, Personality Disorders')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">R</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Reshma</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (11 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Sports Psychology</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Performance Anxiety</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Motivation</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Goal Setting</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Focus</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 11 years of experience. Specialized in Sports Psychology, Performance Anxiety, Motivation, Goal Setting, Focus.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Reshma', 'Sports Psychology, Performance Anxiety, Motivation, Goal Setting, Focus')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0">
+                        <div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">A</div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Akash</h3>
+                        <p class="font-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-primary block"></span> Master in Psychology (14 years exp)
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">LGBTQ+</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Gender Identity</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Sexual Orientation</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Discrimination</span><span class="text-[12px] px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">Trauma</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                    Experienced professional with 14 years of experience. Specialized in LGBTQ+, Gender Identity, Sexual Orientation, Discrimination, Trauma.
+                </p>
+                <button class="w-full bg-primary text-on-primary font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors" onclick="selectTherapist('Akash', 'LGBTQ+, Gender Identity, Sexual Orientation, Discrimination, Trauma')">
+                    Select & Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function selectTherapist(name, specialties) {
+            // Save selected therapist and specialties to localStorage to simulate state transfer
+            localStorage.setItem('selectedTherapist', name);
+            localStorage.setItem('selectedSpecialties', specialties);
+            // Navigate to the calendar booking page
+            window.location.href = '../book_an_appointment/code.html';
+        }
+    </script>
+</body>
+</html>

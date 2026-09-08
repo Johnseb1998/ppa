@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Therapist Dashboard - Practice Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary-fixed-variant": "#454748", "on-primary": "#ffffff", "on-tertiary-container": "#cacbcc", "on-secondary-container": "#70040e", "surface-tint": "#1f5daf", error: "#ba1a1a", "on-background": "#330043", "tertiary-container": "#535657", "on-secondary": "#ffffff", tertiary: "#3c3f40", "outline-variant": "#c2c6d3", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "tertiary-fixed": "#e1e3e4", surface: "#fff7fb", "surface-container": "#ffe6ff", "on-error-container": "#93000a", "secondary-fixed": "#ffdad7", "on-secondary-fixed-variant": "#8a1a1e", primary: "#003d7e", "surface-container-low": "#ffeffd", background: "#fff7fb", "on-surface": "#330043", "on-primary-fixed": "#001b3e", "secondary-fixed-dim": "#ffb3ae", "on-surface-variant": "#424751", "tertiary-fixed-dim": "#c5c7c8", "on-secondary-fixed": "#410004", "primary-fixed": "#d6e3ff", "inverse-on-surface": "#ffebfe", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "surface-container-high": "#fddfff", "on-error": "#ffffff", "inverse-primary": "#aac7ff", "surface-container-highest": "#fbd7ff", "primary-container": "#0d54a5", "surface-bright": "#fff7fb", "secondary-container": "#ff716b", "on-tertiary-fixed": "#191c1d", "surface-dim": "#f8cbff", "inverse-surface": "#54006c", secondary: "#ab3332", "on-primary-fixed-variant": "#00458d", "surface-variant": "#fbd7ff", "on-primary-container": "#b1cbff", outline: "#727783"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {base: "8px", md: "16px", "margin-mobile": "16px", sm: "8px", "margin-desktop": "40px", gutter: "24px", lg: "24px", xl: "48px", xs: "4px"}, fontFamily: {"headline-lg-mobile": ["Public Sans"], "display-lg": ["Public Sans"], "label-md": ["Public Sans"], "body-sm": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg": ["Public Sans"], "body-lg": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface surface-container-low text-primary docked full-width top-0 bg-surface dark:bg-surface-container-low shadow-sm z-40 sticky">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<img alt="Mr. John" class="w-10 h-10 rounded-full object-cover shadow-sm border border-outline-variant" data-alt="A professional headshot of Mr. John, a therapist, with a warm and approachable smile, set against a clean, modern clinical background with soft, diffused white lighting. The overall aesthetic is tranquil and trustworthy, reflecting a minimalist medical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcsq3IsP46lQUlh4XD_5Aef64MKDd4KdIMsVy79RsnwWS4BbugbY7MCSkULfM5ts_uZdgr9wjn-IIX9JqarODYW9m0NygVbvkp6bKxXYTBzWhTn50d4wQP7Vh59Y0G7-KuetaYTug7yJr90LZ6QDpADsW4HcY22lOI_zBWPehfrgQe7NTMyQqZhznlGXnmeDPIcwbXivga6RVZtRuPI_Yx3i_7B4arDNzgacH_fd9mBkHlKUcSQOrB"/>
+<h1 class="font-headline-md text-headline-md text-primary font-semibold">Healing Mind</h1>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="relative group">
+    <button aria-label="Menu" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="absolute right-0 top-full mt-1 w-48 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-lg hidden group-hover:block z-50 overflow-hidden">
+        <div class="py-2 flex flex-col">
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a>
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">help</span>Help</a>
+            <div class="h-[1px] bg-outline-variant/30 my-1"></div>
+            <a href="../index.html" class="px-4 py-2 font-body-sm text-error hover:bg-error/10 flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">logout</span>Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex max-w-7xl mx-auto">
+<!-- SideNav (Desktop) -->
+<nav class="hidden md:flex flex-col w-[280px] p-gutter border-r border-outline-variant min-h-[calc(100vh-64px)] bg-surface sticky top-16 shrink-0">
+<ul class="space-y-sm">
+<li class="">
+<a class="flex items-center gap-md px-4 py-3 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                        Schedule
+                    </a>
+</li>
+<li class="">
+<a class="flex items-center gap-md px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                        Analytics
+                    </a>
+</li>
+
+<li class="">
+<a class="flex items-center gap-md px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">assignment</span>
+                        Tasks
+                    </a>
+</li>
+<li class="">
+<a class="flex items-center gap-md px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors font-label-md text-label-md cursor-pointer" onclick="document.getElementById('dailyReportModal').classList.remove('hidden')">
+<span class="material-symbols-outlined">description</span>
+                        Daily Report
+                    </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop w-full">
+<div class="mx-auto flex flex-col lg:flex-row gap-gutter">
+<div class="flex-1 space-y-gutter min-w-0">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Good morning, Mr. John</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full">Thursday, Oct 12</span>
+</div>
+<!-- Section 1: Daily Schedule -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-md text-headline-md text-on-background">Today's Schedule</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">View All</a>
+</div>
+<!-- Vertical Timeline for Daily Schedule -->
+<div class="relative flex flex-col gap-0 max-h-[600px] overflow-y-auto pr-2 pb-4 hide-scrollbar">
+    
+    <!-- 9:00 AM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-4 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">09:00 AM</p>
+            <p class="font-label-sm text-on-surface-variant">10:00 AM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-green-500 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface-container-lowest border-l-4 border-l-green-500 border border-outline-variant rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-on-surface"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('Sarah J.')">Sarah J.</span> <span class="text-green-600 ml-2 font-normal text-xs">Completed</span></h4>
+            <p class="font-body-sm text-on-surface-variant">Standard Session</p>
+        </div>
+    </div>
+
+    <!-- 10:00 AM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">10:00 AM</p>
+            <p class="font-label-sm text-on-surface-variant">11:00 AM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-green-500 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface-container-lowest border-l-4 border-l-green-500 border border-outline-variant rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-on-surface"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('Mark D.')">Mark D.</span> <span class="text-green-600 ml-2 font-normal text-xs">Completed</span></h4>
+            <p class="font-body-sm text-on-surface-variant">Follow-up</p>
+        </div>
+    </div>
+
+    <!-- 11:00 AM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">11:00 AM</p>
+            <p class="font-label-sm text-on-surface-variant">12:00 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-blue-500 z-10 border-2 border-background shadow-sm animate-pulse"></div>
+        </div>
+        <div class="flex-1 bg-primary/10 border-l-4 border-l-blue-500 border border-primary/20 rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-primary"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('Michael R.')">Michael R.</span> <span class="bg-blue-500 text-white px-2 py-0.5 rounded-full ml-2 font-normal text-xs">On Going</span></h4>
+            <p class="font-body-sm text-primary/80">Initial Consult</p>
+        </div>
+    </div>
+
+    <!-- 12:00 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">12:00 PM</p>
+            <p class="font-label-sm text-on-surface-variant">01:00 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-yellow-500 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface-container-lowest border-l-4 border-l-yellow-500 border border-outline-variant rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-on-surface"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('Emma W.')">Emma W.</span> <span class="text-yellow-600 ml-2 font-normal text-xs">Pending</span></h4>
+            <p class="font-body-sm text-on-surface-variant">Standard Session</p>
+        </div>
+    </div>
+
+    <!-- 1:00 PM Lunch Break -->
+    <div class="flex gap-4 relative min-h-[60px] opacity-70">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant border-dashed"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">01:00 PM</p>
+            <p class="font-label-sm text-on-surface-variant">02:00 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-2 h-2 rounded-full bg-outline-variant z-10 border-2 border-background"></div>
+        </div>
+        <div class="flex-1 bg-surface-container rounded-lg p-2 my-1 flex items-center justify-center border border-dashed border-outline-variant">
+            <span class="font-label-md text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-sm">restaurant</span> Lunch Break</span>
+        </div>
+    </div>
+
+    <!-- 2:00 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">02:00 PM</p>
+            <p class="font-label-sm text-on-surface-variant">03:00 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-gray-300 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface border border-dashed border-outline-variant rounded-lg p-3 my-1 hover:bg-surface-container-low cursor-pointer transition-colors flex items-center">
+            <span class="material-symbols-outlined text-outline mr-2">add_circle</span>
+            <span class="font-label-md text-on-surface-variant">Empty Slot - Click to book</span>
+        </div>
+    </div>
+
+    <!-- 3:00 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">03:00 PM</p>
+            <p class="font-label-sm text-on-surface-variant">04:00 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-yellow-500 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface-container-lowest border-l-4 border-l-yellow-500 border border-outline-variant rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-on-surface"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('David L.')">David L.</span> <span class="text-yellow-600 ml-2 font-normal text-xs">Pending</span></h4>
+            <p class="font-body-sm text-on-surface-variant">Cognitive Evaluation</p>
+        </div>
+    </div>
+
+    <!-- 4:00 PM Tea Break -->
+    <div class="flex gap-4 relative min-h-[60px] opacity-70">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant border-dashed"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">04:00 PM</p>
+            <p class="font-label-sm text-on-surface-variant">04:30 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-2 h-2 rounded-full bg-outline-variant z-10 border-2 border-background"></div>
+        </div>
+        <div class="flex-1 bg-surface-container rounded-lg p-2 my-1 flex items-center justify-center border border-dashed border-outline-variant">
+            <span class="font-label-md text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-sm">local_cafe</span> Tea Break</span>
+        </div>
+    </div>
+
+    <!-- 4:30 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">04:30 PM</p>
+            <p class="font-label-sm text-on-surface-variant">05:30 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-gray-300 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface border border-dashed border-outline-variant rounded-lg p-3 my-1 hover:bg-surface-container-low cursor-pointer transition-colors flex items-center">
+            <span class="material-symbols-outlined text-outline mr-2">add_circle</span>
+            <span class="font-label-md text-on-surface-variant">Empty Slot - Click to book</span>
+        </div>
+    </div>
+
+    <!-- 5:30 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">05:30 PM</p>
+            <p class="font-label-sm text-on-surface-variant">06:30 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-yellow-500 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface-container-lowest border-l-4 border-l-yellow-500 border border-outline-variant rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-on-surface"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('Olivia M.')">Olivia M.</span> <span class="text-yellow-600 ml-2 font-normal text-xs">Pending</span></h4>
+            <p class="font-body-sm text-on-surface-variant">Standard Session</p>
+        </div>
+    </div>
+
+    <!-- 6:30 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">06:30 PM</p>
+            <p class="font-label-sm text-on-surface-variant">07:30 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-yellow-500 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface-container-lowest border-l-4 border-l-yellow-500 border border-outline-variant rounded-lg p-3 my-1 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-label-md text-on-surface"><span class="cursor-pointer hover:underline text-primary" onclick="openClientModal('Chris B.')">Chris B.</span> <span class="text-yellow-600 ml-2 font-normal text-xs">Pending</span></h4>
+            <p class="font-body-sm text-on-surface-variant">Couples Therapy</p>
+        </div>
+    </div>
+    
+    <!-- 7:30 PM -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-0 w-px bg-outline-variant"></div>
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">07:30 PM</p>
+            <p class="font-label-sm text-on-surface-variant">08:30 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-gray-300 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface border border-dashed border-outline-variant rounded-lg p-3 my-1 hover:bg-surface-container-low cursor-pointer transition-colors flex items-center">
+            <span class="material-symbols-outlined text-outline mr-2">add_circle</span>
+            <span class="font-label-md text-on-surface-variant">Empty Slot - Click to book</span>
+        </div>
+    </div>
+    
+    <!-- 8:30 PM (Final Slot) -->
+    <div class="flex gap-4 relative min-h-[80px]">
+        <div class="absolute left-[7.5rem] top-0 bottom-8 w-px bg-outline-variant"></div> <!-- Short line for the end -->
+        <div class="w-24 shrink-0 text-right py-2">
+            <p class="font-label-md text-on-surface">08:30 PM</p>
+            <p class="font-label-sm text-on-surface-variant">09:30 PM</p>
+        </div>
+        <div class="relative pt-3 w-4 shrink-0 flex justify-center">
+            <div class="w-3 h-3 rounded-full bg-gray-300 z-10 border-2 border-background shadow-sm"></div>
+        </div>
+        <div class="flex-1 bg-surface border border-dashed border-outline-variant rounded-lg p-3 my-1 hover:bg-surface-container-low cursor-pointer transition-colors flex items-center">
+            <span class="material-symbols-outlined text-outline mr-2">add_circle</span>
+            <span class="font-label-md text-on-surface-variant">Empty Slot - Click to book</span>
+        </div>
+    </div>
+
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Section 2: Analytics Card -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-background mb-md">Practice Overview</h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg h-full flex flex-col justify-between">
+<div class="grid grid-cols-2 gap-md mb-lg">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-xs">Avg Daily Cases</p>
+<p class="font-display-lg text-display-lg text-on-surface">6.4</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-xs">Retention Rate</p>
+<p class="font-display-lg text-display-lg text-primary">92%</p>
+</div>
+<div class="col-span-2 mt-md pt-md border-t border-outline-variant flex justify-between items-center"><div class="flex flex-col"><p class="font-label-sm text-label-sm text-on-surface-variant mb-xs">Today's Slots</p><div class="flex gap-md"><div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-label-md text-label-md text-on-surface">4 Booked</span></div><div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full border border-outline-variant"></span><span class="font-label-md text-label-md text-on-surface-variant">2 Available</span></div></div></div><span class="material-symbols-outlined text-primary">event_available</span></div></div>
+<div>
+<div class="flex justify-between items-end mb-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Monthly Sessions</p>
+<p class="font-label-md text-label-md text-on-surface">+12% vs last month</p>
+</div>
+<!-- Mock Sparkline -->
+<div class="h-16 w-full flex items-end justify-between gap-1">
+<div class="w-full bg-surface-container h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-surface-container h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-surface-container h-[45%] rounded-t-sm"></div>
+<div class="w-full bg-surface-container h-[70%] rounded-t-sm"></div>
+<div class="w-full bg-surface-container h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-surface-container h-[85%] rounded-t-sm"></div>
+<div class="w-full bg-primary/40 h-[100%] rounded-t-sm"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: To-Do List -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-md text-headline-md text-on-background">To-Do List</h3>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full">1 Pending</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden h-full flex flex-col">
+<div class="flex-1 overflow-y-auto max-h-[400px] hide-scrollbar">
+    
+    <div class="bg-surface-container-low px-md py-sm font-label-md text-on-surface-variant border-b border-outline-variant">
+        Daily Tasks
+    </div>
+    <ul class="divide-y divide-outline-variant">
+        <!-- Task 1 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px]">
+            <div class="mt-1 w-5 h-5 rounded-sm border-2 border-outline-variant flex-shrink-0 cursor-pointer hover:border-primary"></div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface mb-xs">Check daily assignments given to clients</p>
+            </div>
+        </li>
+        <!-- Task 2 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px]">
+            <div class="mt-1 w-5 h-5 rounded-sm bg-primary border-2 border-primary flex-shrink-0 flex items-center justify-center text-on-primary">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+            </div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface line-through text-on-surface-variant mb-xs">Check client assignment completions</p>
+            </div>
+        </li>
+        <!-- Task 3 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px] bg-error-container/10">
+            <div class="mt-1 w-5 h-5 rounded-sm border-2 border-outline-variant flex-shrink-0 cursor-pointer hover:border-primary"></div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface mb-xs">Prepare and save all therapy notes</p>
+                <p class="font-body-sm text-body-sm text-error mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">warning</span> Pending: Missing Case History
+                </p>
+            </div>
+            <button class="text-primary font-label-sm hover:underline font-bold px-3 py-1 bg-primary/10 rounded-full">Submit</button>
+        </li>
+        <!-- Task 4 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px]">
+            <div class="mt-1 w-5 h-5 rounded-sm border-2 border-outline-variant flex-shrink-0 cursor-pointer hover:border-primary"></div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface mb-xs">Update daily blog</p>
+            </div>
+        </li>
+        <!-- Task 5 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px]">
+            <div class="mt-1 w-5 h-5 rounded-sm border-2 border-outline-variant flex-shrink-0 cursor-pointer hover:border-primary"></div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface mb-xs">Practice self-healing techniques</p>
+            </div>
+        </li>
+        <!-- Task 6 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px]">
+            <div class="mt-1 w-5 h-5 rounded-sm border-2 border-outline-variant flex-shrink-0 cursor-pointer hover:border-primary"></div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface mb-xs">Write on a psychosocial topic / Read new study</p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="bg-surface-container-low px-md py-sm font-label-md text-on-surface-variant border-y border-outline-variant mt-2">
+        Monthly Tasks
+    </div>
+    <ul class="divide-y divide-outline-variant">
+        <!-- Task 7 -->
+        <li class="p-md flex items-start gap-md hover:bg-surface-container-low transition-colors min-h-[64px]">
+            <div class="mt-1 w-5 h-5 rounded-sm border-2 border-outline-variant flex-shrink-0 cursor-pointer hover:border-primary"></div>
+            <div class="flex-1">
+                <p class="font-label-md text-label-md text-on-surface mb-xs">Submit a report on a mental health study</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Due by month end</p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+</div>
+</section>
+</div>
+</div> <!-- Closes flex-1 space-y-gutter min-w-0 -->
+
+<!-- Right Sidebar -->
+<aside class="w-full lg:w-80 space-y-gutter shrink-0">
+    <!-- Today's Booking Status -->
+    <section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-sm">
+        <h3 class="font-headline-md text-headline-md text-on-background mb-md">Today's Status</h3>
+        <div class="space-y-sm">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    <span class="font-body-sm text-on-surface">Completed</span>
+                </div>
+                <span class="font-label-md">2</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                    <span class="font-body-sm text-on-surface">On Going</span>
+                </div>
+                <span class="font-label-md">1</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span class="font-body-sm text-on-surface">Pending</span>
+                </div>
+                <span class="font-label-md">3</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+                    <span class="font-body-sm text-on-surface">Empty</span>
+                </div>
+                <span class="font-label-md">2</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Calendar -->
+    <section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-sm">
+        <div class="flex items-center justify-between mb-md">
+            <h3 class="font-headline-md text-headline-md text-on-background">October</h3>
+            <div class="flex gap-2">
+                <button class="material-symbols-outlined text-outline hover:text-primary transition-colors">chevron_left</button>
+                <button class="material-symbols-outlined text-outline hover:text-primary transition-colors">chevron_right</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-7 gap-1 text-center mb-2">
+            <div class="font-label-sm text-on-surface-variant">S</div>
+            <div class="font-label-sm text-on-surface-variant">M</div>
+            <div class="font-label-sm text-on-surface-variant">T</div>
+            <div class="font-label-sm text-on-surface-variant">W</div>
+            <div class="font-label-sm text-on-surface-variant">T</div>
+            <div class="font-label-sm text-on-surface-variant">F</div>
+            <div class="font-label-sm text-on-surface-variant">S</div>
+        </div>
+        <div class="grid grid-cols-7 gap-1 text-center">
+            <div class="p-1 font-body-sm text-on-surface-variant opacity-50">27</div>
+            <div class="p-1 font-body-sm text-on-surface-variant opacity-50">28</div>
+            <div class="p-1 font-body-sm text-on-surface-variant opacity-50">29</div>
+            <div class="p-1 font-body-sm text-on-surface-variant opacity-50">30</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">1</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">2</div>
+            <div class="p-1 font-body-sm text-on-surface">3</div>
+            
+            <div class="p-1 font-body-sm text-on-surface">4</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">5</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">6</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">7</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">8</div>
+            <div class="p-1 font-body-sm rounded-full bg-green-100 text-green-700">9</div>
+            <div class="p-1 font-body-sm text-on-surface">10</div>
+
+            <div class="p-1 font-body-sm text-on-surface">11</div>
+            <div class="p-1 font-body-sm rounded-full bg-primary text-on-primary font-bold shadow-sm">12</div>
+            <div class="p-1 font-body-sm rounded-full bg-yellow-100 text-yellow-700">13</div>
+            <div class="p-1 font-body-sm rounded-full bg-yellow-100 text-yellow-700">14</div>
+            <div class="p-1 font-body-sm text-on-surface">15</div>
+            <div class="p-1 font-body-sm text-on-surface">16</div>
+            <div class="p-1 font-body-sm text-on-surface">17</div>
+            
+            <div class="p-1 font-body-sm text-on-surface">18</div>
+            <div class="p-1 font-body-sm text-on-surface">19</div>
+            <div class="p-1 font-body-sm text-on-surface">20</div>
+            <div class="p-1 font-body-sm text-on-surface">21</div>
+            <div class="p-1 font-body-sm text-on-surface">22</div>
+            <div class="p-1 font-body-sm text-on-surface">23</div>
+            <div class="p-1 font-body-sm text-on-surface">24</div>
+            
+            <div class="p-1 font-body-sm text-on-surface">25</div>
+            <div class="p-1 font-body-sm text-on-surface">26</div>
+            <div class="p-1 font-body-sm text-on-surface">27</div>
+            <div class="p-1 font-body-sm text-on-surface">28</div>
+            <div class="p-1 font-body-sm text-on-surface">29</div>
+            <div class="p-1 font-body-sm text-on-surface">30</div>
+            <div class="p-1 font-body-sm text-on-surface">31</div>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2 justify-center">
+            <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span><span class="text-[10px] text-on-surface-variant">Fully Booked</span></div>
+            <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-yellow-500"></span><span class="text-[10px] text-on-surface-variant">Partial</span></div>
+            <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-[10px] text-on-surface-variant">Today</span></div>
+        </div>
+    </section>
+</aside>
+</div> <!-- Closes flex flex-col lg:flex-row gap-gutter -->
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface-container-low shadow-md">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-4 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-sm text-label-sm mt-1">Analytics</span>
+</a>
+
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm mt-1">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 cursor-pointer" onclick="document.getElementById('dailyReportModal').classList.remove('hidden')">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm mt-1">Report</span>
+</a>
+</nav>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    
+    <!-- Daily Report Modal -->
+    <div id="dailyReportModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="bg-surface rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-outline-variant">
+            <div class="p-6 border-b border-outline-variant flex justify-between items-center sticky top-0 bg-surface z-10">
+                <h2 class="font-headline-sm text-headline-sm text-on-surface">Submit Daily Report</h2>
+                <button onclick="document.getElementById('dailyReportModal').classList.add('hidden')" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form class="p-6 space-y-6" onsubmit="event.preventDefault(); alert('Daily Report Submitted!'); document.getElementById('dailyReportModal').classList.add('hidden');">
+    
+    <!-- Session Reports Section -->
+    <div>
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Session Reports</h3>
+            <span class="font-label-sm text-on-surface-variant bg-surface-container-high px-2 py-1 rounded-full">2/12 Sessions Logged</span>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Session 1 Card -->
+            <div class="bg-surface-container-low border border-outline-variant rounded-lg p-4">
+                <div class="flex items-center justify-between mb-3 border-b border-outline-variant pb-2">
+                    <h4 class="font-label-lg text-on-surface">Session 1 (Sarah J.)</h4>
+                    <span class="material-symbols-outlined text-outline hover:text-error cursor-pointer text-sm">delete</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Diagnosis -->
+                    <div>
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Diagnosis</label>
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none text-sm">
+                            <option value="">Select diagnosis</option>
+                            <option value="anxiety" selected>Anxiety Disorder</option>
+                            <option value="depression">Depression</option>
+                            <option value="ptsd">PTSD</option>
+                            <option value="adhd">ADHD</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <!-- Therapeutic Approach -->
+                    <div>
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Therapeutic Approach</label>
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none text-sm">
+                            <option value="">Select approach</option>
+                            <option value="cbt" selected>CBT (Cognitive Behavioral Therapy)</option>
+                            <option value="dbt">DBT</option>
+                            <option value="act">ACT</option>
+                            <option value="humanistic">Humanistic</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <!-- Homework & Tasks -->
+                    <div class="md:col-span-2">
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Homework & Tasks Given</label>
+                        <textarea rows="2" class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none resize-none text-sm">Completed thought diary for 3 days.</textarea>
+                    </div>
+                    <!-- Revisit Schedule -->
+                    <div class="md:col-span-2">
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Next Revisit Schedule</label>
+                        <input type="text" value="Next week, Thursday 10:00 AM" class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none text-sm">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 2 Card (Empty) -->
+            <div class="bg-surface-container-low border border-outline-variant rounded-lg p-4">
+                <div class="flex items-center justify-between mb-3 border-b border-outline-variant pb-2">
+                    <h4 class="font-label-lg text-on-surface">Session 2</h4>
+                    <span class="material-symbols-outlined text-outline hover:text-error cursor-pointer text-sm">delete</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Diagnosis -->
+                    <div>
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Diagnosis</label>
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none text-sm">
+                            <option value="">Select diagnosis</option>
+                            <option value="anxiety">Anxiety Disorder</option>
+                            <option value="depression">Depression</option>
+                            <option value="ptsd">PTSD</option>
+                            <option value="adhd">ADHD</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <!-- Therapeutic Approach -->
+                    <div>
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Therapeutic Approach</label>
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none text-sm">
+                            <option value="">Select approach</option>
+                            <option value="cbt">CBT (Cognitive Behavioral Therapy)</option>
+                            <option value="dbt">DBT</option>
+                            <option value="act">ACT</option>
+                            <option value="humanistic">Humanistic</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <!-- Homework & Tasks -->
+                    <div class="md:col-span-2">
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Homework & Tasks Given</label>
+                        <textarea rows="2" class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none resize-none text-sm" placeholder="Enter tasks or exercises..."></textarea>
+                    </div>
+                    <!-- Revisit Schedule -->
+                    <div class="md:col-span-2">
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Next Revisit Schedule</label>
+                        <input type="text" placeholder="e.g., Next week, Tuesday 4 PM" class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none text-sm">
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" class="w-full py-2 border border-dashed border-primary text-primary rounded-lg flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors">
+                <span class="material-symbols-outlined text-sm">add</span> Add Another Session
+            </button>
+        </div>
+    </div>
+
+    <!-- Daily Summary Section -->
+    <div class="pt-4 border-t border-outline-variant">
+        <h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Daily Summary</h3>
+        <label class="block font-label-sm text-on-surface-variant mb-2 flex justify-between">
+            <span>Write about the day (Max 100 words)</span>
+            <span>0/100 words</span>
+        </label>
+        <textarea rows="4" class="w-full bg-surface-container-lowest border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none resize-none" placeholder="Briefly reflect on today's sessions, challenges, or notable observations..."></textarea>
+    </div>
+
+    <div class="pt-4 flex justify-end gap-3 border-t border-outline-variant">
+        <button type="button" onclick="document.getElementById('dailyReportModal').classList.add('hidden')" class="px-6 py-2 rounded-full font-label-md text-primary hover:bg-primary/10 transition-colors">Cancel</button>
+        <button type="submit" class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md hover:opacity-90 transition-opacity shadow-sm">Submit Final Report</button>
+    </div>
+</form>
+        </div>
+    </div>
+
+    <!-- Client Details Modal -->
+    <div id="clientDetailsModal" class="hidden fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="bg-surface rounded-2xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col border border-outline-variant">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface shrink-0">
+                <div>
+                    <h2 id="modalClientName" class="font-headline-sm text-headline-sm text-on-surface">Client Details</h2>
+                    <p class="font-body-sm text-on-surface-variant">Session Information and Reports</p>
+                </div>
+                <button onclick="document.getElementById('clientDetailsModal').classList.add('hidden')" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex border-b border-outline-variant px-6 bg-surface shrink-0 overflow-x-auto hide-scrollbar">
+                <button onclick="switchTab('tab-case-history')" id="btn-case-history" class="client-tab-btn font-label-md text-primary border-b-2 border-primary py-3 px-4 shrink-0 transition-colors">Case History</button>
+                <button onclick="switchTab('tab-mse')" id="btn-mse" class="client-tab-btn font-label-md text-on-surface-variant border-b-2 border-transparent hover:text-primary py-3 px-4 shrink-0 transition-colors">MSE</button>
+                <button onclick="switchTab('tab-assessment')" id="btn-assessment" class="client-tab-btn font-label-md text-on-surface-variant border-b-2 border-transparent hover:text-primary py-3 px-4 shrink-0 transition-colors">Assessment Test</button>
+                <button onclick="switchTab('tab-therapy')" id="btn-therapy" class="client-tab-btn font-label-md text-on-surface-variant border-b-2 border-transparent hover:text-primary py-3 px-4 shrink-0 transition-colors">Therapy Report</button>
+            </div>
+
+            <!-- Modal Content Area -->
+            <div class="p-6 overflow-y-auto flex-1 bg-surface-container-lowest">
+                <!-- Case History Tab -->
+                <div id="tab-case-history" class="client-tab-content block space-y-4">
+                    <h3 class="font-label-lg text-on-surface">Case History</h3>
+                    <textarea rows="6" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none resize-none" placeholder="Enter new case history details..."></textarea>
+                    <div class="flex justify-end">
+                        <button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-sm">Save Case History</button>
+                    </div>
+                </div>
+
+                <!-- MSE Tab -->
+                <div id="tab-mse" class="client-tab-content hidden space-y-4">
+                    <h3 class="font-label-lg text-on-surface">Mental Status Examination (MSE)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-label-sm text-on-surface-variant mb-1">Appearance</label>
+                            <input type="text" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2">
+                        </div>
+                        <div>
+                            <label class="block font-label-sm text-on-surface-variant mb-1">Behavior</label>
+                            <input type="text" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block font-label-sm text-on-surface-variant mb-1">Mood & Affect</label>
+                            <textarea rows="2" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 resize-none"></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block font-label-sm text-on-surface-variant mb-1">Cognition & Insight</label>
+                            <textarea rows="2" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 resize-none"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex justify-end mt-4">
+                        <button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-sm">Save MSE</button>
+                    </div>
+                </div>
+
+                <!-- Assessment Test Tab -->
+                <div id="tab-assessment" class="client-tab-content hidden space-y-4">
+                    <h3 class="font-label-lg text-on-surface">Assessment Test Report</h3>
+                    <div>
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Test Name</label>
+                        <select class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 mb-4">
+                            <option>BDI (Beck Depression Inventory)</option>
+                            <option>BAI (Beck Anxiety Inventory)</option>
+                            <option>PHQ-9</option>
+                            <option>GAD-7</option>
+                            <option>Other</option>
+                        </select>
+                        <label class="block font-label-sm text-on-surface-variant mb-1">Test Results / Notes</label>
+                        <textarea rows="4" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 resize-none"></textarea>
+                    </div>
+                    <div class="flex justify-end mt-4">
+                        <button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-sm">Save Assessment</button>
+                    </div>
+                </div>
+
+                <!-- Therapy Report Tab -->
+                <div id="tab-therapy" class="client-tab-content hidden space-y-4">
+                    <h3 class="font-label-lg text-on-surface">Therapy Report (Current Session)</h3>
+                    <textarea rows="6" class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 text-on-surface focus:border-primary focus:outline-none resize-none" placeholder="Enter session notes, progress, and therapy report..."></textarea>
+                    <div class="flex justify-end">
+                        <button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-sm">Save Therapy Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openClientModal(clientName) {
+            document.getElementById('modalClientName').innerText = clientName + ' - Session Details';
+            document.getElementById('clientDetailsModal').classList.remove('hidden');
+            // reset to first tab
+            switchTab('tab-case-history');
+        }
+
+        function switchTab(tabId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.client-tab-content');
+            contents.forEach(c => {
+                c.classList.remove('block');
+                c.classList.add('hidden');
+            });
+
+            // Reset all buttons
+            const btns = document.querySelectorAll('.client-tab-btn');
+            btns.forEach(b => {
+                b.classList.remove('text-primary', 'border-primary');
+                b.classList.add('text-on-surface-variant', 'border-transparent');
+            });
+
+            // Show active content
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(tabId).classList.add('block');
+
+            // Style active button
+            const activeBtn = document.getElementById(tabId.replace('tab-', 'btn-'));
+            activeBtn.classList.remove('text-on-surface-variant', 'border-transparent');
+            activeBtn.classList.add('text-primary', 'border-primary');
+        }
+    </script>
+</body></html>

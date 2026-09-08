@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Therapist Client List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary-fixed-variant": "#454748", "on-primary": "#ffffff", "on-tertiary-container": "#cacbcc", "on-secondary-container": "#70040e", "surface-tint": "#1f5daf", error: "#ba1a1a", "on-background": "#330043", "tertiary-container": "#535657", "on-secondary": "#ffffff", tertiary: "#3c3f40", "outline-variant": "#c2c6d3", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "tertiary-fixed": "#e1e3e4", surface: "#fff7fb", "surface-container": "#ffe6ff", "on-error-container": "#93000a", "secondary-fixed": "#ffdad7", "on-secondary-fixed-variant": "#8a1a1e", primary: "#003d7e", "surface-container-low": "#ffeffd", background: "#fff7fb", "on-surface": "#330043", "on-primary-fixed": "#001b3e", "secondary-fixed-dim": "#ffb3ae", "on-surface-variant": "#424751", "tertiary-fixed-dim": "#c5c7c8", "on-secondary-fixed": "#410004", "primary-fixed": "#d6e3ff", "inverse-on-surface": "#ffebfe", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "surface-container-high": "#fddfff", "on-error": "#ffffff", "inverse-primary": "#aac7ff", "surface-container-highest": "#fbd7ff", "primary-container": "#0d54a5", "surface-bright": "#fff7fb", "secondary-container": "#ff716b", "on-tertiary-fixed": "#191c1d", "surface-dim": "#f8cbff", "inverse-surface": "#54006c", secondary: "#ab3332", "on-primary-fixed-variant": "#00458d", "surface-variant": "#fbd7ff", "on-primary-container": "#b1cbff", outline: "#727783"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {base: "8px", md: "16px", "margin-mobile": "16px", sm: "8px", "margin-desktop": "40px", gutter: "24px", lg: "24px", xl: "48px", xs: "4px"}, fontFamily: {"headline-lg-mobile": ["Public Sans"], "display-lg": ["Public Sans"], "label-md": ["Public Sans"], "body-sm": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg": ["Public Sans"], "body-lg": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 sticky z-40 transition-transform">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Therapist Profile Picture" class="w-full h-full object-cover" data-alt="A professional headshot of a female therapist in her 40s with a warm, empathetic smile. The lighting is soft and natural, emphasizing a bright, modern clinical setting. The background is a clean, minimalist white wall with a hint of indoor greenery out of focus. High-key lighting, modern corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhyVtQekBe90D_g4dq5njajBJNXTwvYKAic5apqJhyDpfQsoDTOrNnI82WUJ5Ed8AuowdITWUCpVmokqriRt7_tRWbqmmrk17SAuUXEv60tphxVNs-iOJD6CIHcky3AQdEgcS-KPaRv4TZyJNnxjckwspPW_F3-fOyvIzOJY-JS252d-UnaaxUWaKq8K2o-GHFux2rLAV46MCaYTx9ZjvMQsTEBw3UtmAoXpIsziqUQvFTphT4IoBs"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-semibold text-primary">Clinical Sanctuary</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary">My Clients</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Manage your clinical caseload and upcoming sessions.</p>
+</div>
+<div class="relative w-full md:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-lg border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" placeholder="Search clients..." type="text"/>
+</div>
+</div>
+<!-- Client Cards Grid (Bento/Card layout instead of basic list) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Sarah Jenkins -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant relative">
+<img alt="Sarah Jenkins" class="w-full h-full object-cover" data-alt="A portrait of a young woman in her late 20s, with a relaxed and approachable expression. She is in a well-lit, contemporary indoor space with white walls. The lighting is bright and even, matching a modern clinical application's light-mode aesthetic. Soft focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtT1_PRfLLJt_7mMOZnzqRsWSyfTQYBuBhPTLf1JLR3l_QA87DrXsUbMu0SvmzlaSzdC8Mk-TPRit3ELLL_PNr3rHY_fe5na2N8FRXqU3rienHswpMud_4NMf7K8CUwm3Fv0YZ9GquXjJ5G3UoXl0M3nmfm5Dq2o0sD4UXkolWqAF_XE9NoO2I5oai6mxZx4A-0bDlrMOaY4UxdGZ7cFK-E5FI7xULStiedH_6-hsHzwRxUQGKGU0a"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Sarah Jenkins</h3>
+<div class="flex items-center gap-1.5 mt-1"><div class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Session Completed</span></div>
+</div>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded p-3 border border-outline-variant border-opacity-50 flex items-center justify-between gap-3"><div class="flex items-center gap-3"><div class="bg-tertiary-container text-on-tertiary-container w-10 h-10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">description</span></div><div><p class="font-label-sm text-label-sm text-on-surface-variant">Clinical Note</p><p class="font-label-md text-label-md text-on-surface">Prepared &amp; Encrypted</p></div></div><span class="material-symbols-outlined text-outline" title="Data Locked for Privacy">lock</span></div>
+<div class="flex gap-2 mt-auto pt-2">
+<button class="flex-1 h-10 rounded border border-primary text-primary font-label-md text-label-md hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex items-center justify-center gap-1"><span class="material-symbols-outlined text-[18px]">assignment_turned_in</span> Assign Task</button>
+<button class="flex-1 h-10 rounded border border-primary text-primary font-label-md text-label-md hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">monitoring</span> Reports
+                    </button>
+<button class="w-10 h-10 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Michael Rodriguez -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-tertiary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant relative">
+<img alt="Michael Rodriguez" class="w-full h-full object-cover" data-alt="A headshot of a middle-aged man with a neat beard, looking thoughtfully towards the camera. The setting is a bright, minimalist office space emphasizing a clean, clinical aesthetic. The lighting is soft white, highlighting a professional and serene mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4y-USbZwd07mu98Y4BPAAbdGEm4jyFOYbYTuKmmhQG8rnnSEBiTW3mucXmXUOullJ4LW9Dk9mSdbdCl7igSXqQkATPGuod8t3Oh6ll7e2gDIrdtZlo6hiZISsGSnoqwCER3rzJthe7yti5TIp87bODEkyrXkGBXzl-Goa_Bjefc1ySKC4KKLoXs7auT1ntljgdiQl_SYcPvVEL1GVi0ct1tMIksD1MyMVA8CEt3KRTUGIRougSpPV"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Michael Rodriguez</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Pending Assessment</span>
+</div>
+</div>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded p-3 border border-outline-variant border-opacity-50 flex items-center gap-3">
+<div class="bg-surface-variant text-on-surface-variant w-10 h-10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Next Session</p>
+<p class="font-label-md text-label-md text-on-surface">Tomorrow, 11:00 AM</p>
+</div>
+</div>
+<div class="flex gap-2 mt-auto pt-2">
+<button class="flex-1 h-10 rounded border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant hover:text-on-surface transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">assignment_add</span> Task
+                    </button>
+<button class="flex-1 h-10 rounded border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant hover:text-on-surface transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">monitoring</span> Reports
+                    </button>
+<button class="w-10 h-10 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+</div>
+<!-- Card 3: David Lee -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant relative">
+<img alt="David Lee" class="w-full h-full object-cover" data-alt="A portrait of an elderly man with glasses, smiling warmly. He is placed in a clean, well-lit environment that suggests a modern healthcare or clinical facility. The lighting is high-key and soft, maintaining a calm and reassuring atmosphere suitable for a therapeutic context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl8GvTxhjt6fYXAkXUV4f4CsOb-iO-nN7__2G9Oh6i_AERdJCo5BZwjJbnVuyDqM-lSjeFsSSdm7mxiYvhx8I8zx8nF0h9WB4f55QDWXgFzJkolN39jSjZRxdCIZIvI7kpWc5nFi0U4hxNpQ-brWi0BUCmhwkOhNwGiJKbd9QQmIqeH2CegtOvToWJoClwHaG6CA1ktmIx1fMvcLQ-ftATh2lMdOMGbl4CPZJ9NIcUfnCD2FFxQVVO"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">David Lee</h3>
+<div class="flex items-center gap-1.5 mt-1">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Active</span>
+</div>
+</div>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded p-3 border border-outline-variant border-opacity-50 flex items-center gap-3">
+<div class="bg-surface-variant text-on-surface-variant w-10 h-10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">event</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Next Session</p>
+<p class="font-label-md text-label-md text-on-surface">Oct 26</p>
+</div>
+</div>
+<div class="flex gap-2 mt-auto pt-2">
+<button class="flex-1 h-10 rounded border border-primary text-primary font-label-md text-label-md hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">assignment_add</span> Task
+                    </button>
+<button class="flex-1 h-10 rounded border border-primary text-primary font-label-md text-label-md hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">monitoring</span> Reports
+                    </button>
+<button class="w-10 h-10 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface md:hidden fixed full-width bottom-0 z-50 shadow-[0_-4px_12px_rgba(26,37,48,0.05)] border-t border-outline-variant border-opacity-20">
+<div class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
+<span class="font-label-sm text-label-sm">Analytics</span>
+</button>
+<!-- Active Tab: Clients -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="groups" data-weight="fill" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-sm text-label-sm font-semibold">Clients</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</button>
+</div>
+</nav>
+<!-- Safe area spacing for mobile -->
+<div class="h-20 md:hidden w-full bg-background"></div>
+</body></html>

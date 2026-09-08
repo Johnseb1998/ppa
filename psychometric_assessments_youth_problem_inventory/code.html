@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Problem Inventory (YPI-V)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003d7e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0d54a5",
+                        "on-primary-container": "#b1cbff",
+                        surface: "#fff7fb",
+                        "on-surface": "#330043",
+                        "surface-variant": "#fbd7ff",
+                        "on-surface-variant": "#424751",
+                        background: "#fff7fb",
+                        "on-background": "#330043",
+                        outline: "#727783",
+                        "outline-variant": "#c2c6d3"
+                    },
+                    fontFamily: {
+                        body: ["Public Sans"],
+                        headline: ["Public Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+    
+    <!-- Top App Bar -->
+    <header class="bg-surface border-b border-outline-variant w-full h-16 flex justify-between items-center px-4 md:px-10 sticky top-0 z-40 shadow-sm shrink-0">
+        <div class="flex items-center gap-4">
+            <button onclick="window.history.back()" class="material-symbols-outlined text-primary hover:bg-surface-variant p-2 rounded-full transition-colors cursor-pointer">arrow_back</button>
+            <h1 class="font-headline text-xl text-primary font-semibold">Youth Problem Inventory (YPI-V)</h1>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-4 md:p-8 mt-4 flex-grow w-full">
+        
+        <!-- Intro Card -->
+        <div id="introCard" class="bg-surface rounded-xl border border-outline-variant p-6 mb-6 shadow-sm">
+            <h2 class="text-2xl font-semibold text-primary mb-2">Instructions</h2>
+            <p class="text-on-surface-variant mb-4">There are 80 statements in this questionnaire. Please indicate the extent to which each statement applies to you.</p>
+            <div class="flex items-center gap-2 bg-primary-container/10 p-3 rounded-lg border border-primary/20 text-primary">
+                <span class="material-symbols-outlined">info</span>
+                <span class="text-sm">There are no right or wrong answers. Answer honestly based on your own feelings and experiences.</span>
+            </div>
+            
+            <div class="mt-4">
+                <div class="w-full bg-surface-variant rounded-full h-2.5 mb-1">
+                    <div id="progressBar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-outline font-medium">
+                    <span>Progress</span>
+                    <span id="progressText">0/80</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questionnaire Container -->
+        <div id="questionsContainer" class="space-y-4 mb-8">
+            <!-- Questions will be injected here -->
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center mb-12">
+            <button id="submitBtn" onclick="calculateResults()" class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                Submit Assessment
+            </button>
+        </div>
+        
+        <!-- Results Modal (Hidden by default) -->
+        <div id="resultsModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+            <div class="bg-surface rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 md:p-8 relative">
+                <button onclick="closeResults()" class="absolute top-4 right-4 material-symbols-outlined text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-variant transition-colors">close</button>
+                
+                <div class="text-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary mb-2">assignment_turned_in</span>
+                    <h2 class="text-3xl font-bold text-on-surface">Your Results</h2>
+                    <p class="text-on-surface-variant mt-2">Youth Problem Inventory (YPI-V)</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- Area A -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex flex-col items-center mb-2">
+                            <div class="flex items-baseline gap-1 mb-1">
+                                <span id="scoreA" class="text-3xl font-bold text-primary">0</span>
+                                <span class="text-sm font-medium text-on-surface-variant">/ 62</span>
+                            </div>
+                            <h3 class="font-semibold text-on-surface text-center">Area A: Family</h3>
+                        </div>
+                        <p class="text-xs text-on-surface-variant text-center">Parental / Family Environment Problems</p>
+                    </div>
+                    <!-- Area B -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex flex-col items-center mb-2">
+                            <div class="flex items-baseline gap-1 mb-1">
+                                <span id="scoreB" class="text-3xl font-bold text-primary">0</span>
+                                <span class="text-sm font-medium text-on-surface-variant">/ 40</span>
+                            </div>
+                            <h3 class="font-semibold text-on-surface text-center">Area B: School</h3>
+                        </div>
+                        <p class="text-xs text-on-surface-variant text-center">School/College, Teachers & Peers Problems</p>
+                    </div>
+                    <!-- Area C -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex flex-col items-center mb-2">
+                            <div class="flex items-baseline gap-1 mb-1">
+                                <span id="scoreC" class="text-3xl font-bold text-primary">0</span>
+                                <span class="text-sm font-medium text-on-surface-variant">/ 10</span>
+                            </div>
+                            <h3 class="font-semibold text-on-surface text-center">Area C: Socio-Economic</h3>
+                        </div>
+                        <p class="text-xs text-on-surface-variant text-center">Socio-Economic Status Problems</p>
+                    </div>
+                    <!-- Area D -->
+                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-5">
+                        <div class="flex flex-col items-center mb-2">
+                            <div class="flex items-baseline gap-1 mb-1">
+                                <span id="scoreD" class="text-3xl font-bold text-primary">0</span>
+                                <span class="text-sm font-medium text-on-surface-variant">/ 48</span>
+                            </div>
+                            <h3 class="font-semibold text-on-surface text-center">Area D: Personal</h3>
+                        </div>
+                        <p class="text-xs text-on-surface-variant text-center">Personal Adjustment, Health & Psychological Wellbeing Problems</p>
+                    </div>
+                </div>
+                
+                <div class="bg-primary/5 p-4 rounded-xl border border-primary/10 text-sm text-on-surface-variant mb-4 text-center">
+                    <strong>Total Problem Score:</strong> <span id="totalScore" class="font-bold text-lg text-primary ml-2">0</span> <span class="text-sm font-medium text-on-surface-variant">/ 160</span>
+                </div>
+                
+                <div class="bg-surface-variant/20 p-4 rounded-xl border border-outline-variant/50 text-sm text-on-surface-variant mb-6">
+                    <div class="flex items-center gap-2 mb-2 text-on-surface">
+                        <span class="material-symbols-outlined text-[18px]">info</span>
+                        <strong class="font-semibold">Clinical / Diagnostic Note</strong>
+                    </div>
+                    <p>Higher scores in any specific area indicate a higher intensity of maladjustment or psychosocial friction within that domain, pointing toward specific targets for psychological counseling or guidance.</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <button onclick="window.location.href='../psychometric_assessments/code.html'" class="px-6 py-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors font-medium">Return to Assessments</button>
+                    <button onclick="window.print()" class="px-6 py-2 bg-primary text-on-primary rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors font-medium flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const questions = [
+            // AREA A
+            "My parents are unmindful of my needs.",
+            "My parents don't help me in solving my problems.",
+            "My parents keep strict vigil over my activities.",
+            "My parents don't allow me to work freely.",
+            "My parents restrict my participation in games, sports, drama, or travelling.",
+            "My parents scold me for not securing good marks, inspite of my hard work.",
+            "My parents blame me only for any loss in the home.",
+            "My parents criticize me for whatever I do.",
+            "My parents compel me to shoulder household responsibilities.",
+            "My parents expect me to perform beyond my bounds.",
+            "My parents often point out for my not being courteous and refined before others.",
+            "My parents restrict me about my friends.",
+            "My parents try to know my private affairs.",
+            "My parents say that I should not do anything without their consent.",
+            "My parents say that I am unable to understand my own wellbeing.",
+            "My parents domineer the family.",
+            "My parents say that sons and daughters don't enjoy equal rights.",
+            "My parents discriminate between the position of sons and daughters.",
+            "My parents consider me a burden upon themselves.",
+            "My parents reject most of my requests.",
+            "I fear to tell my parents of my trivial mistakes even.",
+            "I fear to tell my parents about my problems even.",
+            "My parents wish me to fulfil their desires first.",
+            "My parents wish me to follow their own ideals.",
+            "My parents often have differences between themselves.",
+            "I often feel that amongst my father-mother, brothers-sisters none is of my own.",
+            "I feel ill of the absence of my parents even for a short while.",
+            "It is not possible for me to do anything without the help or guidance of my parents.",
+            "I have difference with most of the ideas of my parents.",
+            "My brothers and sisters take themselves superior to me on every count.",
+            "My brothers and sisters are never with me in any matter.",
+            // AREA B
+            "Inspite of my wish to, I fear to participate in extra-curricular activities at school/college.",
+            "I am afraid of my teachers for no reason.",
+            "I hesitate to offer any suggestions to my teachers.",
+            "I fear to tell my difficulties to the teachers.",
+            "My teachers never appreciate me, however well I may perform.",
+            "My teachers are unable to understand me well.",
+            "I feel that either most of my teachers have shallow knowledge or they come unprepared to the class.",
+            "My teachers are unable to explain their lectures well.",
+            "My teachers talk to me in a satirical manner.",
+            "In the class my teachers treat me with ridicule.",
+            "My teachers scold me for no fault of mine.",
+            "My teachers behave in a discriminatory manner.",
+            "I wish to make some of my classmates friends, but it does not happen.",
+            "I feel my classmates are jealous of me.",
+            "My classmates laugh at me.",
+            "I am weak in some of the subjects taught in the class.",
+            "I am unable to get the help of my teacher in the subject in which I require most.",
+            "I don't know a better way to study well.",
+            "I don't get enough opportunities in the school/college for acquiring new knowledge.",
+            "The subjects of my interest are not taught in my school/college.",
+            // AREA C
+            "I take my dress as inferior before others.",
+            "If my social status were higher, it would have been much better.",
+            "I feel ashamed at the poor economic condition of my family.",
+            "Inspite of my wish I hesitate in interacting with others.",
+            "Others don't like to interact with my family or me.",
+            // AREA D
+            "I have fear of marriage.",
+            "I feel sick in talking to the people of opposite sex except my near relatives.",
+            "Being laughed at or criticized keeps me worried for long.",
+            "Even a little thing deeply pierces my heart.",
+            "My family or personal incidents deeply sadden me.",
+            "I remain worried, as I don't keep good health.",
+            "I feel inferior on account of my physical constitution.",
+            "I am less charming than an average person.",
+            "My voice should have been more melodious.",
+            "I feel ashamed of my manners and behaviour before others.",
+            "I feel that there should be a change in my habits.",
+            "I am worried as I am unable to decide which occupation to adopt in future.",
+            "I am worried about my present.",
+            "I feel difficulty in speaking or lecturing before others.",
+            "I am unable to impress others with my personality.",
+            "I am unhappy because I am not proficient in games and sports.",
+            "Whatever I may do, I don't get due appreciation.",
+            "Since people don't attach due value to me, I am unenthusiastic.",
+            "I don't know why, even before commencing any work I often feel that it will not be properly done.",
+            "Often in hurry I do things wrongly.",
+            "I am unable to do anything significant.",
+            "I feel that I am inferior to others.",
+            "I have no merit.",
+            "There is no meaning of my life."
+        ];
+        
+        const answers = new Array(questions.length).fill(null);
+
+        const options = [
+            { label: 'Untrue (False)', value: 0 },
+            { label: 'Partially True', value: 1 },
+            { label: 'True', value: 2 }
+        ];
+
+        // Items for each scale (1-indexed based)
+        const scoring = {
+            A: Array.from({length: 31}, (_, i) => i + 1), // 1 to 31
+            B: Array.from({length: 20}, (_, i) => i + 32), // 32 to 51
+            C: Array.from({length: 5}, (_, i) => i + 52), // 52 to 56
+            D: Array.from({length: 24}, (_, i) => i + 57) // 57 to 80
+        };
+
+        const container = document.getElementById('questionsContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        
+        function renderQuestions() {
+            container.innerHTML = '';
+            questions.forEach((q, index) => {
+                const qNum = index + 1;
+                const div = document.createElement('div');
+                div.className = 'bg-surface rounded-xl border border-outline-variant p-5 flex flex-col gap-4 transition-colors hover:border-primary/30';
+                div.id = `q-card-${index}`;
+                
+                let optionsHtml = '<div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">';
+                options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button onclick="selectAnswer(${index}, ${opt.value}, ${optIndex})" id="btn-${index}-${optIndex}" class="px-2 py-3 text-sm rounded-lg border-2 border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium flex items-center justify-center text-center leading-tight">
+                            <span>${opt.label}</span>
+                        </button>
+                    `;
+                });
+                optionsHtml += '</div>';
+
+                div.innerHTML = `
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                            ${qNum}
+                        </div>
+                        <p class="text-on-surface font-medium pt-1">${q}</p>
+                    </div>
+                    ${optionsHtml}
+                `;
+                container.appendChild(div);
+            });
+            updateProgress();
+        }
+
+        function selectAnswer(qIndex, value, optIndex) {
+            answers[qIndex] = value;
+            
+            // Reset all buttons in this question group
+            options.forEach((_, idx) => {
+                const btn = document.getElementById(`btn-${qIndex}-${idx}`);
+                btn.className = 'px-2 py-3 text-sm rounded-lg border-2 border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-all font-medium flex items-center justify-center text-center leading-tight';
+            });
+            
+            // Highlight selected
+            const selectedBtn = document.getElementById(`btn-${qIndex}-${optIndex}`);
+            selectedBtn.className = 'px-2 py-3 text-sm rounded-lg border-2 border-primary bg-primary text-on-primary font-medium flex items-center justify-center text-center leading-tight shadow-sm';
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answeredCount = answers.filter(a => a !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressBar.style.width = `${percentage}%`;
+            progressText.innerText = `${answeredCount} of ${questions.length} Answered`;
+        }
+
+        function calculateResults() {
+            // Check if all answered
+            if (answers.includes(null)) {
+                alert("Please answer all questions before submitting.");
+                // Find first unanswered and scroll to it
+                const firstUnanswered = answers.findIndex(a => a === null);
+                document.getElementById(`q-card-${firstUnanswered}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            let sumA = 0, sumB = 0, sumC = 0, sumD = 0;
+
+            answers.forEach((ans, index) => {
+                const qNum = index + 1;
+                if (scoring.A.includes(qNum)) sumA += ans;
+                if (scoring.B.includes(qNum)) sumB += ans;
+                if (scoring.C.includes(qNum)) sumC += ans;
+                if (scoring.D.includes(qNum)) sumD += ans;
+            });
+
+            // Save to Local Database
+            try {
+                const loggedInUser = localStorage.getItem('loggedInUser');
+                if (loggedInUser) {
+                    const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+                    if (users[loggedInUser]) {
+                        users[loggedInUser].youthProblemInventoryResults = { 
+                            AreaA: sumA, 
+                            AreaB: sumB, 
+                            AreaC: sumC,
+                            AreaD: sumD,
+                            Total: sumA + sumB + sumC + sumD,
+                            date: new Date().toISOString() 
+                        };
+                        localStorage.setItem('healingMindUsers', JSON.stringify(users));
+                    }
+                }
+            } catch(e) {
+                console.error("Error saving results:", e);
+            }
+
+            // Update Modal
+            document.getElementById('scoreA').textContent = sumA;
+            document.getElementById('scoreB').textContent = sumB;
+            document.getElementById('scoreC').textContent = sumC;
+            document.getElementById('scoreD').textContent = sumD;
+            document.getElementById('totalScore').textContent = sumA + sumB + sumC + sumD;
+            
+            // Show Modal
+            document.getElementById('resultsModal').classList.remove('hidden');
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').classList.add('hidden');
+        }
+
+        // Init
+        renderQuestions();
+
+    </script>
+</body>
+</html>

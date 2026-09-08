@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Therapist Schedule Grid</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary-fixed-variant": "#454748", "on-primary": "#ffffff", "on-tertiary-container": "#cacbcc", "on-secondary-container": "#70040e", "surface-tint": "#1f5daf", error: "#ba1a1a", "on-background": "#330043", "tertiary-container": "#535657", "on-secondary": "#ffffff", tertiary: "#3c3f40", "outline-variant": "#c2c6d3", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "tertiary-fixed": "#e1e3e4", surface: "#fff7fb", "surface-container": "#ffe6ff", "on-error-container": "#93000a", "secondary-fixed": "#ffdad7", "on-secondary-fixed-variant": "#8a1a1e", primary: "#003d7e", "surface-container-low": "#ffeffd", background: "#fff7fb", "on-surface": "#330043", "on-primary-fixed": "#001b3e", "secondary-fixed-dim": "#ffb3ae", "on-surface-variant": "#424751", "tertiary-fixed-dim": "#c5c7c8", "on-secondary-fixed": "#410004", "primary-fixed": "#d6e3ff", "inverse-on-surface": "#ffebfe", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "surface-container-high": "#fddfff", "on-error": "#ffffff", "inverse-primary": "#aac7ff", "surface-container-highest": "#fbd7ff", "primary-container": "#0d54a5", "surface-bright": "#fff7fb", "secondary-container": "#ff716b", "on-tertiary-fixed": "#191c1d", "surface-dim": "#f8cbff", "inverse-surface": "#54006c", secondary: "#ab3332", "on-primary-fixed-variant": "#00458d", "surface-variant": "#fbd7ff", "on-primary-container": "#b1cbff", outline: "#727783"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {base: "8px", md: "16px", "margin-mobile": "16px", sm: "8px", "margin-desktop": "40px", gutter: "24px", lg: "24px", xl: "48px", xs: "4px"}, fontFamily: {"headline-lg-mobile": ["Public Sans"], "display-lg": ["Public Sans"], "label-md": ["Public Sans"], "body-sm": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg": ["Public Sans"], "body-lg": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen text-on-background pb-[80px] md:pb-0 pt-[64px]">
+<!-- TopAppBar -->
+<header class="fixed bg-surface dark:bg-surface-container-low docked full-width top-0 z-40 flat no shadows flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto shadow-sm">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small, professional circular avatar portrait of a friendly therapist wearing a soft white shirt and dark blue blazer, bathed in warm, soft studio lighting against a light gray seamless paper background. The mood is approachable and clinical, with high-key lighting enhancing the clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUCMceDzPyp4_FAhMNz6QOUVm5lml8q0hnTUXu5ezmDLwyAGs3V2hF8Oe8XcwdEWKe0VLU3xdbhsvjxtjkId7G3zPCpx8na_iMr0ft2wuVOIi0ARhKC9HJcDAv3jFXX3onEDlvhIEyV_wYWrHJO8oKhIIU5tb0mHg9q-vpUDh4umvR95DXGcifG8ilSmI1WO-84k2NHhkPhSwmmWuszA2xRvCSynBCbv2dN52gs01Ga08DBM8pgV_U"/>
+<h1 class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed-dim">Clinical Sanctuary</h1>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+<div class="flex items-center justify-between mb-lg">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Schedule</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 24th</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-DEFAULT h-12 flex items-center justify-center gap-sm hover:bg-primary-container transition-colors shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Appt
+            </button>
+</div>
+<!-- Schedule Grid -->
+<div class="flex flex-col gap-sm">
+<!-- 09:00 AM (Booked) -->
+<div class="flex gap-md min-h-[64px] items-stretch">
+<div class="w-20 shrink-0 flex flex-col items-end py-sm pr-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">09:00 AM</span>
+</div>
+<div class="flex-1 bg-surface-container-highest border border-outline-variant rounded-lg p-md relative overflow-hidden group shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Sarah J.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="videocam">videocam</span> Video Consultation
+                            </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm text-label-sm">Booked</span>
+</div>
+</div>
+</div>
+<!-- 10:00 AM (Booked) -->
+<div class="flex gap-md min-h-[64px] items-stretch">
+<div class="w-20 shrink-0 flex flex-col items-end py-sm pr-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:00 AM</span>
+</div>
+<div class="flex-1 bg-surface-container-highest border border-outline-variant rounded-lg p-md relative overflow-hidden group shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Michael R.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> In-Person
+                            </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm text-label-sm">Booked</span>
+</div>
+</div>
+</div>
+<!-- 11:00 AM (Available) -->
+<div class="flex gap-md min-h-[64px] items-stretch">
+<div class="w-20 shrink-0 flex flex-col items-end py-sm pr-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">11:00 AM</span>
+</div>
+<div class="flex-1 bg-surface border border-primary-fixed-dim rounded-lg p-md flex items-center justify-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="font-label-md text-label-md text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span> Available Slot
+                    </span>
+</div>
+</div>
+<!-- 12:00 PM (Booked) -->
+<div class="flex gap-md min-h-[64px] items-stretch">
+<div class="w-20 shrink-0 flex flex-col items-end py-sm pr-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">12:00 PM</span>
+</div>
+<div class="flex-1 bg-surface-container-highest border border-outline-variant rounded-lg p-md relative overflow-hidden group shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Emily W.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="videocam">videocam</span> Video Consultation
+                            </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm text-label-sm">Booked</span>
+</div>
+</div>
+</div>
+<!-- 01:00 PM (Lunch) -->
+<div class="flex gap-md min-h-[64px] items-stretch">
+<div class="w-20 shrink-0 flex flex-col items-end py-sm pr-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">01:00 PM</span>
+</div>
+<div class="flex-1 bg-surface-variant rounded-lg p-md flex items-center justify-center opacity-70">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="restaurant">restaurant</span> LUNCH BREAK - Blocked
+                    </span>
+</div>
+</div>
+<!-- 02:00 PM (Available) -->
+<div class="flex gap-md min-h-[64px] items-stretch">
+<div class="w-20 shrink-0 flex flex-col items-end py-sm pr-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">02:00 PM</span>
+</div>
+<div class="flex-1 bg-surface border border-primary-fixed-dim rounded-lg p-md flex items-center justify-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="font-label-md text-label-md text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span> Available Slot
+                    </span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-surface-container-low shadow-md fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t-0 bg-surface shadow-sm">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-4 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-sm text-label-sm mt-1">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm mt-1">Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm mt-1">Tasks</span>
+</a>
+</nav>
+<!-- Top Navigation (Desktop) - Hidden on mobile, added for complete layout -->
+<nav class="hidden md:flex fixed top-0 left-0 h-full w-64 bg-surface-container-low border-r border-outline-variant flex-col p-lg pt-24 z-30">
+<ul class="flex flex-col gap-sm">
+<li>
+<a class="flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                    Schedule
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                    Analytics
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                    Clients
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+                    Tasks
+                </a>
+</li>
+</ul>
+</nav>
+<style>
+        /* Adjust main layout for desktop sidebar */
+        @media (min-width: 768px) {
+            main {
+                margin-left: 16rem; /* 64 * 0.25rem = 16rem */
+                max-width: calc(100% - 16rem);
+            }
+        }
+    </style>
+</body></html>

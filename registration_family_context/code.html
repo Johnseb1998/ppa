@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registration Step 3: Family &amp; Household</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"error-container": "#ffdad6", outline: "#727783", "primary-fixed-dim": "#aac7ff", "on-background": "#330043", primary: "#003d7e", "on-surface": "#330043", "on-primary-container": "#b1cbff", background: "#fff7fb", "surface-tint": "#1f5daf", "primary-container": "#0d54a5", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#410004", "inverse-surface": "#54006c", surface: "#fff7fb", "surface-container-low": "#ffeffd", "inverse-primary": "#aac7ff", "secondary-fixed": "#ffdad7", "surface-container": "#ffe6ff", "surface-variant": "#fbd7ff", "secondary-fixed-dim": "#ffb3ae", "inverse-on-surface": "#ffebfe", "outline-variant": "#c2c6d3", "on-tertiary-container": "#cacbcc", "on-surface-variant": "#424751", "on-primary": "#ffffff", "on-error": "#ffffff", "surface-dim": "#f8cbff", "on-primary-fixed-variant": "#00458d", secondary: "#ab3332", "secondary-container": "#ff716b", "tertiary-fixed": "#e1e3e4", error: "#ba1a1a", "on-error-container": "#93000a", "on-primary-fixed": "#001b3e", "on-secondary": "#ffffff", "on-secondary-container": "#70040e", "tertiary-fixed-dim": "#c5c7c8", "on-tertiary-fixed": "#191c1d", tertiary: "#3c3f40", "surface-container-high": "#fddfff", "on-tertiary-fixed-variant": "#454748", "surface-container-highest": "#fbd7ff", "primary-fixed": "#d6e3ff", "on-secondary-fixed-variant": "#8a1a1e", "on-tertiary": "#ffffff", "surface-bright": "#fff7fb", "tertiary-container": "#535657"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xl: "48px", xs: "4px", gutter: "24px", md: "16px", sm: "8px", base: "8px", lg: "24px", "margin-mobile": "16px", "margin-desktop": "40px"}, fontFamily: {"body-lg": ["Public Sans"], "body-sm": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "label-md": ["Public Sans"], "display-lg": ["Public Sans"], "label-sm": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9ff; }
+        .input-clinical {
+            @apply w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-md py-sm text-body-md font-body-md text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none min-h-[48px];
+        }
+        .label-clinical {
+            @apply block text-label-md font-label-md text-on-surface-variant mb-xs;
+        }
+        .glass-card {
+            @apply bg-surface-container-lowest border border-surface-variant shadow-[0px_4px_12px_rgba(26,37,48,0.04)] rounded-xl p-lg;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen text-on-surface flex flex-col bg-background">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim flex justify-between items-center px-gutter py-md w-full max-w-full bg-surface-container-low dark:bg-surface-container-low docked full-width top-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim text-headline-md">clinical_notes</span>
+<h1 class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim">Healing Mind</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant">
+<img alt="Clinician profile photo" class="w-full h-full object-cover" data-alt="A close up professional headshot of a clinician with a calm, reassuring expression. They are wearing a light blue medical scrub top in a softly lit, modern clinic environment. High key lighting, minimalist background. 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNwCbvaTygUYrE1ySHR1rf26Suo0vcpMXKP2lu_wVBMTdP_d46RTQNTaZZAjP0xYYXi9_cjqPz2ecDcy186ulWd667psX8s-Kzs0igqDuXwwGFX9fAP22VrQLBJGyW1TSL9NJisMXkhxXdmuae0-CSePZgMUd4imDCIdmOgF_OvTtVs7qiNlu78dW-zKQc7W8G4y-mHqFG3UbS3bAyPREww29rP5nH_CBeAhRH5jh4VCniGK3B4i4c"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex justify-center items-start pt-lg pb-xl px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-3xl">
+<!-- Progress Header -->
+<div class="mb-lg">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">Family &amp; Household</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-xs">Help us understand your living environment to better tailor your care.</p>
+</div>
+<span class="text-label-md font-label-md text-primary">Step 3 of 4</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 75%;"></div>
+</div>
+</div>
+<form class="space-y-lg">
+<!-- Section 1: Household Context (Bento Style Layout) -->
+<section class="glass-card">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">home</span>
+                        Residential Details
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Residential Type -->
+<div>
+<label class="label-clinical" for="residential-type">Residential Type</label>
+<div class="relative">
+<select class="input-clinical appearance-none cursor-pointer" id="residential-type">
+<option disabled="" selected="" value="">Select environment</option>
+<option value="city">City / Urban</option>
+<option value="suburb">Suburban</option>
+<option value="village">Village / Rural</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Family Members -->
+<div>
+<label class="label-clinical" for="family-members">Number of Family Members in Household</label>
+<input class="input-clinical" id="family-members" max="20" min="1" placeholder="e.g., 4" type="number"/>
+</div>
+<!-- Marital Status -->
+<div class="md:col-span-2">
+<label class="label-clinical mb-sm">Marital Status</label>
+<div class="flex flex-wrap gap-sm">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="marital-status" type="radio" value="single"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-body-sm text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary transition-colors flex items-center gap-xs">
+                                        Single
+                                    </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="marital-status" type="radio" value="married"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-body-sm text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary transition-colors flex items-center gap-xs">
+                                        Married
+                                    </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="marital-status" type="radio" value="divorced"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-body-sm text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary transition-colors flex items-center gap-xs">
+                                        Divorced
+                                    </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="marital-status" type="radio" value="widowed"/>
+<div class="px-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-body-sm text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary transition-colors flex items-center gap-xs">
+                                        Widowed
+                                    </div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Bystander / Emergency Contact -->
+<section class="glass-card relative overflow-hidden">
+<!-- Subtle ambient decoration -->
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-sm flex items-center gap-sm relative z-10">
+<span class="material-symbols-outlined text-primary">contacts</span>
+                        Bystander Information
+                    </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-md relative z-10">Please provide contact details for a primary caregiver, family member, or trusted individual.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md relative z-10">
+<!-- Bystander Name -->
+<div>
+<label class="label-clinical" for="bystander-name">Full Name</label>
+<input class="input-clinical" id="bystander-name" placeholder="John Doe" type="text"/>
+</div>
+<!-- Relationship -->
+<div>
+<label class="label-clinical" for="bystander-relationship">Relationship</label>
+<div class="relative">
+<select class="input-clinical appearance-none cursor-pointer" id="bystander-relationship">
+<option disabled="" selected="" value="">Select relationship</option>
+<option value="spouse">Spouse / Partner</option>
+<option value="parent">Parent</option>
+<option value="sibling">Sibling</option>
+<option value="friend">Friend</option>
+<option value="other">Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="md:col-span-2">
+<label class="label-clinical" for="bystander-phone">Contact Phone Number</label>
+<div class="flex relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant text-body-md font-body-md select-none">+1</span>
+<input class="input-clinical pl-[48px]" id="bystander-phone" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex justify-between items-center pt-md">
+<button onclick="window.history.back()" class="px-lg py-sm min-h-[48px] rounded-full border border-outline text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back
+                    </button>
+<button onclick="window.location.href='../client_dashboard/code.html'" class="px-lg py-sm min-h-[48px] rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-surface-tint shadow-md transition-all flex items-center gap-xs" type="button">
+                        Complete Registration
+                        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+</body></html>

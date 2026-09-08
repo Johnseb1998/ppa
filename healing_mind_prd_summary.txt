@@ -1,0 +1,17 @@
+# Healing Mind - PRD & Architecture Specification Summary
+
+## Core Objectives
+Dual-interface Telehealth & Clinical Practice Management for psychologists, admins, and clients.
+
+## Key Features
+- RBAC: Client (Phone/OTP), Therapist (Username/MFA), Admin (Passkey/OTP).
+- Calendar: 09:00 - 20:00, 45m slots + 15m buffer. Specific lunch/tea breaks.
+- Psychometrics: Automated scoring (BDI, BAI, ADHD, IQ, 16PF, NIMHANS).
+- AI Assistant: DSM-5/ICD-11 based triage and CBT psychoeducation.
+- Telehealth: Custom WebRTC video/chat with therapist status monitoring.
+- Progress Tracking: Homework completion logic (P = T - C) and accuracy score.
+
+## Dashboard Requirements
+- **Client:** Appointments, Task Action Center, Psychometric Portal, Health/Cycle Tracker.
+- **Therapist:** Schedule Grid, Practice Analytics, Clinical SOAP notes, Task Assigner.
+- **Admin:** Therapist Presence Monitor, Operations Metrics, Clinical Oversight, HR Module.

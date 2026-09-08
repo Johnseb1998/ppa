@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Executive Dashboard - Healing Mind</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"outline-variant": "#c2c6d3", "on-primary": "#ffffff", "on-tertiary-fixed": "#191c1d", "on-tertiary": "#ffffff", "primary-container": "#0d54a5", "on-secondary": "#ffffff", "tertiary-container": "#535657", error: "#ba1a1a", "secondary-container": "#ff716b", "on-secondary-container": "#70040e", "surface-tint": "#1f5daf", "on-background": "#330043", "secondary-fixed": "#ffdad7", "surface-bright": "#fff7fb", "on-tertiary-fixed-variant": "#454748", "on-error-container": "#93000a", "surface-dim": "#f8cbff", "secondary-fixed-dim": "#ffb3ae", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", outline: "#727783", "on-surface": "#330043", background: "#fff7fb", "error-container": "#ffdad6", "surface-container-highest": "#fbd7ff", "surface-container-high": "#fddfff", "surface-container": "#ffe6ff", "on-secondary-fixed-variant": "#8a1a1e", "inverse-on-surface": "#ffebfe", "primary-fixed-dim": "#aac7ff", "on-secondary-fixed": "#410004", "on-tertiary-container": "#cacbcc", "primary-fixed": "#d6e3ff", "tertiary-fixed-dim": "#c5c7c8", "on-surface-variant": "#424751", "tertiary-fixed": "#e1e3e4", surface: "#fff7fb", "surface-variant": "#fbd7ff", "on-primary-container": "#b1cbff", "surface-container-low": "#ffeffd", tertiary: "#3c3f40", "on-primary-fixed-variant": "#00458d", "on-primary-fixed": "#001b3e", secondary: "#ab3332", "inverse-primary": "#aac7ff", primary: "#003d7e", "inverse-surface": "#54006c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {lg: "24px", "margin-mobile": "16px", xs: "4px", xl: "48px", base: "8px", gutter: "24px", md: "16px", "margin-desktop": "40px", sm: "8px"}, fontFamily: {"headline-lg-mobile": ["Public Sans"], "body-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "body-sm": ["Public Sans"], "label-sm": ["Public Sans"], "display-lg": ["Public Sans"], "label-md": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased flex flex-col md:flex-row min-h-screen">
+<!-- Mobile Top App Bar -->
+<header class="md:hidden bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center w-full px-margin-mobile h-16 sticky top-0 z-40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary font-semibold">Clinical Sanctuary Admin</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="relative group">
+    <button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer active:scale-95 duration-150 p-2 rounded-full">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="absolute right-0 top-full mt-1 w-48 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-lg hidden group-hover:block z-50 overflow-hidden">
+        <div class="py-2 flex flex-col">
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a>
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">help</span>Help</a>
+            <div class="h-[1px] bg-outline-variant/30 my-1"></div>
+            <a href="../index.html" class="px-4 py-2 font-body-sm text-error hover:bg-error/10 flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">logout</span>Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+</header>
+<!-- Desktop SideNav (NavigationDrawer) -->
+<nav class="hidden md:flex flex-col h-screen w-[280px] bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline fixed left-0 top-0 py-lg gap-base shrink-0 z-40 overflow-y-auto">
+<!-- Header Profile -->
+<div class="px-lg pb-md mb-md border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover border-2 border-primary-container" data-alt="A professional headshot of a female clinical administrator in her 40s. She is wearing a tailored navy blue blazer over a crisp white shirt. Her expression is warm but authoritative. The background is a soft, blurred modern office environment with cool daylight lighting. The image conveys trust and medical professionalism within a clean corporate setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw7qhdH4b6D787ZU6rUqo082DGfctXa3eFUUNKrUhzgPWZmgGEezjScTY_S-rYLp53HYE6OLkP1ml8fO2ShTVCzPXBEb0y6E2KX_4-f1U09TTvxnqVA4z7zwCCy8T7u_i3pm5WGbLS_buNZlOnfQi49vrkJ_nEJNFIA4zTURdupf5BJRnln8UkhyeV7pbzFUG1J0ofW1raCwPhsfuBGZHRhNWGQbUZK5Z2gN3aSjl1fX20xyx7r6Mw"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Clinical Administrator</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Practice Oversight</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-1 px-4">
+<!-- Active: Executive Summary -->
+<a class="flex items-center gap-4 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-semibold rounded-r-full cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-body-md text-body-md">Executive Summary</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer duration-200 rounded-r-full" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-body-md text-body-md">Staff Directory</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer duration-200 rounded-r-full" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md">Revenue Reports</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors cursor-pointer duration-200 rounded-r-full" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-body-md text-body-md">System Configuration</span>
+</a>
+</div>
+<div class="mt-auto px-lg pt-md">
+<span class="font-label-sm text-label-sm text-outline">v2.4.0</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] p-margin-mobile md:p-margin-desktop pb-24 md:pb-margin-desktop overflow-x-hidden">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg gap-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Overview</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Healing Mind Practice Metrics</p>
+</div>
+<div class="hidden md:flex gap-3">
+<button class="h-12 px-6 rounded-lg bg-surface-container-low border border-outline-variant text-primary font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                    Export Report
+                </button>
+<div class="relative group flex items-center">
+    <button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-low border border-outline-variant text-primary hover:bg-surface-container transition-colors active:scale-95">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="absolute right-0 top-full mt-2 w-48 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-lg hidden group-hover:block z-50 overflow-hidden">
+        <div class="py-2 flex flex-col">
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a>
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">help</span>Help</a>
+            <div class="h-[1px] bg-outline-variant/30 my-1"></div>
+            <a href="../index.html" class="px-4 py-2 font-body-sm text-error hover:bg-error/10 flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">logout</span>Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-lg">
+<!-- Key Metric: Total Therapists -->
+<div class="md:col-span-4 bg-surface rounded-lg p-md border border-surface-variant shadow-sm flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Total Active Therapists</span>
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">24</div>
+<div class="font-label-sm text-label-sm text-outline mt-1">Across 3 physical locations</div>
+</div>
+</div>
+<!-- Key Metric: Revenue Growth -->
+<div class="md:col-span-4 bg-surface rounded-lg p-md border border-surface-variant shadow-sm flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Monthly Revenue Growth</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-primary">+15%</div>
+<div class="font-label-sm text-label-sm text-outline mt-1">Compared to last month</div>
+</div>
+</div>
+<!-- Key Metric: Client Satisfaction -->
+<div class="md:col-span-4 bg-surface rounded-lg p-md border border-surface-variant shadow-sm flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Client Satisfaction</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">sentiment_very_satisfied</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">4.8<span class="text-headline-md text-outline">/5</span></div>
+<div class="font-label-sm text-label-sm text-outline mt-1">Based on 142 recent surveys</div>
+</div>
+</div>
+</div>
+<!-- Secondary Section Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Live Status: Therapist Presence -->
+<div class="lg:col-span-7 bg-surface border border-surface-variant rounded-lg p-lg shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">record_voice_over</span>
+                        Therapist Presence
+                    </h2>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Live
+                    </span>
+</div>
+<div class="flex flex-col items-center justify-center py-8 bg-surface-container-lowest rounded-lg border border-dashed border-outline-variant mb-6">
+<span class="font-display-lg text-display-lg text-primary">12</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Sessions in Progress</span>
+</div>
+<!-- Recent Activity List -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-lowest transition-colors group cursor-pointer border border-transparent hover:border-surface-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-md">DR</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Dr. Sarah Jenkins</p>
+<p class="font-label-sm text-label-sm text-outline">CBT Session • Started 15m ago</p>
+</div>
+</div>
+<span class="w-3 h-3 rounded-full bg-primary" title="In Session"></span>
+</div>
+<div class="h-[1px] w-full bg-surface-variant"></div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-lowest transition-colors group cursor-pointer border border-transparent hover:border-surface-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-label-md">MK</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Michael Kim, LCSW</p>
+<p class="font-label-sm text-label-sm text-outline">Intake • Started 5m ago</p>
+</div>
+</div>
+<span class="w-3 h-3 rounded-full bg-primary" title="In Session"></span>
+</div>
+</div>
+</div>
+<!-- Action Items -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div class="bg-surface border border-surface-variant rounded-lg p-lg shadow-sm flex-1">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">fact_check</span>
+                        Action Items
+                    </h2>
+<div class="flex flex-col gap-4">
+<!-- Alert Item 1 -->
+<div class="bg-error-container/30 border border-error/20 p-4 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1">warning</span>
+<div class="flex-1">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">Pending HR Approvals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">3 new clinician background checks require review.</p>
+</div>
+<button class="h-8 px-3 text-primary font-label-sm text-label-sm border border-primary rounded hover:bg-primary-container/20 transition-colors">Review</button>
+</div>
+<!-- Alert Item 2 -->
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">assignment</span>
+<div class="flex-1">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">Clinical Audits Due</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Quarterly chart reviews for Q2 are due in 5 days.</p>
+</div>
+<button class="h-8 px-3 text-primary font-label-sm text-label-sm border border-primary rounded hover:bg-primary-container/20 transition-colors">Start</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Client Registrations Section -->
+<div class="mt-gutter bg-surface border border-surface-variant rounded-lg p-lg shadow-sm">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">person_add</span>
+            Recent Client Registrations
+        </h2>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="border-b border-surface-variant text-on-surface-variant font-label-md text-label-md">
+                    <th class="py-3 px-4 font-semibold">ID</th>
+                    <th class="py-3 px-4 font-semibold">Name</th>
+                    <th class="py-3 px-4 font-semibold">Age</th>
+                    <th class="py-3 px-4 font-semibold">Gender</th>
+                    <th class="py-3 px-4 font-semibold">Booking Status</th>
+                    <th class="py-3 px-4 font-semibold">Therapist Name</th>
+                </tr>
+            </thead>
+            <tbody id="registrationsTableBody" class="text-body-sm font-body-sm text-on-surface">
+                <!-- Data populated by JS -->
+                <tr>
+                    <td colspan="6" class="py-6 text-center text-on-surface-variant">No recent registrations found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Therapist Details Section -->
+<div class="mt-gutter bg-surface border border-surface-variant rounded-lg p-lg shadow-sm">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">medical_information</span>
+            Therapist Details Directory
+        </h2>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="border-b border-surface-variant text-on-surface-variant font-label-md text-label-md">
+                    <th class="py-3 px-4 font-semibold">Therapist Name</th>
+                    <th class="py-3 px-4 font-semibold">Qualification</th>
+                    <th class="py-3 px-4 font-semibold">Experience</th>
+                    <th class="py-3 px-4 font-semibold">Expertise Areas</th>
+                    <th class="py-3 px-4 font-semibold">Status</th>
+                </tr>
+            </thead>
+            <tbody id="therapistsTableBody" class="text-body-sm font-body-sm text-on-surface">
+                <!-- Data populated by JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</main>
+<script>
+    // Fetch users from local storage and populate the admin table
+    document.addEventListener('DOMContentLoaded', () => {
+        const tbody = document.getElementById('registrationsTableBody');
+        try {
+            const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+            
+            // Filter clients (assuming admin and therapists are also in this DB but we want to show new clients)
+            const clients = Object.entries(users)
+                .filter(([id, user]) => user.role === 'client')
+                .sort((a, b) => new Date(b[1].registrationDate || 0) - new Date(a[1].registrationDate || 0)); // Newest first
+
+            if (clients.length > 0) {
+                tbody.innerHTML = ''; // clear empty state
+                clients.forEach(([phoneId, client]) => {
+                    const tr = document.createElement('tr');
+                    tr.className = 'border-b border-surface-variant/50 hover:bg-surface-container-lowest transition-colors cursor-pointer';
+                    tr.onclick = () => { window.location.href = '../admin_client_case_history_review/code.html?id=' + (client.clientId || '10001'); };
+                    
+                    const clientId = client.clientId || '10001';
+                    
+                    // Calculate Age
+                    let age = 'N/A';
+                    if (client.dob) {
+                        const dob = new Date(client.dob);
+                        const diff = Date.now() - dob.getTime();
+                        age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+                    }
+                    
+                    const gender = client.gender || client.sex || 'N/A';
+                    
+                    // Mock booking status based on data
+                    let bookingStatus = 'Pending';
+                    let therapistName = '--';
+                    
+                    const upcStr = localStorage.getItem('upcomingAppointment');
+                    if (upcStr) {
+                        try {
+                            const upc = JSON.parse(upcStr);
+                            bookingStatus = 'Confirmed';
+                            therapistName = 'Dr. ' + upc.therapist;
+                        } catch(e){}
+                    }
+                    
+                    // Color code status
+                    const statusColors = { 'Pending': 'bg-yellow-500', 'Confirmed': 'bg-green-500', 'Completed': 'bg-primary' };
+                    const color = statusColors[bookingStatus] || 'bg-outline';
+
+                    tr.innerHTML = `
+                        <td class="py-3 px-4 font-medium">${clientId}</td>
+                        <td class="py-3 px-4 font-medium text-primary">${client.name || 'Unknown'}</td>
+                        <td class="py-3 px-4">${age}</td>
+                        <td class="py-3 px-4 capitalize">${gender}</td>
+                        <td class="py-3 px-4">
+                            <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container text-xs font-medium">
+                                <span class="w-2 h-2 rounded-full ${color}"></span>
+                                ${bookingStatus}
+                            </span>
+                        </td>
+                        <td class="py-3 px-4 text-outline">${therapistName}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+        } catch (e) {
+            console.error("Error loading registrations", e);
+        }
+
+        // Populate Therapist Details Table
+        const therapistTbody = document.getElementById('therapistsTableBody');
+        const therapists = [
+            { name: "John Sebastian", exp: "5 years", expertise: "Anxiety, Depression, PTSD, Stress, Relationships" },
+            { name: "Goodwin", exp: "8 years", expertise: "Addiction, Trauma, Grief, Anger Management, Phobias" },
+            { name: "Sara", exp: "12 years", expertise: "Couples Therapy, Family Therapy, Child Psychology, Eating Disorders, OCD" },
+            { name: "Anu", exp: "3 years", expertise: "Career Counseling, Life Transitions, Self-Esteem, Sleep Issues, Mindfulness" },
+            { name: "Sneha", exp: "15 years", expertise: "Bipolar Disorder, BPD, Psychosis, Severe Depression, Chronic Pain" },
+            { name: "Arun", exp: "6 years", expertise: "LGBTQ+ Issues, Identity, Sexual Health, Intimacy, Trauma" },
+            { name: "Abhi", exp: "10 years", expertise: "Men's Issues, Anger Management, Career Stress, Substance Abuse, PTSD" },
+            { name: "Akhil", exp: "4 years", expertise: "Sports Psychology, Performance Anxiety, Motivation, Goal Setting, Injury Recovery" },
+            { name: "Alan", exp: "7 years", expertise: "Adolescent Psychology, Bullying, Academic Stress, Peer Pressure, Family Dynamics" },
+            { name: "Paru", exp: "9 years", expertise: "Women's Issues, Postpartum Depression, Fertility Issues, Menopause, Work-Life Balance" },
+            { name: "Reshma", exp: "11 years", expertise: "Geriatric Psychology, Dementia Care, Aging Anxiety, Grief, Chronic Illness" },
+            { name: "Akash", exp: "5 years", expertise: "ADHD, Autism Spectrum, Learning Disabilities, Behavioral Issues, Parenting" }
+        ];
+
+        therapistTbody.innerHTML = '';
+        therapists.forEach(therapist => {
+            const tr = document.createElement('tr');
+            tr.className = 'border-b border-surface-variant/50 hover:bg-surface-container-lowest transition-colors';
+            
+            // Randomize status for UI realism
+            const statuses = ['Active', 'In Session', 'Offline'];
+            const statusColors = {'Active': 'bg-green-500', 'In Session': 'bg-primary', 'Offline': 'bg-gray-400'};
+            const status = statuses[Math.floor(Math.random() * statuses.length)];
+            const colorClass = statusColors[status];
+
+            tr.innerHTML = `
+                <td class="py-3 px-4 font-medium text-primary">Dr. ${therapist.name}</td>
+                <td class="py-3 px-4">Master in Psychology</td>
+                <td class="py-3 px-4">${therapist.exp}</td>
+                <td class="py-3 px-4 text-outline text-xs">${therapist.expertise}</td>
+                <td class="py-3 px-4">
+                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container text-xs font-medium">
+                        <span class="w-2 h-2 rounded-full ${colorClass}"></span>
+                        ${status}
+                    </span>
+                </td>
+            `;
+            therapistTbody.appendChild(tr);
+        });
+
+    });
+</script>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-md">
+<!-- Active Tab: Overview (Closest intent to Executive Summary) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Overview</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-sm text-label-sm mt-1">Therapists</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-sm text-label-sm mt-1">Metrics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

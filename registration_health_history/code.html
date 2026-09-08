@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Health History - Healing Mind</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"error-container": "#ffdad6", outline: "#727783", "primary-fixed-dim": "#aac7ff", "on-background": "#330043", primary: "#003d7e", "on-surface": "#330043", "on-primary-container": "#b1cbff", background: "#fff7fb", "surface-tint": "#1f5daf", "primary-container": "#0d54a5", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#410004", "inverse-surface": "#54006c", surface: "#fff7fb", "surface-container-low": "#ffeffd", "inverse-primary": "#aac7ff", "secondary-fixed": "#ffdad7", "surface-container": "#ffe6ff", "surface-variant": "#fbd7ff", "secondary-fixed-dim": "#ffb3ae", "inverse-on-surface": "#ffebfe", "outline-variant": "#c2c6d3", "on-tertiary-container": "#cacbcc", "on-surface-variant": "#424751", "on-primary": "#ffffff", "on-error": "#ffffff", "surface-dim": "#f8cbff", "on-primary-fixed-variant": "#00458d", secondary: "#ab3332", "secondary-container": "#ff716b", "tertiary-fixed": "#e1e3e4", error: "#ba1a1a", "on-error-container": "#93000a", "on-primary-fixed": "#001b3e", "on-secondary": "#ffffff", "on-secondary-container": "#70040e", "tertiary-fixed-dim": "#c5c7c8", "on-tertiary-fixed": "#191c1d", tertiary: "#3c3f40", "surface-container-high": "#fddfff", "on-tertiary-fixed-variant": "#454748", "surface-container-highest": "#fbd7ff", "primary-fixed": "#d6e3ff", "on-secondary-fixed-variant": "#8a1a1e", "on-tertiary": "#ffffff", "surface-bright": "#fff7fb", "tertiary-container": "#535657"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xl: "48px", xs: "4px", gutter: "24px", md: "16px", sm: "8px", base: "8px", lg: "24px", "margin-mobile": "16px", "margin-desktop": "40px"}, fontFamily: {"body-lg": ["Public Sans"], "body-sm": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "label-md": ["Public Sans"], "display-lg": ["Public Sans"], "label-sm": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9ff; }
+        .form-checkbox { accent-color: #005da7; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<!-- Top Navigation Anchor (Suppressed standard nav for linear flow) -->
+<header class="w-full max-w-full bg-surface flex justify-center items-center px-gutter py-md sticky top-0 z-10 border-b border-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="clinical_notes">clinical_notes</span>
+<h1 class="text-headline-md font-headline-md text-primary font-bold">Healing Mind</h1>
+</div>
+</header>
+<main class="w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-xl">
+<!-- Progress Bar -->
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-sm">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Step 3 of 4</span>
+<span class="text-label-sm font-label-sm text-primary font-semibold">Clinical Health History</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 rounded-full transition-all duration-500 ease-in-out"></div>
+</div>
+</div>
+<div class="mb-lg">
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface mb-xs">Medical Background</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Please provide details about your medical history to help us tailor your care.</p>
+</div>
+<form class="space-y-lg">
+<!-- Chronic Conditions -->
+<section class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-surface-container-low shadow-[0px_4px_12px_rgba(26,37,48,0.04)]">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="monitor_heart">monitor_heart</span>
+                    Chronic Conditions
+                </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<label class="flex items-start gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox mt-1 h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<div>
+<span class="text-body-md font-body-md text-on-surface block">Blood Pressure (BP)</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Hypertension or Hypotension</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox mt-1 h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<div>
+<span class="text-body-md font-body-md text-on-surface block">Diabetes</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Type 1, Type 2, or Pre-diabetes</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox mt-1 h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<div>
+<span class="text-body-md font-body-md text-on-surface block">Cholesterol</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">High cholesterol levels</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox mt-1 h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<div>
+<span class="text-body-md font-body-md text-on-surface block">Thyroid Issues</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Hyperthyroidism or Hypothyroidism</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Major Events -->
+<section class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-surface-container-low shadow-[0px_4px_12px_rgba(26,37,48,0.04)]">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="local_hospital">local_hospital</span>
+                    Major Medical Events
+                </h3>
+<div class="space-y-sm">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Major Surgery</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Traumatic Brain Injury (TBI)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Epilepsy / Seizures</span>
+</label>
+</div>
+</section>
+<!-- Family History -->
+<section class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-surface-container-low shadow-[0px_4px_12px_rgba(26,37,48,0.04)]">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="family_history">family_history</span>
+                    Family History
+                </h3>
+<div class="space-y-sm">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">History of Genetic Illnesses</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 focus:ring-offset-1" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Family History of Mental Illness</span>
+</label>
+</div>
+</section>
+<!-- Actions -->
+<div class="pt-lg flex flex-col-reverse sm:flex-row justify-end gap-md">
+<button onclick="window.history.back()" class="h-12 px-6 rounded-full border border-primary text-primary text-label-md font-label-md hover:bg-surface-container-low transition-colors flex items-center justify-center" type="button">
+                    Back
+                </button>
+<button onclick="window.location.href='../registration_family_context/code.html'" class="h-12 px-6 rounded-full bg-primary text-on-primary text-label-md font-label-md hover:bg-surface-tint shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2" type="button">
+                    Continue to Step 4
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</main>
+</body></html>

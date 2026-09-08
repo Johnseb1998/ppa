@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Sanctuary Admin - Metrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"outline-variant": "#c2c6d3", "on-primary": "#ffffff", "on-tertiary-fixed": "#191c1d", "on-tertiary": "#ffffff", "primary-container": "#0d54a5", "on-secondary": "#ffffff", "tertiary-container": "#535657", error: "#ba1a1a", "secondary-container": "#ff716b", "on-secondary-container": "#70040e", "surface-tint": "#1f5daf", "on-background": "#330043", "secondary-fixed": "#ffdad7", "surface-bright": "#fff7fb", "on-tertiary-fixed-variant": "#454748", "on-error-container": "#93000a", "surface-dim": "#f8cbff", "secondary-fixed-dim": "#ffb3ae", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", outline: "#727783", "on-surface": "#330043", background: "#fff7fb", "error-container": "#ffdad6", "surface-container-highest": "#fbd7ff", "surface-container-high": "#fddfff", "surface-container": "#ffe6ff", "on-secondary-fixed-variant": "#8a1a1e", "inverse-on-surface": "#ffebfe", "primary-fixed-dim": "#aac7ff", "on-secondary-fixed": "#410004", "on-tertiary-container": "#cacbcc", "primary-fixed": "#d6e3ff", "tertiary-fixed-dim": "#c5c7c8", "on-surface-variant": "#424751", "tertiary-fixed": "#e1e3e4", surface: "#fff7fb", "surface-variant": "#fbd7ff", "on-primary-container": "#b1cbff", "surface-container-low": "#ffeffd", tertiary: "#3c3f40", "on-primary-fixed-variant": "#00458d", "on-primary-fixed": "#001b3e", secondary: "#ab3332", "inverse-primary": "#aac7ff", primary: "#003d7e", "inverse-surface": "#54006c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {lg: "24px", "margin-mobile": "16px", xs: "4px", xl: "48px", base: "8px", gutter: "24px", md: "16px", "margin-desktop": "40px", sm: "8px"}, fontFamily: {"headline-lg-mobile": ["Public Sans"], "body-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "body-sm": ["Public Sans"], "label-sm": ["Public Sans"], "display-lg": ["Public Sans"], "label-md": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md">
+<!-- Navigation Drawer (Desktop) -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-[280px] bg-surface border-r border-outline-variant py-lg gap-base z-40">
+<div class="px-md pb-md border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Admin Profile Photo" class="w-full h-full object-cover" data-alt="A professional headshot of a clinical administrator in a modern, well-lit medical office. The lighting is soft and natural, emphasizing a calm, trustworthy demeanor. The color palette features light grays, whites, and subtle blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMLid83FbhhvpF7c4sPXHAboK5y1dTVl5qSPv6uAeEKnQSRVUgMtRB1Gt7eQFor5aqhHbYRjsglidmgdnUMsQAtRKRqtVrTHVdHHbYhUXFVd0JdeNeDMg1P6mLGdmcb-P_GhGBSwPJFCDcaT_p7-zVIFXt4jykxbgAwMNZNDuzWj_XFQA4zDXOj50eLpWci12KfHvjuH9xvSdjcpfRTdQ8KBaAx7bl2vKYy68n8FbsijXNBDnGgKPK"/>
+</div>
+<div>
+<h2 class="font-body-md text-body-md font-semibold text-primary">Clinical Administrator</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Practice Oversight</p>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-sm">v2.4.0</p>
+</div>
+<div class="flex flex-col gap-sm pr-md">
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-body-md text-body-md">Executive Summary</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-body-md text-body-md">Staff Directory</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm bg-secondary-container text-on-secondary-container font-semibold rounded-r-full cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined filled">analytics</span>
+<span class="font-body-md text-body-md">Metrics</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md">Revenue Reports</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-body-md text-body-md">System Configuration</span>
+</a>
+</div>
+</nav>
+<!-- Top App Bar (Desktop) -->
+<header class="hidden md:flex justify-between items-center w-full px-margin-desktop h-16 bg-surface border-b border-outline-variant fixed top-0 left-0 w-full z-30 ml-[280px]" style="width: calc(100% - 280px);">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-150">clinical_notes</span>
+<h1 class="font-headline-md text-headline-md text-primary font-semibold">Clinical Sanctuary Admin</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 duration-150 p-sm rounded-full">notifications</span>
+</div>
+</header>
+<!-- Top App Bar (Mobile) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile h-16 bg-surface border-b border-outline-variant fixed top-0 left-0 z-30">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-150">clinical_notes</span>
+<h1 class="font-headline-md text-headline-md text-primary font-semibold truncate">Clinical Sanctuary</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant p-sm rounded-full cursor-pointer active:scale-95 duration-150">notifications</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-20 md:pt-24 pb-24 md:pb-12 px-margin-mobile md:px-margin-desktop md:ml-[280px] max-w-7xl mx-auto">
+<div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Quality Assurance Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitoring practice-wide clinical outcomes and operational fidelity.</p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-surface border border-outline-variant text-primary font-label-md text-label-md px-md py-sm rounded-lg flex items-center gap-sm hover:bg-surface-container-low transition-colors min-h-[48px]">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                    Last 30 Days
+                </button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-lg flex items-center gap-sm hover:bg-surface-tint transition-colors shadow-sm min-h-[48px]">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export
+                </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg auto-rows-min">
+<!-- Key Metric: BDI Improvement -->
+<div class="md:col-span-8 bg-surface border border-outline-variant rounded-xl p-lg relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 right-0 p-md">
+<span class="material-symbols-outlined text-primary opacity-20 text-[64px]">trending_down</span>
+</div>
+<div>
+<div class="flex items-center gap-sm mb-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">psychiatry</span>
+<h3 class="font-body-md text-body-md">Practice-Wide Psychometric Trends</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mb-lg">Average change in Beck Depression Inventory (BDI-II) scores from intake to session 6 across all active treatment plans.</p>
+</div>
+<div class="flex items-end gap-md">
+<div class="font-display-lg text-display-lg text-primary tracking-tight">-12.4 <span class="font-headline-md text-headline-md text-on-surface-variant">pts</span></div>
+<div class="bg-primary-container/20 text-primary-container px-sm py-xs rounded flex items-center gap-xs font-label-sm text-label-sm mb-sm">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+                        1.2 points better than benchmark
+                    </div>
+</div>
+<div class="mt-lg h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between mt-sm font-label-sm text-label-sm text-on-surface-variant">
+<span>Baseline Average: 28.1 (Moderate-Severe)</span>
+<span>Current Average: 15.7 (Mild)</span>
+</div>
+</div>
+<!-- Audit Alerts (High Priority) -->
+<div class="md:col-span-4 bg-error-container/30 border border-error/20 rounded-xl p-lg flex flex-col">
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-sm text-error">
+<span class="material-symbols-outlined filled text-[20px]">warning</span>
+<h3 class="font-headline-md text-headline-md text-error">Audit Alerts</h3>
+</div>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full">3 High Risk</span>
+</div>
+<div class="flex flex-col gap-sm flex-grow overflow-y-auto">
+<!-- Alert Item -->
+<div class="bg-surface rounded-lg p-sm border border-outline-variant flex gap-sm">
+<div class="w-2 h-2 rounded-full bg-error mt-1.5 flex-shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Missed Suicidality Screen</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Patient ID: 4920 • Dr. L. Barnes</p>
+<button class="text-primary font-label-sm text-label-sm mt-xs hover:underline">Review Chart</button>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="bg-surface rounded-lg p-sm border border-outline-variant flex gap-sm">
+<div class="w-2 h-2 rounded-full bg-error mt-1.5 flex-shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Overdue Peer Review</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Treatment Plan &gt; 90 days</p>
+<button class="text-primary font-label-sm text-label-sm mt-xs hover:underline">Assign Reviewer</button>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="bg-surface rounded-lg p-sm border border-outline-variant flex gap-sm">
+<div class="w-2 h-2 rounded-full bg-tertiary mt-1.5 flex-shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Note Deficit &gt; 48hrs</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Dr. J. Smith • 3 Sessions Pending</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinical Note Completion -->
+<div class="md:col-span-6 bg-surface border border-outline-variant rounded-xl p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Note Completion Fidelity</h3>
+<span class="material-symbols-outlined text-outline">description</span>
+</div>
+<div class="flex items-center gap-lg">
+<!-- Progress Ring Representation -->
+<div class="relative w-24 h-24 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-surface-container-highest" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="12" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">
+                            88%
+                        </div>
+</div>
+<div class="flex flex-col gap-sm w-full">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Completed within 24h</span>
+<span class="font-medium">88%</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Completed within 48h</span>
+<span class="font-medium">95%</span>
+</div>
+<div class="flex justify-between text-body-sm text-error">
+<span>Deficient (&gt;72h)</span>
+<span class="font-medium">5%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- No-Show Analytics -->
+<div class="md:col-span-6 bg-surface border border-outline-variant rounded-xl p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Appointment Adherence</h3>
+<span class="material-symbols-outlined text-outline">event_busy</span>
+</div>
+<div class="flex flex-col h-full justify-between">
+<div class="flex items-end gap-sm mb-lg">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">8.4%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-1">No-Show / Late Cancel Rate</span>
+</div>
+<!-- Simple Bar Chart Representation -->
+<div class="flex items-end gap-sm h-24 mt-auto">
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-surface-container-highest rounded-t-sm h-12"></div>
+<span class="font-label-sm text-label-sm text-outline">Mon</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-surface-container-highest rounded-t-sm h-16"></div>
+<span class="font-label-sm text-label-sm text-outline">Tue</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-surface-container-highest rounded-t-sm h-8"></div>
+<span class="font-label-sm text-label-sm text-outline">Wed</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary/40 rounded-t-sm h-20 relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-surface border border-outline-variant px-2 py-0.5 rounded text-xs font-semibold shadow-sm">Peak</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Thu</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-surface-container-highest rounded-t-sm h-14"></div>
+<span class="font-label-sm text-label-sm text-outline">Fri</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface border-t border-outline-variant shadow-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Overview</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-sm text-label-sm mt-1">Therapists</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined filled">analytics</span>
+<span class="font-label-sm text-label-sm mt-1 font-semibold">Metrics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

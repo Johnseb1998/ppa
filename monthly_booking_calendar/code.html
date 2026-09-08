@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monthly Schedule - Clinical Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"inverse-primary": "#aac7ff", "on-surface": "#330043", "secondary-container": "#ff716b", "on-primary-fixed-variant": "#00458d", "on-primary-container": "#b1cbff", "on-primary-fixed": "#001b3e", "surface-bright": "#fff7fb", "primary-container": "#0d54a5", "error-container": "#ffdad6", "inverse-on-surface": "#ffebfe", primary: "#003d7e", outline: "#727783", "on-tertiary-fixed-variant": "#454748", "tertiary-fixed-dim": "#c5c7c8", "surface-container-high": "#fddfff", "surface-container-low": "#ffeffd", "surface-container": "#ffe6ff", "secondary-fixed": "#ffdad7", "primary-fixed-dim": "#aac7ff", "on-error-container": "#93000a", secondary: "#ab3332", "on-surface-variant": "#424751", surface: "#fff7fb", "surface-container-lowest": "#ffffff", "on-secondary-container": "#70040e", "on-tertiary-fixed": "#191c1d", "on-tertiary-container": "#cacbcc", "tertiary-container": "#535657", "on-background": "#330043", "tertiary-fixed": "#e1e3e4", "primary-fixed": "#d6e3ff", "surface-dim": "#f8cbff", "on-secondary-fixed-variant": "#8a1a1e", tertiary: "#3c3f40", "on-primary": "#ffffff", "surface-tint": "#1f5daf", "surface-variant": "#fbd7ff", "secondary-fixed-dim": "#ffb3ae", background: "#fff7fb", "surface-container-highest": "#fbd7ff", "inverse-surface": "#54006c", "on-tertiary": "#ffffff", "outline-variant": "#c2c6d3", "on-secondary-fixed": "#410004", error: "#ba1a1a", "on-error": "#ffffff", "on-secondary": "#ffffff"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-mobile": "16px", xl: "48px", "margin-desktop": "40px", md: "16px", sm: "8px", base: "8px", gutter: "24px", xs: "4px", lg: "24px"}, fontFamily: {"label-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "body-lg": ["Public Sans"], "display-lg": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "body-sm": ["Public Sans"], "headline-lg": ["Public Sans"], "headline-md": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col pb-24 md:pb-0 pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface dark:bg-surface-container-low w-full">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a therapist in a brightly lit, modern clinical office setting. Soft, natural light illuminates their face, conveying empathy and trust. Modern, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2HIXaVXimRQoZZcjdN5rKIqVBmuKzFBa8DoELnYvTcCGC0MhP4vRT4tAKrAEzxjfmgzaLDss63Q8R_8kHU9-ErBPQuIffP6FcJyAzcXvkNuIfS2jWMPcLnGE-SyZ_fnXLYkPEkst5g1FZeQW3s8MhTP231jtEToRSm09gvhq-hb2E5uK7udBZBraiRpQ_5dGb-9ve4JHwb0R2tKG9kOqORTYGbrFCIJUrQeoebb5IfpUt42y6mPik"/>
+<h1 class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed-dim">Clinical Sanctuary</h1>
+</div>
+<div class="hidden md:flex gap-6 items-center flex-1 justify-center">
+<!-- Desktop Nav -->
+<a class="text-primary dark:text-primary-fixed-dim font-bold flex flex-col items-center" href="#">
+<span class="material-symbols-outlined fill text-2xl">calendar_today</span>
+<span class="font-label-md text-label-md mt-1">Schedule</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex flex-col items-center rounded-lg p-2 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+<span class="font-label-md text-label-md mt-1">Analytics</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex flex-col items-center rounded-lg p-2 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl">groups</span>
+<span class="font-label-md text-label-md mt-1">Clients</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex flex-col items-center rounded-lg p-2 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl">assignment</span>
+<span class="font-label-md text-label-md mt-1">Tasks</span>
+</a>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-4">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Monthly Schedule</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">October 2023</p>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+<button class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors min-h-[48px]">
+<span class="material-symbols-outlined">today</span>
+                    Daily View
+                </button>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low min-h-[48px] min-w-[48px] flex items-center justify-center"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low min-h-[48px] min-w-[48px] flex items-center justify-center"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden mb-lg">
+<div class="grid grid-cols-7 border-b border-outline-variant bg-surface-container-low">
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">SUN</div>
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">MON</div>
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">TUE</div>
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">WED</div>
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">THU</div>
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">FRI</div>
+<div class="py-sm text-center font-label-sm text-label-sm text-on-surface-variant">SAT</div>
+</div>
+<div class="grid grid-cols-7 auto-rows-fr h-[600px] md:h-[700px]">
+<!-- Previous Month Days -->
+<div class="border-r border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">24</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">25</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">26</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">27</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">28</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">29</span>
+</div>
+<div class="border-b border-outline-variant/50 p-sm opacity-50 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">30</span>
+</div>
+<!-- Current Month Days -->
+<!-- Fully Booked -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative bg-[#e6f4ea] hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">1</span>
+<div class="absolute bottom-2 left-2 right-2 flex justify-center">
+<span class="font-label-sm text-label-sm text-[#137333] hidden md:block">8/8 Booked</span>
+<div class="w-2 h-2 rounded-full bg-[#137333] md:hidden"></div>
+</div>
+</div>
+<!-- Partially Booked -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative bg-[#fef7e0] hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">2</span>
+<div class="absolute bottom-2 left-2 right-2 flex justify-center">
+<span class="font-label-sm text-label-sm text-[#b06000] hidden md:block">5/8 Booked</span>
+<div class="w-2 h-2 rounded-full bg-[#b06000] md:hidden"></div>
+</div>
+</div>
+<!-- Available/Empty -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm text-on-surface">3</span>
+</div>
+<!-- Fully Booked -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative bg-[#e6f4ea] hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">4</span>
+<div class="absolute bottom-2 left-2 right-2 flex justify-center">
+<span class="font-label-sm text-label-sm text-[#137333] hidden md:block">8/8 Booked</span>
+<div class="w-2 h-2 rounded-full bg-[#137333] md:hidden"></div>
+</div>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm text-on-surface">5</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm text-on-surface">6</span>
+</div>
+<div class="border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow bg-surface-container-low opacity-75">
+<span class="font-body-sm text-body-sm text-on-surface-variant">7</span>
+</div>
+<!-- Row 3 -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative bg-surface-container-low opacity-75">
+<span class="font-body-sm text-body-sm text-on-surface-variant">8</span>
+</div>
+<!-- Partially Booked -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative bg-[#fef7e0] hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">9</span>
+<div class="absolute bottom-2 left-2 right-2 flex justify-center">
+<span class="font-label-sm text-label-sm text-[#b06000] hidden md:block">2/8 Booked</span>
+<div class="w-2 h-2 rounded-full bg-[#b06000] md:hidden"></div>
+</div>
+</div>
+<!-- Fully Booked -->
+<div class="border-r border-b border-outline-variant/50 p-sm relative bg-[#e6f4ea] hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">10</span>
+<div class="absolute bottom-2 left-2 right-2 flex justify-center">
+<span class="font-label-sm text-label-sm text-[#137333] hidden md:block">8/8 Booked</span>
+<div class="w-2 h-2 rounded-full bg-[#137333] md:hidden"></div>
+</div>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm text-on-surface">11</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm text-on-surface">12</span>
+</div>
+<div class="border-r border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow">
+<span class="font-body-sm text-body-sm text-on-surface">13</span>
+</div>
+<div class="border-b border-outline-variant/50 p-sm relative hover:ring-2 hover:ring-primary hover:z-10 transition-shadow bg-surface-container-low opacity-75">
+<span class="font-body-sm text-body-sm text-on-surface-variant">14</span>
+</div>
+<!-- More generic days to fill grid... -->
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">15</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">16</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">17</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">18</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">19</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">20</span></div>
+<div class="border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">21</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">22</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">23</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">24</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">25</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">26</span></div>
+<div class="border-r border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">27</span></div>
+<div class="border-b border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">28</span></div>
+<div class="border-r border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">29</span></div>
+<div class="border-r border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">30</span></div>
+<div class="border-r border-outline-variant/50 p-sm"><span class="font-body-sm text-body-sm">31</span></div>
+<div class="border-r border-outline-variant/50 p-sm opacity-50 bg-surface-container-low"><span class="font-body-sm text-body-sm text-on-surface-variant">1</span></div>
+<div class="border-r border-outline-variant/50 p-sm opacity-50 bg-surface-container-low"><span class="font-body-sm text-body-sm text-on-surface-variant">2</span></div>
+<div class="border-r border-outline-variant/50 p-sm opacity-50 bg-surface-container-low"><span class="font-body-sm text-body-sm text-on-surface-variant">3</span></div>
+<div class="p-sm opacity-50 bg-surface-container-low"><span class="font-body-sm text-body-sm text-on-surface-variant">4</span></div>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center gap-6 justify-center md:justify-start">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-[#e6f4ea] border border-[#137333]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fully Booked</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-[#fef7e0] border border-[#b06000]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Partially Booked</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-surface-container-lowest border border-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Available</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface-container-low shadow-sm pb-safe">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-4 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined fill text-2xl mb-1">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">monitoring</span>
+<span class="font-label-sm text-label-sm">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">groups</span>
+<span class="font-label-sm text-label-sm">Clients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+</nav>
+</body></html>

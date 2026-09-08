@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healing Mind - Client Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary": "#ffffff", "on-surface-variant": "#424751", "on-primary": "#ffffff", secondary: "#ab3332", "on-primary-fixed-variant": "#00458d", "primary-fixed": "#d6e3ff", "on-secondary-fixed": "#410004", "on-tertiary-fixed-variant": "#454748", "inverse-primary": "#aac7ff", "surface-tint": "#1f5daf", "on-surface": "#330043", "on-error-container": "#93000a", error: "#ba1a1a", "secondary-fixed": "#ffdad7", "on-tertiary-fixed": "#191c1d", "tertiary-container": "#535657", "on-secondary-fixed-variant": "#8a1a1e", "error-container": "#ffdad6", background: "#fff7fb", "surface-container-high": "#fddfff", "on-secondary": "#ffffff", "on-background": "#330043", "primary-container": "#0d54a5", tertiary: "#3c3f40", "on-error": "#ffffff", "surface-bright": "#fff7fb", "surface-container-low": "#ffeffd", "secondary-container": "#ff716b", "on-primary-container": "#b1cbff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#fbd7ff", "surface-container": "#ffe6ff", "tertiary-fixed": "#e1e3e4", "inverse-on-surface": "#ffebfe", "surface-variant": "#fbd7ff", outline: "#727783", "inverse-surface": "#54006c", "on-primary-fixed": "#001b3e", "on-secondary-container": "#70040e", "primary-fixed-dim": "#aac7ff", "on-tertiary-container": "#cacbcc", surface: "#fff7fb", primary: "#003d7e", "surface-dim": "#f8cbff", "outline-variant": "#c2c6d3", "secondary-fixed-dim": "#ffb3ae", "tertiary-fixed-dim": "#c5c7c8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xl: "48px", base: "8px", gutter: "24px", sm: "8px", "margin-desktop": "40px", xs: "4px", lg: "24px", "margin-mobile": "16px", md: "16px"}, fontFamily: {"label-sm": ["Public Sans"], "headline-lg": ["Public Sans"], "display-lg": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "body-sm": ["Public Sans"], "label-md": ["Public Sans"], "body-lg": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant/20 docked full-width top-0 z-50 flex justify-between items-center w-full px-4 h-16 sticky top-0 hidden md:flex">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 cursor-pointer">
+<img alt="Therapist Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a female therapist in a well-lit, modern office setting. The therapist has a warm, empathetic smile and is wearing a soft blue blouse that matches the Healing Mind primary brand color. The lighting is soft and clinical yet inviting, conveying trust and medical authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe8YikIxE2JR7B4it9h5ieuUuwmqfV2XOKEQ0huj0XXyK2-xY_Xg_-gz7YWh021cMnpZS5D3ztDFkQXG8LxclSvsxjCY3GciRykj7FstR1y9EJ3vg5F5WgouYluY5IjEVZGkrIn5ibdyXKUXT8h7yqJ6U0wK8OIuRKOY-AxvxC7tGEiblhZuXyOFzFltoyw7mpUVBx_CqDnrC1W9DyKHHadOKz8rCNets4cr1-Pm8AeY1zskYNbjrz"/>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Healing Mind</h1>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-primary font-label-md text-label-md flex flex-col items-center gap-1 border-b-2 border-primary pb-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-1 hover:bg-surface-container-low transition-opacity px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                Schedule
+            </a><a class="text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-1 hover:bg-surface-container-low transition-opacity px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+    Therapists
+</a>
+<a class="text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-1 hover:bg-surface-container-low transition-opacity px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+                Tasks
+            </a>
+<a class="text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-1 hover:bg-surface-container-low transition-opacity px-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+                Profile
+            </a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-opacity text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="relative group">
+    <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-opacity text-on-surface-variant">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="absolute right-0 top-full mt-1 w-48 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-lg hidden group-hover:block z-50 overflow-hidden">
+        <div class="py-2 flex flex-col">
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a>
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">help</span>Help</a>
+            <div class="h-[1px] bg-outline-variant/30 my-1"></div>
+            <a href="../index.html" class="px-4 py-2 font-body-sm text-error hover:bg-error/10 flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">logout</span>Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+</header>
+<!-- Mobile Top App Bar -->
+<header class="md:hidden bg-surface dark:bg-surface-dim border-b border-outline-variant/20 docked full-width top-0 z-50 flex justify-between items-center w-full px-4 h-16 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 cursor-pointer">
+<img id="mobileProfileImage" alt="Therapist Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a female therapist in a well-lit, modern office setting. The therapist has a warm, empathetic smile and is wearing a soft blue blouse that matches the Healing Mind primary brand color. The lighting is soft and clinical yet inviting, conveying trust and medical authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc6SKBZU1q2zX6aiazzkTCwYmmgB5siHwQHQa-3-y5n3qGHlFbl89rFt52Je-BhgCFZsFTURLEBpLK6A2hBAg4deivqRV8SJyv2SE11uHnIG2KX9z_58ymWHni0oC5fOG3i_CGNvmH524yb5pnVo31p9MVTe_2bpeRQ0bxgKXXgS2hQQL08dlOiFZigULaZzR1TF8FVv2pRinIf-7e6m4egaaIk_92AzqSnn_CnbwUZnNho7cYqpmu"/>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary-fixed-dim">Healing Mind</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-opacity text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="relative group">
+    <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-opacity text-on-surface-variant">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="absolute right-0 top-full mt-1 w-48 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-lg hidden group-hover:block z-50 overflow-hidden">
+        <div class="py-2 flex flex-col">
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a>
+            <a href="#" class="px-4 py-2 font-body-sm text-on-surface hover:bg-surface-container-low flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">help</span>Help</a>
+            <div class="h-[1px] bg-outline-variant/30 my-1"></div>
+            <a href="../index.html" class="px-4 py-2 font-body-sm text-error hover:bg-error/10 flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">logout</span>Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-4 md:px-gutter py-lg md:py-margin-desktop grid grid-cols-4 md:grid-cols-12 gap-4 md:gap-gutter">
+<!-- Welcome Section -->
+<div class="col-span-4 md:col-span-12 mb-4">
+<h2 id="greetingHeader" class="font-display-lg text-display-lg text-on-surface">Good morning, Sarah.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Here is a summary of your wellness journey today.</p>
+</div><div class="col-span-4 md:col-span-12 bg-primary-container text-on-primary-container rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 mb-4 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-on-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">waving_hand</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md-mobile md:text-headline-md">New to Healing Mind?</h3>
+<p class="font-body-md opacity-90">Start your journey by scheduling your first session with a specialist.</p>
+</div>
+</div>
+<button class="w-full md:w-auto bg-surface-container-lowest text-primary font-label-md h-[48px] px-8 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined">calendar_add_on</span>
+        Book your first appointment
+    </button>
+</div>
+<!-- Next Session Card (Bento Item 1) -->
+<div class="col-span-4 md:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
+<!-- Decorative subtle background -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+<div class="z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary block"></span>
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Next Session</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-1">Dr. Emily Chen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">schedule</span> Today, 10:00 AM
+                </p>
+<div class="flex gap-2 mt-4">
+<span class="bg-primary-fixed/30 text-primary-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">psychology</span> CBT Therapy
+                    </span>
+</div>
+</div>
+<div class="w-full md:w-auto z-10">
+<button class="w-full md:w-auto bg-primary text-on-primary font-label-md text-label-md h-[48px] px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">videocam</span>
+                    Join Video
+                </button>
+</div>
+</div>
+<!-- Daily Action Center (Bento Item 2) -->
+<div class="col-span-4 md:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Action Center</h3>
+<span class="material-symbols-outlined text-outline">task_alt</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-low rounded-lg p-2 border border-outline-variant/20 text-center">
+<span class="block font-headline-md text-primary">10</span>
+<span class="block font-label-sm text-on-surface-variant uppercase text-[10px]">Total (T)</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 border border-outline-variant/20 text-center">
+<span class="block font-headline-md text-primary">8</span>
+<span class="block font-label-sm text-on-surface-variant uppercase text-[10px]">Done (C)</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 border border-outline-variant/20 text-center">
+<span class="block font-headline-md text-error">2</span>
+<span class="block font-label-sm text-on-surface-variant uppercase text-[10px]">Pending (P)</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 my-2">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50 border border-outline-variant/10">
+<span class="text-body-sm text-on-surface">Morning Meditation</span>
+<span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-primary/10 text-primary">Completed</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50 border border-outline-variant/10">
+<span class="text-body-sm text-on-surface">Mood Journaling</span>
+<span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-error/10 text-error">Pending</span>
+</div>
+</div><button class="mt-auto w-full border-2 border-primary text-primary font-label-md text-label-md h-[48px] rounded-lg flex items-center justify-center hover:bg-primary-fixed transition-colors">
+                View All Tasks
+            </button>
+</div>
+<!-- Health Track Shortcut (Bento Item 3) -->
+<div class="col-span-2 md:col-span-6 bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-md flex flex-col justify-between group cursor-pointer hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Health Track</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Monitor your cycle and daily vitals.</p>
+</div>
+<div class="mt-4 flex items-center text-primary font-label-md text-label-md">
+                Open Tracker <span class="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Psychometric Portal Shortcut (Bento Item 4) -->
+<div class="col-span-2 md:col-span-6 bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-md flex flex-col justify-between group cursor-pointer hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Psychometric Portal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Access assessments and insights.</p>
+</div>
+<div class="mt-4 flex items-center text-primary font-label-md text-label-md">
+                View Portal <span class="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-dim shadow-[0px_-4px_12px_rgba(26,37,48,0.08)] docked full-width bottom-0 z-50 fixed bottom-0 w-full flex justify-around items-center px-4 py-2 border-t-0">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-1.5 active:scale-95 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-sm text-label-sm mt-1">Therapists</span>
+</a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-label-sm text-label-sm mt-1">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<button class="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-primary text-on-primary px-4 py-3 rounded-r-xl shadow-lg flex items-center gap-2 hover:bg-primary-container transition-all group active:scale-95">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-md hidden md:block">Assessments</span>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Client Greeting and Avatar
+    const loggedInUserPhone = localStorage.getItem('loggedInUser');
+    const users = JSON.parse(localStorage.getItem('healingMindUsers')) || {};
+    const currentUser = users[loggedInUserPhone];
+
+    if (currentUser) {
+        // Update greeting name based on time of day
+        const greetingHeader = document.getElementById('greetingHeader');
+        if (greetingHeader) {
+            const currentHour = new Date().getHours();
+            let greetingTime = "Good morning";
+            if (currentHour >= 12 && currentHour < 17) greetingTime = "Good afternoon";
+            else if (currentHour >= 17) greetingTime = "Good evening";
+            
+            const firstName = currentUser.name ? currentUser.name.split(' ')[0] : 'Client';
+            greetingHeader.textContent = `${greetingTime}, ${firstName}.`;
+        }
+
+        // Update Avatar based on gender
+        const mobileProfileImage = document.getElementById('mobileProfileImage');
+        if (mobileProfileImage) {
+            const gender = (currentUser.gender || currentUser.sex || '').toLowerCase();
+            if (gender === 'male' || gender === 'm' || gender === 'man') {
+                mobileProfileImage.src = "https://i.pravatar.cc/150?img=11"; // Default male portrait
+            } else if (gender === 'female' || gender === 'f' || gender === 'woman') {
+                mobileProfileImage.src = "https://i.pravatar.cc/150?img=5"; // Default female portrait
+            } else {
+                // Fallback to initial monogram
+                const firstName = currentUser.name ? currentUser.name.split(' ')[0] : 'U';
+                mobileProfileImage.src = `https://ui-avatars.com/api/?name=${firstName}&background=0d54a5&color=fff&size=128`;
+            }
+            mobileProfileImage.alt = "Client Profile Avatar";
+        }
+    }
+});
+</script>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Sanctuary Admin - Therapists</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"outline-variant": "#c2c6d3", "on-primary": "#ffffff", "on-tertiary-fixed": "#191c1d", "on-tertiary": "#ffffff", "primary-container": "#0d54a5", "on-secondary": "#ffffff", "tertiary-container": "#535657", error: "#ba1a1a", "secondary-container": "#ff716b", "on-secondary-container": "#70040e", "surface-tint": "#1f5daf", "on-background": "#330043", "secondary-fixed": "#ffdad7", "surface-bright": "#fff7fb", "on-tertiary-fixed-variant": "#454748", "on-error-container": "#93000a", "surface-dim": "#f8cbff", "secondary-fixed-dim": "#ffb3ae", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", outline: "#727783", "on-surface": "#330043", background: "#fff7fb", "error-container": "#ffdad6", "surface-container-highest": "#fbd7ff", "surface-container-high": "#fddfff", "surface-container": "#ffe6ff", "on-secondary-fixed-variant": "#8a1a1e", "inverse-on-surface": "#ffebfe", "primary-fixed-dim": "#aac7ff", "on-secondary-fixed": "#410004", "on-tertiary-container": "#cacbcc", "primary-fixed": "#d6e3ff", "tertiary-fixed-dim": "#c5c7c8", "on-surface-variant": "#424751", "tertiary-fixed": "#e1e3e4", surface: "#fff7fb", "surface-variant": "#fbd7ff", "on-primary-container": "#b1cbff", "surface-container-low": "#ffeffd", tertiary: "#3c3f40", "on-primary-fixed-variant": "#00458d", "on-primary-fixed": "#001b3e", secondary: "#ab3332", "inverse-primary": "#aac7ff", primary: "#003d7e", "inverse-surface": "#54006c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {lg: "24px", "margin-mobile": "16px", xs: "4px", xl: "48px", base: "8px", gutter: "24px", md: "16px", "margin-desktop": "40px", sm: "8px"}, fontFamily: {"headline-lg-mobile": ["Public Sans"], "body-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "body-sm": ["Public Sans"], "label-sm": ["Public Sans"], "display-lg": ["Public Sans"], "label-md": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased flex flex-col md:flex-row h-screen overflow-hidden">
+<!-- Navigation Drawer (Desktop/Tablet) -->
+<aside class="hidden md:flex bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline fixed left-0 top-0 h-full w-[280px] flex-col py-lg gap-base z-40 transition-transform">
+<div class="px-md pb-md flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Admin Profile Photo" class="w-full h-full object-cover" data-alt="A professional headshot of a clinical administrator in a modern, brightly lit office environment. The lighting is soft and natural, emphasizing a calm and organized atmosphere suitable for a healthcare setting. High-quality corporate portrait style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-dztJ-PEvbyDSCbvj1t6a0vIt0lftjV6u4qSzqnhhua6IsdZDXe1ABqt9ssZfFypnKru9JoJ_IdMYHaIGu-PSB3Y2-HNoVzNaeM0j2omz9OIhIQiy6qiX4JAo0fedhJ4s4khnzk3r93yV99TCYqTFtArYdJKptPAFVb8VCbuPF4Y3f2rC4Mwtu9tvlxTbo4qUpSPK1KkhNjoESCin52S7PuXME6JZlbLht0NK9EIy1FvHG8XvB0U6"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-primary truncate">Clinical Administrator</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Practice Oversight</div>
+</div>
+</div>
+<nav class="flex-1 px-sm">
+<a class="flex items-center gap-md px-md py-sm mb-xs rounded-r-full text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-body-md text-body-md">Executive Summary</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm mb-xs rounded-r-full bg-secondary-container text-on-secondary-container font-semibold transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined fill text-primary">badge</span>
+<span class="font-body-md text-body-md">Staff Directory</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm mb-xs rounded-r-full text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md">Revenue Reports</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm mb-xs rounded-r-full text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer duration-200" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-body-md text-body-md">System Configuration</span>
+</a>
+</nav>
+<div class="px-md mt-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant">v2.4.0</span>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-[280px] h-full relative overflow-y-auto w-full">
+<!-- TopAppBar (Web & Mobile Header) -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0 z-30 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 shadow-none">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-150 md:hidden">menu</span>
+<span class="material-symbols-outlined text-primary md:hidden">clinical_notes</span>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary dark:text-inverse-primary font-bold tracking-tight">Clinical Sanctuary Admin</h1>
+</div>
+<div class="flex items-center gap-sm md:gap-md">
+<!-- Desktop Navigation items within Topbar (Optional, usually handled by Sidebar, but demonstrating integration if needed, omitting here for clean canvas prioritizing sidebar) -->
+<div class="hidden md:flex gap-md mr-md">
+<!-- Nav items could go here if TopNav is preferred over SideNav -->
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:scale-95 duration-150 hover:bg-surface-container-low p-2 rounded-full transition-colors">notifications</span>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="p-margin-mobile md:p-gutter flex-1 pb-24 md:pb-gutter max-w-7xl mx-auto w-full">
+<!-- Page Header & Filters -->
+<div class="mb-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Therapist Activity Monitor</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time status and operational metrics.</p>
+</div>
+<div class="flex gap-sm w-full md:w-auto overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-transparent flex items-center gap-2">
+                        All Departments
+                    </button>
+<button class="bg-surface text-on-surface-variant px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant hover:bg-surface-container transition-colors flex items-center gap-2">
+                        CBT
+                    </button>
+<button class="bg-surface text-on-surface-variant px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant hover:bg-surface-container transition-colors flex items-center gap-2">
+                        DBT
+                    </button>
+<button class="bg-surface text-on-surface-variant px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap border border-outline-variant hover:bg-surface-container transition-colors flex items-center gap-2">
+                        Pediatric
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Metrics Column (Spans 4 cols on Desktop) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-48 relative overflow-hidden group">
+<div class="flex justify-between items-start z-10">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Average Session Duration</span>
+<span class="material-symbols-outlined text-primary bg-primary-container p-1 rounded-full">schedule</span>
+</div>
+<div class="z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-1">48<span class="font-headline-md text-headline-md text-on-surface-variant">m</span></div>
+<div class="font-body-sm text-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+                                -2m vs last week
+                            </div>
+</div>
+<!-- Decorative subtle gradient -->
+<div class="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mb-10 group-hover:bg-primary/10 transition-colors duration-500"></div>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-48 relative overflow-hidden group">
+<div class="flex justify-between items-start z-10">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Daily Completion Rate</span>
+<span class="material-symbols-outlined text-primary bg-primary-container p-1 rounded-full">check_circle</span>
+</div>
+<div class="z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-1">94<span class="font-headline-md text-headline-md text-on-surface-variant">%</span></div>
+<div class="font-body-sm text-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +3% vs yesterday
+                            </div>
+</div>
+<!-- Decorative subtle gradient -->
+<div class="absolute bottom-0 right-0 w-32 h-32 bg-secondary-container/30 rounded-full blur-2xl -mr-10 -mb-10 group-hover:bg-secondary-container/50 transition-colors duration-500"></div>
+</div>
+<!-- Quick Actions / Context (Optional) -->
+<div class="bg-surface-container-low rounded-xl p-md hidden lg:block">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Quick Insights</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Patient load is currently well-balanced across active departments. No critical bottlenecks identified.</p>
+</div>
+</div>
+<!-- Therapists List Column (Spans 8 cols on Desktop) -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="px-md py-sm border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Active Roster</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">filter_list</span>
+<span class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span>
+</div>
+</div>
+<div class="flex flex-col divide-y divide-outline-variant flex-1">
+<!-- Therapist Row: In Session -->
+<div class="flex items-center p-md min-h-[72px] hover:bg-surface-container-lowest/50 transition-colors group relative cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error rounded-r-full hidden group-hover:block transition-all"></div>
+<div class="relative mr-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Dr. Emily Chen" class="w-full h-full object-cover" data-alt="Portrait of Dr. Emily Chen, a professional female therapist with a warm, reassuring smile. The background is a soft, blurred clinical office setting. Bright, clear lighting emphasizes a modern healthcare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2jU9ZYyQbzgj0T9ufH8RxY8_I-ufGkaJLJN-z8N5fX2yrm5lkY1sGJ-7LySqe0owS4Gf7xqiLzkt_Wot1gCPSwrPVc-VzHctQU8do02ZtUCcJJdsFal8xzAWX9Z7nW7A9OiS9bZOsYQkJLdDpq2CNxuWxzEg6qIUdlYjVqPANHIA_FOtEy_00a2qonOaJZKt57Fzb1jrQ2t3y5E-xnjZSvm1Tn9jUGrPjMxPzMroGlZ3EeJfOgU_b"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-error border-2 border-surface-container-lowest rounded-full" title="In Session"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-semibold text-on-surface truncate">Dr. Emily Chen</h4>
+<span class="font-label-sm text-label-sm text-error bg-error-container px-2 py-0.5 rounded-full whitespace-nowrap">In Session (45m)</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">CBT</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Patient: A. Smith • Next: 2:00 PM</span>
+</div>
+</div>
+<div class="ml-md hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary hover:bg-primary-container p-2 rounded-full transition-colors"><span class="material-symbols-outlined">chat</span></button>
+</div>
+</div>
+<!-- Therapist Row: Available -->
+<div class="flex items-center p-md min-h-[72px] hover:bg-surface-container-lowest/50 transition-colors group relative cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full hidden group-hover:block transition-all"></div>
+<div class="relative mr-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Dr. Michael Rodriguez" class="w-full h-full object-cover" data-alt="Portrait of Dr. Michael Rodriguez, a confident male clinical psychologist wearing a casual yet professional button-down shirt. The setting is a minimalist, modern clinic with ample natural light. High resolution, professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOSV24S0sscgSf3nAN_Fdvfw2e340c_TFBKbZrIIFHfLftCiN-5ssq2G90kq57iq3iYQUtTE8DjeRGiQVnGtET660-6uRF-sg8Kpo_REFkXN9fesC4NdZrinDG-myLCniENMlFoedmG_x2VS0ls047fMg25P550cchTq2824N1-X8AdLGAacTMUQYl_ri1CfdyHyuE1bNJTy7aJQoCqHzeQ06HSbV-63-78bQUy3QTpKL2QJwqBglz"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-primary border-2 border-surface-container-lowest rounded-full" title="Available"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-semibold text-on-surface truncate">Dr. Michael Rodriguez</h4>
+<span class="font-label-sm text-label-sm text-primary bg-primary-container/20 px-2 py-0.5 rounded-full whitespace-nowrap">Available</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">DBT</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Preparing notes • Next: 3:30 PM</span>
+</div>
+</div>
+<div class="ml-md hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary hover:bg-primary-container p-2 rounded-full transition-colors"><span class="material-symbols-outlined">assignment</span></button>
+</div>
+</div>
+<!-- Therapist Row: On Break -->
+<div class="flex items-center p-md min-h-[72px] hover:bg-surface-container-lowest/50 transition-colors group relative cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary rounded-r-full hidden group-hover:block transition-all"></div>
+<div class="relative mr-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline-md text-headline-md">
+                                    SJ
+                                </div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary border-2 border-surface-container-lowest rounded-full" title="On Break"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-semibold text-on-surface truncate">Dr. Sarah Jenkins</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full whitespace-nowrap">On Break</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">Pediatric</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Returns at 1:15 PM</span>
+</div>
+</div>
+<div class="ml-md hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary hover:bg-primary-container p-2 rounded-full transition-colors"><span class="material-symbols-outlined">schedule</span></button>
+</div>
+</div>
+<!-- Therapist Row: Available (Additional for layout balance) -->
+<div class="flex items-center p-md min-h-[72px] hover:bg-surface-container-lowest/50 transition-colors group relative cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full hidden group-hover:block transition-all"></div>
+<div class="relative mr-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Dr. David Lee" class="w-full h-full object-cover" data-alt="Portrait of Dr. David Lee, a mature male psychiatrist with glasses, looking approachable and focused. The environment is a serene, well-lit medical consulting room. Minimalist and clean visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKZT-IyVQYjM0kTOgtt0PXIKS1ScqnnnxfUkODkell4M9UZOotSogZa7etANZV_ie_O19oOSSRDXGu-7dA5XDt258lG3huqMd7G0hs_M89W2v9qmVQW0wkgXLlLIuvKfTgUnHyCL1Y3gD7J-p-HLRBerD17hNBbqU5MSKwOPe4T7oGngAkBqsmlClNBhEUr6HYLX5A6JD7eK0zWakK9U4lvzhhg4xoHJuZqsDU1wt2xHfB1m4Vkmol"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-primary border-2 border-surface-container-lowest rounded-full" title="Available"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md text-body-md font-semibold text-on-surface truncate">Dr. David Lee</h4>
+<span class="font-label-sm text-label-sm text-primary bg-primary-container/20 px-2 py-0.5 rounded-full whitespace-nowrap">Available</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">CBT</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Walk-in ready</span>
+</div>
+</div>
+<div class="ml-md hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary hover:bg-primary-container p-2 rounded-full transition-colors"><span class="material-symbols-outlined">assignment</span></button>
+</div>
+</div>
+</div>
+<div class="p-sm border-t border-outline-variant bg-surface flex justify-center">
+<button class="font-label-md text-label-md text-primary hover:bg-primary-container/50 px-4 py-2 rounded-full transition-colors flex items-center gap-1">
+                            View All Staff
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe shadow-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Overview</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined fill">groups</span>
+<span class="font-label-sm text-label-sm font-semibold">Therapists</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-sm text-label-sm">Metrics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+<style>
+        /* Hide scrollbar for cleaner UI on horizontal scroll areas */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

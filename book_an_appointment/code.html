@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appointment Booking - Healing Mind</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary": "#ffffff", "on-surface-variant": "#424751", "on-primary": "#ffffff", secondary: "#ab3332", "on-primary-fixed-variant": "#00458d", "primary-fixed": "#d6e3ff", "on-secondary-fixed": "#410004", "on-tertiary-fixed-variant": "#454748", "inverse-primary": "#aac7ff", "surface-tint": "#1f5daf", "on-surface": "#330043", "on-error-container": "#93000a", error: "#ba1a1a", "secondary-fixed": "#ffdad7", "on-tertiary-fixed": "#191c1d", "tertiary-container": "#535657", "on-secondary-fixed-variant": "#8a1a1e", "error-container": "#ffdad6", background: "#fff7fb", "surface-container-high": "#fddfff", "on-secondary": "#ffffff", "on-background": "#330043", "primary-container": "#0d54a5", tertiary: "#3c3f40", "on-error": "#ffffff", "surface-bright": "#fff7fb", "surface-container-low": "#ffeffd", "secondary-container": "#ff716b", "on-primary-container": "#b1cbff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#fbd7ff", "surface-container": "#ffe6ff", "tertiary-fixed": "#e1e3e4", "inverse-on-surface": "#ffebfe", "surface-variant": "#fbd7ff", outline: "#727783", "inverse-surface": "#54006c", "on-primary-fixed": "#001b3e", "on-secondary-container": "#70040e", "primary-fixed-dim": "#aac7ff", "on-tertiary-container": "#cacbcc", surface: "#fff7fb", primary: "#003d7e", "surface-dim": "#f8cbff", "outline-variant": "#c2c6d3", "secondary-fixed-dim": "#ffb3ae", "tertiary-fixed-dim": "#c5c7c8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xl: "48px", base: "8px", gutter: "24px", sm: "8px", "margin-desktop": "40px", xs: "4px", lg: "24px", "margin-mobile": "16px", md: "16px"}, fontFamily: {"label-sm": ["Public Sans"], "headline-lg": ["Public Sans"], "display-lg": ["Public Sans"], "headline-md": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "body-sm": ["Public Sans"], "label-md": ["Public Sans"], "body-lg": ["Public Sans"], headline: ["Public Sans"], display: ["Public Sans"], body: ["Public Sans"], label: ["Public Sans"]}, fontSize: {"label-sm": ["12px", {lineHeight: "14px", fontWeight: "500"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant/20 flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-md">
+<!-- Back Button Context -->
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low transition-opacity rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Healing Mind</h1>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low transition-opacity rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-xl">
+<!-- Header Section -->
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Book an Appointment</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                Select an available time slot for your session. Sessions are 45 minutes with a 15-minute buffer.
+            </p>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Date & Context -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Therapist Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md">
+<div class="flex items-center gap-md mb-md">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-highest shrink-0 flex items-center justify-center bg-primary/20 text-primary font-bold text-xl" id="therapistInitials">
+SJ
+</div>
+<div>
+<h3 id="therapistName" class="font-headline-md text-headline-md-mobile text-on-surface">Dr. Sarah Jenkins</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary block"></span> Clinician
+                            </p>
+</div>
+</div>
+<div id="therapistSpecialties" class="flex flex-wrap gap-sm">
+<span class="font-label-sm text-label-sm px-3 py-1 bg-primary/10 text-primary rounded-full">Anxiety</span>
+</div>
+</div>
+<!-- Date Selector (Next 7 Days) -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md">
+<h3 class="font-label-md text-label-md text-on-surface mb-md">Select Date</h3>
+<div class="flex overflow-x-auto pb-sm gap-sm no-scrollbar">
+<!-- Active Date -->
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-20 rounded-lg bg-primary text-on-primary border-2 border-primary transition-colors" data-date="12">
+<span class="font-label-sm text-label-sm opacity-90 uppercase">Mon</span>
+<span class="font-headline-md text-headline-md-mobile">12</span>
+</button>
+<!-- Inactive Dates -->
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-20 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container-low hover:border-primary/50 transition-colors" data-date="13">
+<span class="font-label-sm text-label-sm uppercase">Tue</span>
+<span class="font-headline-md text-headline-md-mobile text-on-surface">13</span>
+</button>
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-20 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container-low hover:border-primary/50 transition-colors" data-date="14">
+<span class="font-label-sm text-label-sm uppercase">Wed</span>
+<span class="font-headline-md text-headline-md-mobile text-on-surface">14</span>
+</button>
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-20 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container-low hover:border-primary/50 transition-colors" data-date="15">
+<span class="font-label-sm text-label-sm uppercase">Thu</span>
+<span class="font-headline-md text-headline-md-mobile text-on-surface">15</span>
+</button>
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-20 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant/50 hover:bg-surface-container-low hover:border-primary/50 transition-colors" data-date="16">
+<span class="font-label-sm text-label-sm uppercase">Fri</span>
+<span class="font-headline-md text-headline-md-mobile text-on-surface">16</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Time Slots -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md md:p-lg h-full">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Available Times</h3>
+<!-- Legend -->
+<div class="flex items-center gap-md font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-surface-container-lowest border border-primary"></span> Available
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-surface-variant"></span> Booked
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-stripes opacity-30 border border-outline-variant"></span> Break
+                            </div>
+</div>
+</div>
+<!-- Time Grid -->
+<div id="timeSlotsContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-md">
+<!-- Slots generated by JS based on date -->
+</div>
+<div id="fullyBookedAlert" class="hidden mt-8 bg-error-container p-6 rounded-lg text-center">
+    <span class="material-symbols-outlined text-4xl text-error mb-2">event_busy</span>
+    <h4 class="font-headline-md text-on-error-container mb-2">No Available Slots</h4>
+    <p class="font-body-md text-on-surface-variant mb-6">This therapist is fully booked on this date. Please select another date, or see other available therapists for this same date.</p>
+    <button class="px-6 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg text-primary font-label-md hover:bg-surface-container-low transition-colors" onclick="openAlternativeModal()">
+        View Alternative Therapists for this Date
+    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on md and up as per guidelines, though intent is transactional so it shouldn't be here anyway, keeping logic strict: Suppressed due to task-focused/transactional intent) -->
+<!-- Navigation Shell suppressed for booking flow -->
+
+<!-- Alternative Therapists Modal -->
+<div id="alternativeModal" class="fixed inset-0 bg-on-background/50 z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl relative">
+        <div class="sticky top-0 bg-surface-container-lowest border-b border-outline-variant/30 px-6 py-4 flex justify-between items-center z-10">
+            <div>
+                <h3 class="font-headline-md text-on-surface">Available Therapists on <span id="modalDate"></span></h3>
+                <p class="font-body-sm text-on-surface-variant">Matching: <span id="modalSpecialty" class="font-medium text-primary"></span></p>
+            </div>
+            <button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors" onclick="closeAlternativeModal()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+            
+            <div class="border border-outline-variant/30 rounded-lg p-4 flex flex-col md:flex-row items-center gap-4 hover:shadow-sm transition-shadow bg-surface">
+                <div class="w-12 h-12 rounded-full bg-secondary-container/50 text-secondary font-bold flex justify-center items-center shrink-0">MK</div>
+                <div class="flex-grow text-center md:text-left">
+                    <h4 class="font-label-md text-lg text-on-surface">Michael Kim, LCSW</h4>
+                    <p class="font-body-sm text-on-surface-variant">Matches your selected specialties.</p>
+                </div>
+                <button class="w-full md:w-auto px-6 py-2 bg-primary text-on-primary rounded-lg font-label-md hover:bg-primary-container" onclick="switchToTherapist('Michael Kim, LCSW')">
+                    Select
+                </button>
+            </div>
+
+            <div class="border border-outline-variant/30 rounded-lg p-4 flex flex-col md:flex-row items-center gap-4 hover:shadow-sm transition-shadow bg-surface">
+                <div class="w-12 h-12 rounded-full bg-primary-container/50 text-primary font-bold flex justify-center items-center shrink-0">AJ</div>
+                <div class="flex-grow text-center md:text-left">
+                    <h4 class="font-label-md text-lg text-on-surface">Amanda Jones</h4>
+                    <p class="font-body-sm text-on-surface-variant">Available at 02:00 PM on this date.</p>
+                </div>
+                <button class="w-full md:w-auto px-6 py-2 bg-primary text-on-primary rounded-lg font-label-md hover:bg-primary-container" onclick="switchToTherapist('Amanda Jones')">
+                    Select
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // State logic
+    const selectedTherapist = localStorage.getItem('selectedTherapist') || 'Dr. Sarah Jenkins';
+    const selectedSpecialties = localStorage.getItem('selectedSpecialties') || 'Anxiety, CBT';
+    let currentDate = '12';
+
+    // Set Therapist Info UI
+    document.getElementById('therapistName').textContent = selectedTherapist;
+    document.getElementById('therapistInitials').textContent = selectedTherapist.split(' ').map(n => n[0]).join('').substring(0,2);
+    document.getElementById('therapistSpecialties').innerHTML = selectedSpecialties.split(',').map(s => `<span class="font-label-sm text-label-sm px-3 py-1 bg-primary/10 text-primary rounded-full">${s.trim()}</span>`).join('');
+
+    const timeSlotsContainer = document.getElementById('timeSlotsContainer');
+    const fullyBookedAlert = document.getElementById('fullyBookedAlert');
+    const dateButtons = document.querySelectorAll('.date-btn');
+
+    // Default template for available slots
+    const availableSlotsHTML = `
+        <div class="col-span-full mb-2 mt-4">
+            <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Morning</h4>
+        </div>
+        <button class="h-[48px] rounded-lg border border-primary bg-surface-container-lowest text-primary hover:bg-primary-fixed hover:shadow-md transition-all flex items-center justify-center font-body-md text-body-md focus:outline-none" onclick="bookSlot(this)">09:00 AM</button>
+        <button class="h-[48px] rounded-lg border border-outline-variant/50 bg-surface-variant text-on-surface-variant cursor-not-allowed flex items-center justify-center font-body-md text-body-md">10:00 AM</button>
+        <button class="h-[48px] rounded-lg border border-primary bg-surface-container-lowest text-primary hover:bg-primary-fixed hover:shadow-md transition-all flex items-center justify-center font-body-md text-body-md focus:outline-none" onclick="bookSlot(this)">11:00 AM</button>
+        
+        <div class="col-span-full mb-2 mt-6">
+            <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Afternoon</h4>
+        </div>
+        <div class="h-[48px] rounded-lg border border-outline-variant border-dashed bg-surface-container flex items-center justify-center font-body-md text-body-md text-on-surface-variant opacity-70">1:00 PM - Break</div>
+        <button class="h-[48px] rounded-lg border border-primary bg-surface-container-lowest text-primary hover:bg-primary-fixed hover:shadow-md transition-all flex items-center justify-center font-body-md text-body-md focus:outline-none" onclick="bookSlot(this)">02:00 PM</button>
+    `;
+
+    // Handle date click
+    dateButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const dateStr = e.currentTarget.getAttribute('data-date');
+            
+            // Remove active classes
+            dateButtons.forEach(b => {
+                b.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'border-outline-variant/50');
+            });
+
+            // Add active classes to clicked
+            e.currentTarget.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'border-outline-variant/50');
+            e.currentTarget.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+
+            currentDate = dateStr;
+
+            // Logic: if user clicks "16", it is fully booked. Otherwise available.
+            if (dateStr === '16') {
+                timeSlotsContainer.classList.add('hidden');
+                fullyBookedAlert.classList.remove('hidden');
+            } else {
+                timeSlotsContainer.innerHTML = availableSlotsHTML;
+                timeSlotsContainer.classList.remove('hidden');
+                fullyBookedAlert.classList.add('hidden');
+            }
+        });
+    });
+
+    // Initialize initial state
+    timeSlotsContainer.innerHTML = availableSlotsHTML;
+
+    // Slot Booking action
+    function bookSlot(btn) {
+        const time = btn.textContent.trim();
+        const appointmentData = {
+            therapist: selectedTherapist,
+            date: currentDate + 'th', // simple representation
+            time: time,
+            price: '₹1500' // Mock price for the session
+        };
+        localStorage.setItem('pendingAppointment', JSON.stringify(appointmentData));
+        window.location.href = '../payment_gateway/code.html';
+    }
+
+    // Modal Logic
+    function openAlternativeModal() {
+        document.getElementById('modalDate').textContent = 'Date: 16th';
+        document.getElementById('modalSpecialty').textContent = selectedSpecialties;
+        document.getElementById('alternativeModal').classList.remove('hidden');
+    }
+
+    function closeAlternativeModal() {
+        document.getElementById('alternativeModal').classList.add('hidden');
+    }
+
+    function switchToTherapist(name) {
+        localStorage.setItem('selectedTherapist', name);
+        // Refresh page to load new therapist
+        window.location.reload();
+    }
+</script>
+</body></html>
